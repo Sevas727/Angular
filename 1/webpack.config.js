@@ -6,5 +6,11 @@ module.exports = {
     output: {
         filename: "build.js"
     },
-    watch: true
+    module: {
+        loaders: [
+            {test: /\.html$/, loaders: ["html-loader"]}
+        ]
+    },
+    watch: true,
+    devtool: "source-map"
 }

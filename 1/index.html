@@ -1,17 +1,22 @@
 <!doctype html>
-<html lang="en" ng-app="myApp">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Google Phone Gallery</title>
 </head>
-<body ng-app="post-box">
+<!--<body ng-app="post-box" ng-controller="myCtrl">
 
-    <a ui-sref="incoming" ui-sref-active="active">incoming</a>
-    <a ui-sref="outcoming" ui-sref-active="active">outcoming</a>
+    <input ng-model="name">
 
-    <ui-view></ui-view>
 
+
+</body>
+-->
+<body ng-app="postBox" ng-controller="postController as ctr">
+
+<incoming-drc></incoming-drc>
+<p ng-model="ctr.name">{{ctr.name}}</p>
 <script src="./build.js"></script>
 
 </body>

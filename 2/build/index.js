@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 304);
+/******/ 	return __webpack_require__(__webpack_require__.s = 316);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -157,7 +157,7 @@ module.exports = function(it){
 /* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var store      = __webpack_require__(57)('wks')
+var store      = __webpack_require__(58)('wks')
   , uid        = __webpack_require__(39)
   , Symbol     = __webpack_require__(2).Symbol
   , USE_SYMBOL = typeof Symbol == 'function';
@@ -183,7 +183,7 @@ module.exports = !__webpack_require__(3)(function(){
 /***/ (function(module, exports, __webpack_require__) {
 
 var anObject       = __webpack_require__(1)
-  , IE8_DOM_DEFINE = __webpack_require__(93)
+  , IE8_DOM_DEFINE = __webpack_require__(95)
   , toPrimitive    = __webpack_require__(23)
   , dP             = Object.defineProperty;
 
@@ -317,7 +317,7 @@ module.exports = function(NAME, exec){
 /***/ (function(module, exports, __webpack_require__) {
 
 // to indexed object, toObject with fallback for non-array-like ES3 strings
-var IObject = __webpack_require__(46)
+var IObject = __webpack_require__(47)
   , defined = __webpack_require__(19);
 module.exports = function(it){
   return IObject(defined(it));
@@ -327,12 +327,12 @@ module.exports = function(it){
 /* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var pIE            = __webpack_require__(47)
+var pIE            = __webpack_require__(48)
   , createDesc     = __webpack_require__(29)
   , toIObject      = __webpack_require__(15)
   , toPrimitive    = __webpack_require__(23)
   , has            = __webpack_require__(10)
-  , IE8_DOM_DEFINE = __webpack_require__(93)
+  , IE8_DOM_DEFINE = __webpack_require__(95)
   , gOPD           = Object.getOwnPropertyDescriptor;
 
 exports.f = __webpack_require__(6) ? gOPD : function getOwnPropertyDescriptor(O, P){
@@ -351,7 +351,7 @@ exports.f = __webpack_require__(6) ? gOPD : function getOwnPropertyDescriptor(O,
 // 19.1.2.9 / 15.2.3.2 Object.getPrototypeOf(O)
 var has         = __webpack_require__(10)
   , toObject    = __webpack_require__(9)
-  , IE_PROTO    = __webpack_require__(74)('IE_PROTO')
+  , IE_PROTO    = __webpack_require__(75)('IE_PROTO')
   , ObjectProto = Object.prototype;
 
 module.exports = Object.getPrototypeOf || function(O){
@@ -406,10 +406,10 @@ module.exports = function(method, arg){
 // 5 -> Array#find
 // 6 -> Array#findIndex
 var ctx      = __webpack_require__(25)
-  , IObject  = __webpack_require__(46)
+  , IObject  = __webpack_require__(47)
   , toObject = __webpack_require__(9)
   , toLength = __webpack_require__(8)
-  , asc      = __webpack_require__(122);
+  , asc      = __webpack_require__(127);
 module.exports = function(TYPE, $create){
   var IS_MAP        = TYPE == 1
     , IS_FILTER     = TYPE == 2
@@ -511,10 +511,10 @@ module.exports = function(fn, that, length){
 /* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Map     = __webpack_require__(109)
+var Map     = __webpack_require__(111)
   , $export = __webpack_require__(0)
-  , shared  = __webpack_require__(57)('metadata')
-  , store   = shared.store || (shared.store = new (__webpack_require__(112)));
+  , shared  = __webpack_require__(58)('metadata')
+  , store   = shared.store || (shared.store = new (__webpack_require__(114)));
 
 var getOrCreateMetadataMap = function(target, targetKey, create){
   var targetMetadata = store.get(target);
@@ -574,8 +574,8 @@ if(__webpack_require__(6)){
     , global              = __webpack_require__(2)
     , fails               = __webpack_require__(3)
     , $export             = __webpack_require__(0)
-    , $typed              = __webpack_require__(58)
-    , $buffer             = __webpack_require__(81)
+    , $typed              = __webpack_require__(59)
+    , $buffer             = __webpack_require__(82)
     , ctx                 = __webpack_require__(25)
     , anInstance          = __webpack_require__(31)
     , propertyDesc        = __webpack_require__(29)
@@ -586,26 +586,26 @@ if(__webpack_require__(6)){
     , toIndex             = __webpack_require__(38)
     , toPrimitive         = __webpack_require__(23)
     , has                 = __webpack_require__(10)
-    , same                = __webpack_require__(106)
-    , classof             = __webpack_require__(45)
+    , same                = __webpack_require__(108)
+    , classof             = __webpack_require__(46)
     , isObject            = __webpack_require__(4)
     , toObject            = __webpack_require__(9)
-    , isArrayIter         = __webpack_require__(66)
+    , isArrayIter         = __webpack_require__(67)
     , create              = __webpack_require__(33)
     , getPrototypeOf      = __webpack_require__(17)
     , gOPN                = __webpack_require__(34).f
-    , getIterFn           = __webpack_require__(83)
+    , getIterFn           = __webpack_require__(84)
     , uid                 = __webpack_require__(39)
     , wks                 = __webpack_require__(5)
     , createArrayMethod   = __webpack_require__(21)
-    , createArrayIncludes = __webpack_require__(48)
-    , speciesConstructor  = __webpack_require__(75)
-    , ArrayIterators      = __webpack_require__(84)
+    , createArrayIncludes = __webpack_require__(49)
+    , speciesConstructor  = __webpack_require__(76)
+    , ArrayIterators      = __webpack_require__(85)
     , Iterators           = __webpack_require__(42)
-    , $iterDetect         = __webpack_require__(54)
+    , $iterDetect         = __webpack_require__(55)
     , setSpecies          = __webpack_require__(37)
-    , arrayFill           = __webpack_require__(59)
-    , arrayCopyWithin     = __webpack_require__(86)
+    , arrayFill           = __webpack_require__(60)
+    , arrayCopyWithin     = __webpack_require__(88)
     , $DP                 = __webpack_require__(7)
     , $GOPD               = __webpack_require__(16)
     , dP                  = $DP.f
@@ -1152,22 +1152,22 @@ module.exports = false;
 
 // 19.1.2.2 / 15.2.3.5 Object.create(O [, Properties])
 var anObject    = __webpack_require__(1)
-  , dPs         = __webpack_require__(99)
-  , enumBugKeys = __webpack_require__(62)
-  , IE_PROTO    = __webpack_require__(74)('IE_PROTO')
+  , dPs         = __webpack_require__(101)
+  , enumBugKeys = __webpack_require__(63)
+  , IE_PROTO    = __webpack_require__(75)('IE_PROTO')
   , Empty       = function(){ /* empty */ }
   , PROTOTYPE   = 'prototype';
 
 // Create object with fake `null` prototype: use iframe Object with cleared prototype
 var createDict = function(){
   // Thrash, waste and sodomy: IE GC bug
-  var iframe = __webpack_require__(61)('iframe')
+  var iframe = __webpack_require__(62)('iframe')
     , i      = enumBugKeys.length
     , lt     = '<'
     , gt     = '>'
     , iframeDocument;
   iframe.style.display = 'none';
-  __webpack_require__(64).appendChild(iframe);
+  __webpack_require__(65).appendChild(iframe);
   iframe.src = 'javascript:'; // eslint-disable-line no-script-url
   // createDict = iframe.contentWindow.Object;
   // html.removeChild(iframe);
@@ -1198,8 +1198,8 @@ module.exports = Object.create || function create(O, Properties){
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.7 / 15.2.3.4 Object.getOwnPropertyNames(O)
-var $keys      = __webpack_require__(101)
-  , hiddenKeys = __webpack_require__(62).concat('length', 'prototype');
+var $keys      = __webpack_require__(103)
+  , hiddenKeys = __webpack_require__(63).concat('length', 'prototype');
 
 exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O){
   return $keys(O, hiddenKeys);
@@ -1210,8 +1210,8 @@ exports.f = Object.getOwnPropertyNames || function getOwnPropertyNames(O){
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 / 15.2.3.14 Object.keys(O)
-var $keys       = __webpack_require__(101)
-  , enumBugKeys = __webpack_require__(62);
+var $keys       = __webpack_require__(103)
+  , enumBugKeys = __webpack_require__(63);
 
 module.exports = Object.keys || function keys(O){
   return $keys(O, enumBugKeys);
@@ -1285,11 +1285,11 @@ module.exports = function(key){
 /***/ (function(module, exports, __webpack_require__) {
 
 var ctx         = __webpack_require__(25)
-  , call        = __webpack_require__(95)
-  , isArrayIter = __webpack_require__(66)
+  , call        = __webpack_require__(97)
+  , isArrayIter = __webpack_require__(67)
   , anObject    = __webpack_require__(1)
   , toLength    = __webpack_require__(8)
-  , getIterFn   = __webpack_require__(83)
+  , getIterFn   = __webpack_require__(84)
   , BREAK       = {}
   , RETURN      = {};
 var exports = module.exports = function(iterable, entries, fn, that, ITERATOR){
@@ -1335,7 +1335,7 @@ module.exports = function(it, tag, stat){
 var $export = __webpack_require__(0)
   , defined = __webpack_require__(19)
   , fails   = __webpack_require__(3)
-  , spaces  = __webpack_require__(79)
+  , spaces  = __webpack_require__(80)
   , space   = '[' + spaces + ']'
   , non     = '\u200b\u0085'
   , ltrim   = RegExp('^' + space + space + '*')
@@ -1367,6 +1367,14 @@ module.exports = exporter;
 /* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
+__webpack_require__(123);
+module.exports = angular;
+
+
+/***/ }),
+/* 46 */
+/***/ (function(module, exports, __webpack_require__) {
+
 // getting tag from 19.1.3.6 Object.prototype.toString()
 var cof = __webpack_require__(18)
   , TAG = __webpack_require__(5)('toStringTag')
@@ -1392,7 +1400,7 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 46 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // fallback for non-array-like ES3 and non-enumerable old V8 strings
@@ -1402,13 +1410,13 @@ module.exports = Object('z').propertyIsEnumerable(0) ? Object : function(it){
 };
 
 /***/ }),
-/* 47 */
+/* 48 */
 /***/ (function(module, exports) {
 
 exports.f = {}.propertyIsEnumerable;
 
 /***/ }),
-/* 48 */
+/* 49 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // false -> Array#indexOf
@@ -1434,7 +1442,7 @@ module.exports = function(IS_INCLUDES){
 };
 
 /***/ }),
-/* 49 */
+/* 50 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1448,9 +1456,9 @@ var global            = __webpack_require__(2)
   , anInstance        = __webpack_require__(31)
   , isObject          = __webpack_require__(4)
   , fails             = __webpack_require__(3)
-  , $iterDetect       = __webpack_require__(54)
+  , $iterDetect       = __webpack_require__(55)
   , setToStringTag    = __webpack_require__(43)
-  , inheritIfRequired = __webpack_require__(65);
+  , inheritIfRequired = __webpack_require__(66);
 
 module.exports = function(NAME, wrapper, methods, common, IS_MAP, IS_WEAK){
   var Base  = global[NAME]
@@ -1525,7 +1533,7 @@ module.exports = function(NAME, wrapper, methods, common, IS_MAP, IS_WEAK){
 };
 
 /***/ }),
-/* 50 */
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1559,7 +1567,7 @@ module.exports = function(KEY, length, exec){
 };
 
 /***/ }),
-/* 51 */
+/* 52 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1578,7 +1586,7 @@ module.exports = function(){
 };
 
 /***/ }),
-/* 52 */
+/* 53 */
 /***/ (function(module, exports) {
 
 // fast apply, http://jsperf.lnkit.com/fast-apply/5
@@ -1599,7 +1607,7 @@ module.exports = function(fn, args, that){
 };
 
 /***/ }),
-/* 53 */
+/* 54 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.2.8 IsRegExp(argument)
@@ -1612,7 +1620,7 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 54 */
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var ITERATOR     = __webpack_require__(5)('iterator')
@@ -1638,7 +1646,7 @@ module.exports = function(exec, skipClosing){
 };
 
 /***/ }),
-/* 55 */
+/* 56 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Forced replacement prototype accessors methods
@@ -1650,13 +1658,13 @@ module.exports = __webpack_require__(32)|| !__webpack_require__(3)(function(){
 });
 
 /***/ }),
-/* 56 */
+/* 57 */
 /***/ (function(module, exports) {
 
 exports.f = Object.getOwnPropertySymbols;
 
 /***/ }),
-/* 57 */
+/* 58 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var global = __webpack_require__(2)
@@ -1667,7 +1675,7 @@ module.exports = function(key){
 };
 
 /***/ }),
-/* 58 */
+/* 59 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var global = __webpack_require__(2)
@@ -1698,7 +1706,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 59 */
+/* 60 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1719,7 +1727,7 @@ module.exports = function fill(value /*, start = 0, end = @length */){
 };
 
 /***/ }),
-/* 60 */
+/* 61 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1733,7 +1741,7 @@ module.exports = function(object, index, value){
 };
 
 /***/ }),
-/* 61 */
+/* 62 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(4)
@@ -1745,7 +1753,7 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 62 */
+/* 63 */
 /***/ (function(module, exports) {
 
 // IE 8- don't enum bug keys
@@ -1754,7 +1762,7 @@ module.exports = (
 ).split(',');
 
 /***/ }),
-/* 63 */
+/* 64 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var MATCH = __webpack_require__(5)('match');
@@ -1771,17 +1779,17 @@ module.exports = function(KEY){
 };
 
 /***/ }),
-/* 64 */
+/* 65 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(2).document && document.documentElement;
 
 /***/ }),
-/* 65 */
+/* 66 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject       = __webpack_require__(4)
-  , setPrototypeOf = __webpack_require__(73).set;
+  , setPrototypeOf = __webpack_require__(74).set;
 module.exports = function(that, target, C){
   var P, S = target.constructor;
   if(S !== C && typeof S == 'function' && (P = S.prototype) !== C.prototype && isObject(P) && setPrototypeOf){
@@ -1790,7 +1798,7 @@ module.exports = function(that, target, C){
 };
 
 /***/ }),
-/* 66 */
+/* 67 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // check on default Array iterator
@@ -1803,7 +1811,7 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 67 */
+/* 68 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.2.2 IsArray(argument)
@@ -1813,7 +1821,7 @@ module.exports = Array.isArray || function isArray(arg){
 };
 
 /***/ }),
-/* 68 */
+/* 69 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1832,7 +1840,7 @@ module.exports = function(Constructor, NAME, next){
 };
 
 /***/ }),
-/* 69 */
+/* 70 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1843,7 +1851,7 @@ var LIBRARY        = __webpack_require__(32)
   , hide           = __webpack_require__(12)
   , has            = __webpack_require__(10)
   , Iterators      = __webpack_require__(42)
-  , $iterCreate    = __webpack_require__(68)
+  , $iterCreate    = __webpack_require__(69)
   , setToStringTag = __webpack_require__(43)
   , getPrototypeOf = __webpack_require__(17)
   , ITERATOR       = __webpack_require__(5)('iterator')
@@ -1908,7 +1916,7 @@ module.exports = function(Base, NAME, Constructor, next, DEFAULT, IS_SET, FORCED
 };
 
 /***/ }),
-/* 70 */
+/* 71 */
 /***/ (function(module, exports) {
 
 // 20.2.2.14 Math.expm1(x)
@@ -1923,7 +1931,7 @@ module.exports = (!$expm1
 } : $expm1;
 
 /***/ }),
-/* 71 */
+/* 72 */
 /***/ (function(module, exports) {
 
 // 20.2.2.28 Math.sign(x)
@@ -1932,11 +1940,11 @@ module.exports = Math.sign || function sign(x){
 };
 
 /***/ }),
-/* 72 */
+/* 73 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var global    = __webpack_require__(2)
-  , macrotask = __webpack_require__(80).set
+  , macrotask = __webpack_require__(81).set
   , Observer  = global.MutationObserver || global.WebKitMutationObserver
   , process   = global.process
   , Promise   = global.Promise
@@ -2005,7 +2013,7 @@ module.exports = function(){
 };
 
 /***/ }),
-/* 73 */
+/* 74 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Works with __proto__ only. Old v8 can't work with null proto objects.
@@ -2035,17 +2043,17 @@ module.exports = {
 };
 
 /***/ }),
-/* 74 */
+/* 75 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var shared = __webpack_require__(57)('keys')
+var shared = __webpack_require__(58)('keys')
   , uid    = __webpack_require__(39);
 module.exports = function(key){
   return shared[key] || (shared[key] = uid(key));
 };
 
 /***/ }),
-/* 75 */
+/* 76 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 7.3.20 SpeciesConstructor(O, defaultConstructor)
@@ -2058,7 +2066,7 @@ module.exports = function(O, D){
 };
 
 /***/ }),
-/* 76 */
+/* 77 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var toInteger = __webpack_require__(30)
@@ -2080,11 +2088,11 @@ module.exports = function(TO_STRING){
 };
 
 /***/ }),
-/* 77 */
+/* 78 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // helper for String#{startsWith, endsWith, includes}
-var isRegExp = __webpack_require__(53)
+var isRegExp = __webpack_require__(54)
   , defined  = __webpack_require__(19);
 
 module.exports = function(that, searchString, NAME){
@@ -2093,7 +2101,7 @@ module.exports = function(that, searchString, NAME){
 };
 
 /***/ }),
-/* 78 */
+/* 79 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2111,20 +2119,20 @@ module.exports = function repeat(count){
 };
 
 /***/ }),
-/* 79 */
+/* 80 */
 /***/ (function(module, exports) {
 
 module.exports = '\x09\x0A\x0B\x0C\x0D\x20\xA0\u1680\u180E\u2000\u2001\u2002\u2003' +
   '\u2004\u2005\u2006\u2007\u2008\u2009\u200A\u202F\u205F\u3000\u2028\u2029\uFEFF';
 
 /***/ }),
-/* 80 */
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var ctx                = __webpack_require__(25)
-  , invoke             = __webpack_require__(52)
-  , html               = __webpack_require__(64)
-  , cel                = __webpack_require__(61)
+  , invoke             = __webpack_require__(53)
+  , html               = __webpack_require__(65)
+  , cel                = __webpack_require__(62)
   , global             = __webpack_require__(2)
   , process            = global.process
   , setTask            = global.setImmediate
@@ -2198,7 +2206,7 @@ module.exports = {
 };
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2206,7 +2214,7 @@ module.exports = {
 var global         = __webpack_require__(2)
   , DESCRIPTORS    = __webpack_require__(6)
   , LIBRARY        = __webpack_require__(32)
-  , $typed         = __webpack_require__(58)
+  , $typed         = __webpack_require__(59)
   , hide           = __webpack_require__(12)
   , redefineAll    = __webpack_require__(36)
   , fails          = __webpack_require__(3)
@@ -2215,7 +2223,7 @@ var global         = __webpack_require__(2)
   , toLength       = __webpack_require__(8)
   , gOPN           = __webpack_require__(34).f
   , dP             = __webpack_require__(7).f
-  , arrayFill      = __webpack_require__(59)
+  , arrayFill      = __webpack_require__(60)
   , setToStringTag = __webpack_require__(43)
   , ARRAY_BUFFER   = 'ArrayBuffer'
   , DATA_VIEW      = 'DataView'
@@ -2477,13 +2485,13 @@ exports[ARRAY_BUFFER] = $ArrayBuffer;
 exports[DATA_VIEW] = $DataView;
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var global         = __webpack_require__(2)
   , core           = __webpack_require__(24)
   , LIBRARY        = __webpack_require__(32)
-  , wksExt         = __webpack_require__(108)
+  , wksExt         = __webpack_require__(110)
   , defineProperty = __webpack_require__(7).f;
 module.exports = function(name){
   var $Symbol = core.Symbol || (core.Symbol = LIBRARY ? {} : global.Symbol || {});
@@ -2491,10 +2499,10 @@ module.exports = function(name){
 };
 
 /***/ }),
-/* 83 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var classof   = __webpack_require__(45)
+var classof   = __webpack_require__(46)
   , ITERATOR  = __webpack_require__(5)('iterator')
   , Iterators = __webpack_require__(42);
 module.exports = __webpack_require__(24).getIteratorMethod = function(it){
@@ -2504,13 +2512,13 @@ module.exports = __webpack_require__(24).getIteratorMethod = function(it){
 };
 
 /***/ }),
-/* 84 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var addToUnscopables = __webpack_require__(40)
-  , step             = __webpack_require__(96)
+  , step             = __webpack_require__(98)
   , Iterators        = __webpack_require__(42)
   , toIObject        = __webpack_require__(15);
 
@@ -2518,7 +2526,7 @@ var addToUnscopables = __webpack_require__(40)
 // 22.1.3.13 Array.prototype.keys()
 // 22.1.3.29 Array.prototype.values()
 // 22.1.3.30 Array.prototype[@@iterator]()
-module.exports = __webpack_require__(69)(Array, 'Array', function(iterated, kind){
+module.exports = __webpack_require__(70)(Array, 'Array', function(iterated, kind){
   this._t = toIObject(iterated); // target
   this._i = 0;                   // next index
   this._k = kind;                // kind
@@ -2544,7 +2552,4696 @@ addToUnscopables('values');
 addToUnscopables('entries');
 
 /***/ }),
-/* 85 */
+/* 86 */
+/***/ (function(module, exports) {
+
+/**
+ * State-based routing for AngularJS
+ * @version v0.4.2
+ * @link http://angular-ui.github.com/
+ * @license MIT License, http://www.opensource.org/licenses/MIT
+ */
+
+/* commonjs package manager support (eg componentjs) */
+if (typeof module !== "undefined" && typeof exports !== "undefined" && module.exports === exports){
+  module.exports = 'ui.router';
+}
+
+(function (window, angular, undefined) {
+/*jshint globalstrict:true*/
+/*global angular:false*/
+'use strict';
+
+var isDefined = angular.isDefined,
+    isFunction = angular.isFunction,
+    isString = angular.isString,
+    isObject = angular.isObject,
+    isArray = angular.isArray,
+    forEach = angular.forEach,
+    extend = angular.extend,
+    copy = angular.copy,
+    toJson = angular.toJson;
+
+function inherit(parent, extra) {
+  return extend(new (extend(function() {}, { prototype: parent }))(), extra);
+}
+
+function merge(dst) {
+  forEach(arguments, function(obj) {
+    if (obj !== dst) {
+      forEach(obj, function(value, key) {
+        if (!dst.hasOwnProperty(key)) dst[key] = value;
+      });
+    }
+  });
+  return dst;
+}
+
+/**
+ * Finds the common ancestor path between two states.
+ *
+ * @param {Object} first The first state.
+ * @param {Object} second The second state.
+ * @return {Array} Returns an array of state names in descending order, not including the root.
+ */
+function ancestors(first, second) {
+  var path = [];
+
+  for (var n in first.path) {
+    if (first.path[n] !== second.path[n]) break;
+    path.push(first.path[n]);
+  }
+  return path;
+}
+
+/**
+ * IE8-safe wrapper for `Object.keys()`.
+ *
+ * @param {Object} object A JavaScript object.
+ * @return {Array} Returns the keys of the object as an array.
+ */
+function objectKeys(object) {
+  if (Object.keys) {
+    return Object.keys(object);
+  }
+  var result = [];
+
+  forEach(object, function(val, key) {
+    result.push(key);
+  });
+  return result;
+}
+
+/**
+ * IE8-safe wrapper for `Array.prototype.indexOf()`.
+ *
+ * @param {Array} array A JavaScript array.
+ * @param {*} value A value to search the array for.
+ * @return {Number} Returns the array index value of `value`, or `-1` if not present.
+ */
+function indexOf(array, value) {
+  if (Array.prototype.indexOf) {
+    return array.indexOf(value, Number(arguments[2]) || 0);
+  }
+  var len = array.length >>> 0, from = Number(arguments[2]) || 0;
+  from = (from < 0) ? Math.ceil(from) : Math.floor(from);
+
+  if (from < 0) from += len;
+
+  for (; from < len; from++) {
+    if (from in array && array[from] === value) return from;
+  }
+  return -1;
+}
+
+/**
+ * Merges a set of parameters with all parameters inherited between the common parents of the
+ * current state and a given destination state.
+ *
+ * @param {Object} currentParams The value of the current state parameters ($stateParams).
+ * @param {Object} newParams The set of parameters which will be composited with inherited params.
+ * @param {Object} $current Internal definition of object representing the current state.
+ * @param {Object} $to Internal definition of object representing state to transition to.
+ */
+function inheritParams(currentParams, newParams, $current, $to) {
+  var parents = ancestors($current, $to), parentParams, inherited = {}, inheritList = [];
+
+  for (var i in parents) {
+    if (!parents[i] || !parents[i].params) continue;
+    parentParams = objectKeys(parents[i].params);
+    if (!parentParams.length) continue;
+
+    for (var j in parentParams) {
+      if (indexOf(inheritList, parentParams[j]) >= 0) continue;
+      inheritList.push(parentParams[j]);
+      inherited[parentParams[j]] = currentParams[parentParams[j]];
+    }
+  }
+  return extend({}, inherited, newParams);
+}
+
+/**
+ * Performs a non-strict comparison of the subset of two objects, defined by a list of keys.
+ *
+ * @param {Object} a The first object.
+ * @param {Object} b The second object.
+ * @param {Array} keys The list of keys within each object to compare. If the list is empty or not specified,
+ *                     it defaults to the list of keys in `a`.
+ * @return {Boolean} Returns `true` if the keys match, otherwise `false`.
+ */
+function equalForKeys(a, b, keys) {
+  if (!keys) {
+    keys = [];
+    for (var n in a) keys.push(n); // Used instead of Object.keys() for IE8 compatibility
+  }
+
+  for (var i=0; i<keys.length; i++) {
+    var k = keys[i];
+    if (a[k] != b[k]) return false; // Not '===', values aren't necessarily normalized
+  }
+  return true;
+}
+
+/**
+ * Returns the subset of an object, based on a list of keys.
+ *
+ * @param {Array} keys
+ * @param {Object} values
+ * @return {Boolean} Returns a subset of `values`.
+ */
+function filterByKeys(keys, values) {
+  var filtered = {};
+
+  forEach(keys, function (name) {
+    filtered[name] = values[name];
+  });
+  return filtered;
+}
+
+// like _.indexBy
+// when you know that your index values will be unique, or you want last-one-in to win
+function indexBy(array, propName) {
+  var result = {};
+  forEach(array, function(item) {
+    result[item[propName]] = item;
+  });
+  return result;
+}
+
+// extracted from underscore.js
+// Return a copy of the object only containing the whitelisted properties.
+function pick(obj) {
+  var copy = {};
+  var keys = Array.prototype.concat.apply(Array.prototype, Array.prototype.slice.call(arguments, 1));
+  forEach(keys, function(key) {
+    if (key in obj) copy[key] = obj[key];
+  });
+  return copy;
+}
+
+// extracted from underscore.js
+// Return a copy of the object omitting the blacklisted properties.
+function omit(obj) {
+  var copy = {};
+  var keys = Array.prototype.concat.apply(Array.prototype, Array.prototype.slice.call(arguments, 1));
+  for (var key in obj) {
+    if (indexOf(keys, key) == -1) copy[key] = obj[key];
+  }
+  return copy;
+}
+
+function pluck(collection, key) {
+  var result = isArray(collection) ? [] : {};
+
+  forEach(collection, function(val, i) {
+    result[i] = isFunction(key) ? key(val) : val[key];
+  });
+  return result;
+}
+
+function filter(collection, callback) {
+  var array = isArray(collection);
+  var result = array ? [] : {};
+  forEach(collection, function(val, i) {
+    if (callback(val, i)) {
+      result[array ? result.length : i] = val;
+    }
+  });
+  return result;
+}
+
+function map(collection, callback) {
+  var result = isArray(collection) ? [] : {};
+
+  forEach(collection, function(val, i) {
+    result[i] = callback(val, i);
+  });
+  return result;
+}
+
+// issue #2676 #2889
+function silenceUncaughtInPromise (promise) {
+  return promise.then(undefined, function() {}) && promise;
+}
+
+/**
+ * @ngdoc overview
+ * @name ui.router.util
+ *
+ * @description
+ * # ui.router.util sub-module
+ *
+ * This module is a dependency of other sub-modules. Do not include this module as a dependency
+ * in your angular app (use {@link ui.router} module instead).
+ *
+ */
+angular.module('ui.router.util', ['ng']);
+
+/**
+ * @ngdoc overview
+ * @name ui.router.router
+ * 
+ * @requires ui.router.util
+ *
+ * @description
+ * # ui.router.router sub-module
+ *
+ * This module is a dependency of other sub-modules. Do not include this module as a dependency
+ * in your angular app (use {@link ui.router} module instead).
+ */
+angular.module('ui.router.router', ['ui.router.util']);
+
+/**
+ * @ngdoc overview
+ * @name ui.router.state
+ * 
+ * @requires ui.router.router
+ * @requires ui.router.util
+ *
+ * @description
+ * # ui.router.state sub-module
+ *
+ * This module is a dependency of the main ui.router module. Do not include this module as a dependency
+ * in your angular app (use {@link ui.router} module instead).
+ * 
+ */
+angular.module('ui.router.state', ['ui.router.router', 'ui.router.util']);
+
+/**
+ * @ngdoc overview
+ * @name ui.router
+ *
+ * @requires ui.router.state
+ *
+ * @description
+ * # ui.router
+ * 
+ * ## The main module for ui.router 
+ * There are several sub-modules included with the ui.router module, however only this module is needed
+ * as a dependency within your angular app. The other modules are for organization purposes. 
+ *
+ * The modules are:
+ * * ui.router - the main "umbrella" module
+ * * ui.router.router - 
+ * 
+ * *You'll need to include **only** this module as the dependency within your angular app.*
+ * 
+ * <pre>
+ * <!doctype html>
+ * <html ng-app="myApp">
+ * <head>
+ *   <script src="js/angular.js"></script>
+ *   <!-- Include the ui-router script -->
+ *   <script src="js/angular-ui-router.min.js"></script>
+ *   <script>
+ *     // ...and add 'ui.router' as a dependency
+ *     var myApp = angular.module('myApp', ['ui.router']);
+ *   </script>
+ * </head>
+ * <body>
+ * </body>
+ * </html>
+ * </pre>
+ */
+angular.module('ui.router', ['ui.router.state']);
+
+angular.module('ui.router.compat', ['ui.router']);
+
+/**
+ * @ngdoc object
+ * @name ui.router.util.$resolve
+ *
+ * @requires $q
+ * @requires $injector
+ *
+ * @description
+ * Manages resolution of (acyclic) graphs of promises.
+ */
+$Resolve.$inject = ['$q', '$injector'];
+function $Resolve(  $q,    $injector) {
+  
+  var VISIT_IN_PROGRESS = 1,
+      VISIT_DONE = 2,
+      NOTHING = {},
+      NO_DEPENDENCIES = [],
+      NO_LOCALS = NOTHING,
+      NO_PARENT = extend($q.when(NOTHING), { $$promises: NOTHING, $$values: NOTHING });
+  
+
+  /**
+   * @ngdoc function
+   * @name ui.router.util.$resolve#study
+   * @methodOf ui.router.util.$resolve
+   *
+   * @description
+   * Studies a set of invocables that are likely to be used multiple times.
+   * <pre>
+   * $resolve.study(invocables)(locals, parent, self)
+   * </pre>
+   * is equivalent to
+   * <pre>
+   * $resolve.resolve(invocables, locals, parent, self)
+   * </pre>
+   * but the former is more efficient (in fact `resolve` just calls `study` 
+   * internally).
+   *
+   * @param {object} invocables Invocable objects
+   * @return {function} a function to pass in locals, parent and self
+   */
+  this.study = function (invocables) {
+    if (!isObject(invocables)) throw new Error("'invocables' must be an object");
+    var invocableKeys = objectKeys(invocables || {});
+    
+    // Perform a topological sort of invocables to build an ordered plan
+    var plan = [], cycle = [], visited = {};
+    function visit(value, key) {
+      if (visited[key] === VISIT_DONE) return;
+      
+      cycle.push(key);
+      if (visited[key] === VISIT_IN_PROGRESS) {
+        cycle.splice(0, indexOf(cycle, key));
+        throw new Error("Cyclic dependency: " + cycle.join(" -> "));
+      }
+      visited[key] = VISIT_IN_PROGRESS;
+      
+      if (isString(value)) {
+        plan.push(key, [ function() { return $injector.get(value); }], NO_DEPENDENCIES);
+      } else {
+        var params = $injector.annotate(value);
+        forEach(params, function (param) {
+          if (param !== key && invocables.hasOwnProperty(param)) visit(invocables[param], param);
+        });
+        plan.push(key, value, params);
+      }
+      
+      cycle.pop();
+      visited[key] = VISIT_DONE;
+    }
+    forEach(invocables, visit);
+    invocables = cycle = visited = null; // plan is all that's required
+    
+    function isResolve(value) {
+      return isObject(value) && value.then && value.$$promises;
+    }
+    
+    return function (locals, parent, self) {
+      if (isResolve(locals) && self === undefined) {
+        self = parent; parent = locals; locals = null;
+      }
+      if (!locals) locals = NO_LOCALS;
+      else if (!isObject(locals)) {
+        throw new Error("'locals' must be an object");
+      }       
+      if (!parent) parent = NO_PARENT;
+      else if (!isResolve(parent)) {
+        throw new Error("'parent' must be a promise returned by $resolve.resolve()");
+      }
+      
+      // To complete the overall resolution, we have to wait for the parent
+      // promise and for the promise for each invokable in our plan.
+      var resolution = $q.defer(),
+          result = silenceUncaughtInPromise(resolution.promise),
+          promises = result.$$promises = {},
+          values = extend({}, locals),
+          wait = 1 + plan.length/3,
+          merged = false;
+
+      silenceUncaughtInPromise(result);
+          
+      function done() {
+        // Merge parent values we haven't got yet and publish our own $$values
+        if (!--wait) {
+          if (!merged) merge(values, parent.$$values); 
+          result.$$values = values;
+          result.$$promises = result.$$promises || true; // keep for isResolve()
+          delete result.$$inheritedValues;
+          resolution.resolve(values);
+        }
+      }
+      
+      function fail(reason) {
+        result.$$failure = reason;
+        resolution.reject(reason);
+      }
+
+      // Short-circuit if parent has already failed
+      if (isDefined(parent.$$failure)) {
+        fail(parent.$$failure);
+        return result;
+      }
+      
+      if (parent.$$inheritedValues) {
+        merge(values, omit(parent.$$inheritedValues, invocableKeys));
+      }
+
+      // Merge parent values if the parent has already resolved, or merge
+      // parent promises and wait if the parent resolve is still in progress.
+      extend(promises, parent.$$promises);
+      if (parent.$$values) {
+        merged = merge(values, omit(parent.$$values, invocableKeys));
+        result.$$inheritedValues = omit(parent.$$values, invocableKeys);
+        done();
+      } else {
+        if (parent.$$inheritedValues) {
+          result.$$inheritedValues = omit(parent.$$inheritedValues, invocableKeys);
+        }        
+        parent.then(done, fail);
+      }
+      
+      // Process each invocable in the plan, but ignore any where a local of the same name exists.
+      for (var i=0, ii=plan.length; i<ii; i+=3) {
+        if (locals.hasOwnProperty(plan[i])) done();
+        else invoke(plan[i], plan[i+1], plan[i+2]);
+      }
+      
+      function invoke(key, invocable, params) {
+        // Create a deferred for this invocation. Failures will propagate to the resolution as well.
+        var invocation = $q.defer(), waitParams = 0;
+        function onfailure(reason) {
+          invocation.reject(reason);
+          fail(reason);
+        }
+        // Wait for any parameter that we have a promise for (either from parent or from this
+        // resolve; in that case study() will have made sure it's ordered before us in the plan).
+        forEach(params, function (dep) {
+          if (promises.hasOwnProperty(dep) && !locals.hasOwnProperty(dep)) {
+            waitParams++;
+            promises[dep].then(function (result) {
+              values[dep] = result;
+              if (!(--waitParams)) proceed();
+            }, onfailure);
+          }
+        });
+        if (!waitParams) proceed();
+        function proceed() {
+          if (isDefined(result.$$failure)) return;
+          try {
+            invocation.resolve($injector.invoke(invocable, self, values));
+            invocation.promise.then(function (result) {
+              values[key] = result;
+              done();
+            }, onfailure);
+          } catch (e) {
+            onfailure(e);
+          }
+        }
+        // Publish promise synchronously; invocations further down in the plan may depend on it.
+        promises[key] = silenceUncaughtInPromise(invocation.promise);
+      }
+      
+      return result;
+    };
+  };
+  
+  /**
+   * @ngdoc function
+   * @name ui.router.util.$resolve#resolve
+   * @methodOf ui.router.util.$resolve
+   *
+   * @description
+   * Resolves a set of invocables. An invocable is a function to be invoked via 
+   * `$injector.invoke()`, and can have an arbitrary number of dependencies. 
+   * An invocable can either return a value directly,
+   * or a `$q` promise. If a promise is returned it will be resolved and the 
+   * resulting value will be used instead. Dependencies of invocables are resolved 
+   * (in this order of precedence)
+   *
+   * - from the specified `locals`
+   * - from another invocable that is part of this `$resolve` call
+   * - from an invocable that is inherited from a `parent` call to `$resolve` 
+   *   (or recursively
+   * - from any ancestor `$resolve` of that parent).
+   *
+   * The return value of `$resolve` is a promise for an object that contains 
+   * (in this order of precedence)
+   *
+   * - any `locals` (if specified)
+   * - the resolved return values of all injectables
+   * - any values inherited from a `parent` call to `$resolve` (if specified)
+   *
+   * The promise will resolve after the `parent` promise (if any) and all promises 
+   * returned by injectables have been resolved. If any invocable 
+   * (or `$injector.invoke`) throws an exception, or if a promise returned by an 
+   * invocable is rejected, the `$resolve` promise is immediately rejected with the 
+   * same error. A rejection of a `parent` promise (if specified) will likewise be 
+   * propagated immediately. Once the `$resolve` promise has been rejected, no 
+   * further invocables will be called.
+   * 
+   * Cyclic dependencies between invocables are not permitted and will cause `$resolve`
+   * to throw an error. As a special case, an injectable can depend on a parameter 
+   * with the same name as the injectable, which will be fulfilled from the `parent` 
+   * injectable of the same name. This allows inherited values to be decorated. 
+   * Note that in this case any other injectable in the same `$resolve` with the same
+   * dependency would see the decorated value, not the inherited value.
+   *
+   * Note that missing dependencies -- unlike cyclic dependencies -- will cause an 
+   * (asynchronous) rejection of the `$resolve` promise rather than a (synchronous) 
+   * exception.
+   *
+   * Invocables are invoked eagerly as soon as all dependencies are available. 
+   * This is true even for dependencies inherited from a `parent` call to `$resolve`.
+   *
+   * As a special case, an invocable can be a string, in which case it is taken to 
+   * be a service name to be passed to `$injector.get()`. This is supported primarily 
+   * for backwards-compatibility with the `resolve` property of `$routeProvider` 
+   * routes.
+   *
+   * @param {object} invocables functions to invoke or 
+   * `$injector` services to fetch.
+   * @param {object} locals  values to make available to the injectables
+   * @param {object} parent  a promise returned by another call to `$resolve`.
+   * @param {object} self  the `this` for the invoked methods
+   * @return {object} Promise for an object that contains the resolved return value
+   * of all invocables, as well as any inherited and local values.
+   */
+  this.resolve = function (invocables, locals, parent, self) {
+    return this.study(invocables)(locals, parent, self);
+  };
+}
+
+angular.module('ui.router.util').service('$resolve', $Resolve);
+
+
+
+/**
+ * @ngdoc object
+ * @name ui.router.util.$templateFactoryProvider
+ *
+ * @description
+ * Provider for $templateFactory. Manages which template-loading mechanism to
+ * use, and will default to the most recent one ($templateRequest on Angular
+ * versions starting from 1.3, $http otherwise).
+ */
+function TemplateFactoryProvider() {
+  var shouldUnsafelyUseHttp = angular.version.minor < 3;
+
+  /**
+   * @ngdoc function
+   * @name ui.router.util.$templateFactoryProvider#shouldUnsafelyUseHttp
+   * @methodOf ui.router.util.$templateFactoryProvider
+   *
+   * @description
+   * Forces $templateFactory to use $http instead of $templateRequest. This
+   * might cause XSS, as $http doesn't enforce the regular security checks for
+   * templates that have been introduced in Angular 1.3. Note that setting this
+   * to false on Angular older than 1.3.x will crash, as the $templateRequest
+   * service (and the security checks) are not implemented on these versions.
+   *
+   * See the $sce documentation, section
+   * <a href="https://docs.angularjs.org/api/ng/service/$sce#impact-on-loading-templates">
+   * Impact on loading templates</a> for more details about this mechanism.
+   *
+   * @param {boolean} value
+   */
+  this.shouldUnsafelyUseHttp = function(value) {
+    shouldUnsafelyUseHttp = !!value;
+  };
+
+  /**
+   * @ngdoc object
+   * @name ui.router.util.$templateFactory
+   *
+   * @requires $http
+   * @requires $templateCache
+   * @requires $injector
+   *
+   * @description
+   * Service. Manages loading of templates.
+   */
+  this.$get = ['$http', '$templateCache', '$injector', function($http, $templateCache, $injector){
+    return new TemplateFactory($http, $templateCache, $injector, shouldUnsafelyUseHttp);}];
+}
+
+
+/**
+ * @ngdoc object
+ * @name ui.router.util.$templateFactory
+ *
+ * @requires $http
+ * @requires $templateCache
+ * @requires $injector
+ *
+ * @description
+ * Service. Manages loading of templates.
+ */
+function TemplateFactory($http, $templateCache, $injector, shouldUnsafelyUseHttp) {
+
+  /**
+   * @ngdoc function
+   * @name ui.router.util.$templateFactory#fromConfig
+   * @methodOf ui.router.util.$templateFactory
+   *
+   * @description
+   * Creates a template from a configuration object. 
+   *
+   * @param {object} config Configuration object for which to load a template. 
+   * The following properties are search in the specified order, and the first one 
+   * that is defined is used to create the template:
+   *
+   * @param {string|object} config.template html string template or function to 
+   * load via {@link ui.router.util.$templateFactory#fromString fromString}.
+   * @param {string|object} config.templateUrl url to load or a function returning 
+   * the url to load via {@link ui.router.util.$templateFactory#fromUrl fromUrl}.
+   * @param {Function} config.templateProvider function to invoke via 
+   * {@link ui.router.util.$templateFactory#fromProvider fromProvider}.
+   * @param {object} params  Parameters to pass to the template function.
+   * @param {object} locals Locals to pass to `invoke` if the template is loaded 
+   * via a `templateProvider`. Defaults to `{ params: params }`.
+   *
+   * @return {string|object}  The template html as a string, or a promise for 
+   * that string,or `null` if no template is configured.
+   */
+  this.fromConfig = function (config, params, locals) {
+    return (
+      isDefined(config.template) ? this.fromString(config.template, params) :
+      isDefined(config.templateUrl) ? this.fromUrl(config.templateUrl, params) :
+      isDefined(config.templateProvider) ? this.fromProvider(config.templateProvider, params, locals) :
+      null
+    );
+  };
+
+  /**
+   * @ngdoc function
+   * @name ui.router.util.$templateFactory#fromString
+   * @methodOf ui.router.util.$templateFactory
+   *
+   * @description
+   * Creates a template from a string or a function returning a string.
+   *
+   * @param {string|object} template html template as a string or function that 
+   * returns an html template as a string.
+   * @param {object} params Parameters to pass to the template function.
+   *
+   * @return {string|object} The template html as a string, or a promise for that 
+   * string.
+   */
+  this.fromString = function (template, params) {
+    return isFunction(template) ? template(params) : template;
+  };
+
+  /**
+   * @ngdoc function
+   * @name ui.router.util.$templateFactory#fromUrl
+   * @methodOf ui.router.util.$templateFactory
+   * 
+   * @description
+   * Loads a template from the a URL via `$http` and `$templateCache`.
+   *
+   * @param {string|Function} url url of the template to load, or a function 
+   * that returns a url.
+   * @param {Object} params Parameters to pass to the url function.
+   * @return {string|Promise.<string>} The template html as a string, or a promise 
+   * for that string.
+   */
+  this.fromUrl = function (url, params) {
+    if (isFunction(url)) url = url(params);
+    if (url == null) return null;
+    else {
+      if(!shouldUnsafelyUseHttp) {
+        return $injector.get('$templateRequest')(url);
+      } else {
+        return $http
+          .get(url, { cache: $templateCache, headers: { Accept: 'text/html' }})
+          .then(function(response) { return response.data; });
+      }
+    }
+  };
+
+  /**
+   * @ngdoc function
+   * @name ui.router.util.$templateFactory#fromProvider
+   * @methodOf ui.router.util.$templateFactory
+   *
+   * @description
+   * Creates a template by invoking an injectable provider function.
+   *
+   * @param {Function} provider Function to invoke via `$injector.invoke`
+   * @param {Object} params Parameters for the template.
+   * @param {Object} locals Locals to pass to `invoke`. Defaults to 
+   * `{ params: params }`.
+   * @return {string|Promise.<string>} The template html as a string, or a promise 
+   * for that string.
+   */
+  this.fromProvider = function (provider, params, locals) {
+    return $injector.invoke(provider, null, locals || { params: params });
+  };
+}
+
+angular.module('ui.router.util').provider('$templateFactory', TemplateFactoryProvider);
+
+var $$UMFP; // reference to $UrlMatcherFactoryProvider
+
+/**
+ * @ngdoc object
+ * @name ui.router.util.type:UrlMatcher
+ *
+ * @description
+ * Matches URLs against patterns and extracts named parameters from the path or the search
+ * part of the URL. A URL pattern consists of a path pattern, optionally followed by '?' and a list
+ * of search parameters. Multiple search parameter names are separated by '&'. Search parameters
+ * do not influence whether or not a URL is matched, but their values are passed through into
+ * the matched parameters returned by {@link ui.router.util.type:UrlMatcher#methods_exec exec}.
+ *
+ * Path parameter placeholders can be specified using simple colon/catch-all syntax or curly brace
+ * syntax, which optionally allows a regular expression for the parameter to be specified:
+ *
+ * * `':'` name - colon placeholder
+ * * `'*'` name - catch-all placeholder
+ * * `'{' name '}'` - curly placeholder
+ * * `'{' name ':' regexp|type '}'` - curly placeholder with regexp or type name. Should the
+ *   regexp itself contain curly braces, they must be in matched pairs or escaped with a backslash.
+ *
+ * Parameter names may contain only word characters (latin letters, digits, and underscore) and
+ * must be unique within the pattern (across both path and search parameters). For colon
+ * placeholders or curly placeholders without an explicit regexp, a path parameter matches any
+ * number of characters other than '/'. For catch-all placeholders the path parameter matches
+ * any number of characters.
+ *
+ * Examples:
+ *
+ * * `'/hello/'` - Matches only if the path is exactly '/hello/'. There is no special treatment for
+ *   trailing slashes, and patterns have to match the entire path, not just a prefix.
+ * * `'/user/:id'` - Matches '/user/bob' or '/user/1234!!!' or even '/user/' but not '/user' or
+ *   '/user/bob/details'. The second path segment will be captured as the parameter 'id'.
+ * * `'/user/{id}'` - Same as the previous example, but using curly brace syntax.
+ * * `'/user/{id:[^/]*}'` - Same as the previous example.
+ * * `'/user/{id:[0-9a-fA-F]{1,8}}'` - Similar to the previous example, but only matches if the id
+ *   parameter consists of 1 to 8 hex digits.
+ * * `'/files/{path:.*}'` - Matches any URL starting with '/files/' and captures the rest of the
+ *   path into the parameter 'path'.
+ * * `'/files/*path'` - ditto.
+ * * `'/calendar/{start:date}'` - Matches "/calendar/2014-11-12" (because the pattern defined
+ *   in the built-in  `date` Type matches `2014-11-12`) and provides a Date object in $stateParams.start
+ *
+ * @param {string} pattern  The pattern to compile into a matcher.
+ * @param {Object} config  A configuration object hash:
+ * @param {Object=} parentMatcher Used to concatenate the pattern/config onto
+ *   an existing UrlMatcher
+ *
+ * * `caseInsensitive` - `true` if URL matching should be case insensitive, otherwise `false`, the default value (for backward compatibility) is `false`.
+ * * `strict` - `false` if matching against a URL with a trailing slash should be treated as equivalent to a URL without a trailing slash, the default value is `true`.
+ *
+ * @property {string} prefix  A static prefix of this pattern. The matcher guarantees that any
+ *   URL matching this matcher (i.e. any string for which {@link ui.router.util.type:UrlMatcher#methods_exec exec()} returns
+ *   non-null) will start with this prefix.
+ *
+ * @property {string} source  The pattern that was passed into the constructor
+ *
+ * @property {string} sourcePath  The path portion of the source property
+ *
+ * @property {string} sourceSearch  The search portion of the source property
+ *
+ * @property {string} regex  The constructed regex that will be used to match against the url when
+ *   it is time to determine which url will match.
+ *
+ * @returns {Object}  New `UrlMatcher` object
+ */
+function UrlMatcher(pattern, config, parentMatcher) {
+  config = extend({ params: {} }, isObject(config) ? config : {});
+
+  // Find all placeholders and create a compiled pattern, using either classic or curly syntax:
+  //   '*' name
+  //   ':' name
+  //   '{' name '}'
+  //   '{' name ':' regexp '}'
+  // The regular expression is somewhat complicated due to the need to allow curly braces
+  // inside the regular expression. The placeholder regexp breaks down as follows:
+  //    ([:*])([\w\[\]]+)              - classic placeholder ($1 / $2) (search version has - for snake-case)
+  //    \{([\w\[\]]+)(?:\:\s*( ... ))?\}  - curly brace placeholder ($3) with optional regexp/type ... ($4) (search version has - for snake-case
+  //    (?: ... | ... | ... )+         - the regexp consists of any number of atoms, an atom being either
+  //    [^{}\\]+                       - anything other than curly braces or backslash
+  //    \\.                            - a backslash escape
+  //    \{(?:[^{}\\]+|\\.)*\}          - a matched set of curly braces containing other atoms
+  var placeholder       = /([:*])([\w\[\]]+)|\{([\w\[\]]+)(?:\:\s*((?:[^{}\\]+|\\.|\{(?:[^{}\\]+|\\.)*\})+))?\}/g,
+      searchPlaceholder = /([:]?)([\w\[\].-]+)|\{([\w\[\].-]+)(?:\:\s*((?:[^{}\\]+|\\.|\{(?:[^{}\\]+|\\.)*\})+))?\}/g,
+      compiled = '^', last = 0, m,
+      segments = this.segments = [],
+      parentParams = parentMatcher ? parentMatcher.params : {},
+      params = this.params = parentMatcher ? parentMatcher.params.$$new() : new $$UMFP.ParamSet(),
+      paramNames = [];
+
+  function addParameter(id, type, config, location) {
+    paramNames.push(id);
+    if (parentParams[id]) return parentParams[id];
+    if (!/^\w+([-.]+\w+)*(?:\[\])?$/.test(id)) throw new Error("Invalid parameter name '" + id + "' in pattern '" + pattern + "'");
+    if (params[id]) throw new Error("Duplicate parameter name '" + id + "' in pattern '" + pattern + "'");
+    params[id] = new $$UMFP.Param(id, type, config, location);
+    return params[id];
+  }
+
+  function quoteRegExp(string, pattern, squash, optional) {
+    var surroundPattern = ['',''], result = string.replace(/[\\\[\]\^$*+?.()|{}]/g, "\\$&");
+    if (!pattern) return result;
+    switch(squash) {
+      case false: surroundPattern = ['(', ')' + (optional ? "?" : "")]; break;
+      case true:
+        result = result.replace(/\/$/, '');
+        surroundPattern = ['(?:\/(', ')|\/)?'];
+      break;
+      default:    surroundPattern = ['(' + squash + "|", ')?']; break;
+    }
+    return result + surroundPattern[0] + pattern + surroundPattern[1];
+  }
+
+  this.source = pattern;
+
+  // Split into static segments separated by path parameter placeholders.
+  // The number of segments is always 1 more than the number of parameters.
+  function matchDetails(m, isSearch) {
+    var id, regexp, segment, type, cfg, arrayMode;
+    id          = m[2] || m[3]; // IE[78] returns '' for unmatched groups instead of null
+    cfg         = config.params[id];
+    segment     = pattern.substring(last, m.index);
+    regexp      = isSearch ? m[4] : m[4] || (m[1] == '*' ? '.*' : null);
+
+    if (regexp) {
+      type      = $$UMFP.type(regexp) || inherit($$UMFP.type("string"), { pattern: new RegExp(regexp, config.caseInsensitive ? 'i' : undefined) });
+    }
+
+    return {
+      id: id, regexp: regexp, segment: segment, type: type, cfg: cfg
+    };
+  }
+
+  var p, param, segment;
+  while ((m = placeholder.exec(pattern))) {
+    p = matchDetails(m, false);
+    if (p.segment.indexOf('?') >= 0) break; // we're into the search part
+
+    param = addParameter(p.id, p.type, p.cfg, "path");
+    compiled += quoteRegExp(p.segment, param.type.pattern.source, param.squash, param.isOptional);
+    segments.push(p.segment);
+    last = placeholder.lastIndex;
+  }
+  segment = pattern.substring(last);
+
+  // Find any search parameter names and remove them from the last segment
+  var i = segment.indexOf('?');
+
+  if (i >= 0) {
+    var search = this.sourceSearch = segment.substring(i);
+    segment = segment.substring(0, i);
+    this.sourcePath = pattern.substring(0, last + i);
+
+    if (search.length > 0) {
+      last = 0;
+      while ((m = searchPlaceholder.exec(search))) {
+        p = matchDetails(m, true);
+        param = addParameter(p.id, p.type, p.cfg, "search");
+        last = placeholder.lastIndex;
+        // check if ?&
+      }
+    }
+  } else {
+    this.sourcePath = pattern;
+    this.sourceSearch = '';
+  }
+
+  compiled += quoteRegExp(segment) + (config.strict === false ? '\/?' : '') + '$';
+  segments.push(segment);
+
+  this.regexp = new RegExp(compiled, config.caseInsensitive ? 'i' : undefined);
+  this.prefix = segments[0];
+  this.$$paramNames = paramNames;
+}
+
+/**
+ * @ngdoc function
+ * @name ui.router.util.type:UrlMatcher#concat
+ * @methodOf ui.router.util.type:UrlMatcher
+ *
+ * @description
+ * Returns a new matcher for a pattern constructed by appending the path part and adding the
+ * search parameters of the specified pattern to this pattern. The current pattern is not
+ * modified. This can be understood as creating a pattern for URLs that are relative to (or
+ * suffixes of) the current pattern.
+ *
+ * @example
+ * The following two matchers are equivalent:
+ * <pre>
+ * new UrlMatcher('/user/{id}?q').concat('/details?date');
+ * new UrlMatcher('/user/{id}/details?q&date');
+ * </pre>
+ *
+ * @param {string} pattern  The pattern to append.
+ * @param {Object} config  An object hash of the configuration for the matcher.
+ * @returns {UrlMatcher}  A matcher for the concatenated pattern.
+ */
+UrlMatcher.prototype.concat = function (pattern, config) {
+  // Because order of search parameters is irrelevant, we can add our own search
+  // parameters to the end of the new pattern. Parse the new pattern by itself
+  // and then join the bits together, but it's much easier to do this on a string level.
+  var defaultConfig = {
+    caseInsensitive: $$UMFP.caseInsensitive(),
+    strict: $$UMFP.strictMode(),
+    squash: $$UMFP.defaultSquashPolicy()
+  };
+  return new UrlMatcher(this.sourcePath + pattern + this.sourceSearch, extend(defaultConfig, config), this);
+};
+
+UrlMatcher.prototype.toString = function () {
+  return this.source;
+};
+
+/**
+ * @ngdoc function
+ * @name ui.router.util.type:UrlMatcher#exec
+ * @methodOf ui.router.util.type:UrlMatcher
+ *
+ * @description
+ * Tests the specified path against this matcher, and returns an object containing the captured
+ * parameter values, or null if the path does not match. The returned object contains the values
+ * of any search parameters that are mentioned in the pattern, but their value may be null if
+ * they are not present in `searchParams`. This means that search parameters are always treated
+ * as optional.
+ *
+ * @example
+ * <pre>
+ * new UrlMatcher('/user/{id}?q&r').exec('/user/bob', {
+ *   x: '1', q: 'hello'
+ * });
+ * // returns { id: 'bob', q: 'hello', r: null }
+ * </pre>
+ *
+ * @param {string} path  The URL path to match, e.g. `$location.path()`.
+ * @param {Object} searchParams  URL search parameters, e.g. `$location.search()`.
+ * @returns {Object}  The captured parameter values.
+ */
+UrlMatcher.prototype.exec = function (path, searchParams) {
+  var m = this.regexp.exec(path);
+  if (!m) return null;
+  searchParams = searchParams || {};
+
+  var paramNames = this.parameters(), nTotal = paramNames.length,
+    nPath = this.segments.length - 1,
+    values = {}, i, j, cfg, paramName;
+
+  if (nPath !== m.length - 1) throw new Error("Unbalanced capture group in route '" + this.source + "'");
+
+  function decodePathArray(string) {
+    function reverseString(str) { return str.split("").reverse().join(""); }
+    function unquoteDashes(str) { return str.replace(/\\-/g, "-"); }
+
+    var split = reverseString(string).split(/-(?!\\)/);
+    var allReversed = map(split, reverseString);
+    return map(allReversed, unquoteDashes).reverse();
+  }
+
+  var param, paramVal;
+  for (i = 0; i < nPath; i++) {
+    paramName = paramNames[i];
+    param = this.params[paramName];
+    paramVal = m[i+1];
+    // if the param value matches a pre-replace pair, replace the value before decoding.
+    for (j = 0; j < param.replace.length; j++) {
+      if (param.replace[j].from === paramVal) paramVal = param.replace[j].to;
+    }
+    if (paramVal && param.array === true) paramVal = decodePathArray(paramVal);
+    if (isDefined(paramVal)) paramVal = param.type.decode(paramVal);
+    values[paramName] = param.value(paramVal);
+  }
+  for (/**/; i < nTotal; i++) {
+    paramName = paramNames[i];
+    values[paramName] = this.params[paramName].value(searchParams[paramName]);
+    param = this.params[paramName];
+    paramVal = searchParams[paramName];
+    for (j = 0; j < param.replace.length; j++) {
+      if (param.replace[j].from === paramVal) paramVal = param.replace[j].to;
+    }
+    if (isDefined(paramVal)) paramVal = param.type.decode(paramVal);
+    values[paramName] = param.value(paramVal);
+  }
+
+  return values;
+};
+
+/**
+ * @ngdoc function
+ * @name ui.router.util.type:UrlMatcher#parameters
+ * @methodOf ui.router.util.type:UrlMatcher
+ *
+ * @description
+ * Returns the names of all path and search parameters of this pattern in an unspecified order.
+ *
+ * @returns {Array.<string>}  An array of parameter names. Must be treated as read-only. If the
+ *    pattern has no parameters, an empty array is returned.
+ */
+UrlMatcher.prototype.parameters = function (param) {
+  if (!isDefined(param)) return this.$$paramNames;
+  return this.params[param] || null;
+};
+
+/**
+ * @ngdoc function
+ * @name ui.router.util.type:UrlMatcher#validates
+ * @methodOf ui.router.util.type:UrlMatcher
+ *
+ * @description
+ * Checks an object hash of parameters to validate their correctness according to the parameter
+ * types of this `UrlMatcher`.
+ *
+ * @param {Object} params The object hash of parameters to validate.
+ * @returns {boolean} Returns `true` if `params` validates, otherwise `false`.
+ */
+UrlMatcher.prototype.validates = function (params) {
+  return this.params.$$validates(params);
+};
+
+/**
+ * @ngdoc function
+ * @name ui.router.util.type:UrlMatcher#format
+ * @methodOf ui.router.util.type:UrlMatcher
+ *
+ * @description
+ * Creates a URL that matches this pattern by substituting the specified values
+ * for the path and search parameters. Null values for path parameters are
+ * treated as empty strings.
+ *
+ * @example
+ * <pre>
+ * new UrlMatcher('/user/{id}?q').format({ id:'bob', q:'yes' });
+ * // returns '/user/bob?q=yes'
+ * </pre>
+ *
+ * @param {Object} values  the values to substitute for the parameters in this pattern.
+ * @returns {string}  the formatted URL (path and optionally search part).
+ */
+UrlMatcher.prototype.format = function (values) {
+  values = values || {};
+  var segments = this.segments, params = this.parameters(), paramset = this.params;
+  if (!this.validates(values)) return null;
+
+  var i, search = false, nPath = segments.length - 1, nTotal = params.length, result = segments[0];
+
+  function encodeDashes(str) { // Replace dashes with encoded "\-"
+    return encodeURIComponent(str).replace(/-/g, function(c) { return '%5C%' + c.charCodeAt(0).toString(16).toUpperCase(); });
+  }
+
+  for (i = 0; i < nTotal; i++) {
+    var isPathParam = i < nPath;
+    var name = params[i], param = paramset[name], value = param.value(values[name]);
+    var isDefaultValue = param.isOptional && param.type.equals(param.value(), value);
+    var squash = isDefaultValue ? param.squash : false;
+    var encoded = param.type.encode(value);
+
+    if (isPathParam) {
+      var nextSegment = segments[i + 1];
+      var isFinalPathParam = i + 1 === nPath;
+
+      if (squash === false) {
+        if (encoded != null) {
+          if (isArray(encoded)) {
+            result += map(encoded, encodeDashes).join("-");
+          } else {
+            result += encodeURIComponent(encoded);
+          }
+        }
+        result += nextSegment;
+      } else if (squash === true) {
+        var capture = result.match(/\/$/) ? /\/?(.*)/ : /(.*)/;
+        result += nextSegment.match(capture)[1];
+      } else if (isString(squash)) {
+        result += squash + nextSegment;
+      }
+
+      if (isFinalPathParam && param.squash === true && result.slice(-1) === '/') result = result.slice(0, -1);
+    } else {
+      if (encoded == null || (isDefaultValue && squash !== false)) continue;
+      if (!isArray(encoded)) encoded = [ encoded ];
+      if (encoded.length === 0) continue;
+      encoded = map(encoded, encodeURIComponent).join('&' + name + '=');
+      result += (search ? '&' : '?') + (name + '=' + encoded);
+      search = true;
+    }
+  }
+
+  return result;
+};
+
+/**
+ * @ngdoc object
+ * @name ui.router.util.type:Type
+ *
+ * @description
+ * Implements an interface to define custom parameter types that can be decoded from and encoded to
+ * string parameters matched in a URL. Used by {@link ui.router.util.type:UrlMatcher `UrlMatcher`}
+ * objects when matching or formatting URLs, or comparing or validating parameter values.
+ *
+ * See {@link ui.router.util.$urlMatcherFactory#methods_type `$urlMatcherFactory#type()`} for more
+ * information on registering custom types.
+ *
+ * @param {Object} config  A configuration object which contains the custom type definition.  The object's
+ *        properties will override the default methods and/or pattern in `Type`'s public interface.
+ * @example
+ * <pre>
+ * {
+ *   decode: function(val) { return parseInt(val, 10); },
+ *   encode: function(val) { return val && val.toString(); },
+ *   equals: function(a, b) { return this.is(a) && a === b; },
+ *   is: function(val) { return angular.isNumber(val) isFinite(val) && val % 1 === 0; },
+ *   pattern: /\d+/
+ * }
+ * </pre>
+ *
+ * @property {RegExp} pattern The regular expression pattern used to match values of this type when
+ *           coming from a substring of a URL.
+ *
+ * @returns {Object}  Returns a new `Type` object.
+ */
+function Type(config) {
+  extend(this, config);
+}
+
+/**
+ * @ngdoc function
+ * @name ui.router.util.type:Type#is
+ * @methodOf ui.router.util.type:Type
+ *
+ * @description
+ * Detects whether a value is of a particular type. Accepts a native (decoded) value
+ * and determines whether it matches the current `Type` object.
+ *
+ * @param {*} val  The value to check.
+ * @param {string} key  Optional. If the type check is happening in the context of a specific
+ *        {@link ui.router.util.type:UrlMatcher `UrlMatcher`} object, this is the name of the
+ *        parameter in which `val` is stored. Can be used for meta-programming of `Type` objects.
+ * @returns {Boolean}  Returns `true` if the value matches the type, otherwise `false`.
+ */
+Type.prototype.is = function(val, key) {
+  return true;
+};
+
+/**
+ * @ngdoc function
+ * @name ui.router.util.type:Type#encode
+ * @methodOf ui.router.util.type:Type
+ *
+ * @description
+ * Encodes a custom/native type value to a string that can be embedded in a URL. Note that the
+ * return value does *not* need to be URL-safe (i.e. passed through `encodeURIComponent()`), it
+ * only needs to be a representation of `val` that has been coerced to a string.
+ *
+ * @param {*} val  The value to encode.
+ * @param {string} key  The name of the parameter in which `val` is stored. Can be used for
+ *        meta-programming of `Type` objects.
+ * @returns {string}  Returns a string representation of `val` that can be encoded in a URL.
+ */
+Type.prototype.encode = function(val, key) {
+  return val;
+};
+
+/**
+ * @ngdoc function
+ * @name ui.router.util.type:Type#decode
+ * @methodOf ui.router.util.type:Type
+ *
+ * @description
+ * Converts a parameter value (from URL string or transition param) to a custom/native value.
+ *
+ * @param {string} val  The URL parameter value to decode.
+ * @param {string} key  The name of the parameter in which `val` is stored. Can be used for
+ *        meta-programming of `Type` objects.
+ * @returns {*}  Returns a custom representation of the URL parameter value.
+ */
+Type.prototype.decode = function(val, key) {
+  return val;
+};
+
+/**
+ * @ngdoc function
+ * @name ui.router.util.type:Type#equals
+ * @methodOf ui.router.util.type:Type
+ *
+ * @description
+ * Determines whether two decoded values are equivalent.
+ *
+ * @param {*} a  A value to compare against.
+ * @param {*} b  A value to compare against.
+ * @returns {Boolean}  Returns `true` if the values are equivalent/equal, otherwise `false`.
+ */
+Type.prototype.equals = function(a, b) {
+  return a == b;
+};
+
+Type.prototype.$subPattern = function() {
+  var sub = this.pattern.toString();
+  return sub.substr(1, sub.length - 2);
+};
+
+Type.prototype.pattern = /.*/;
+
+Type.prototype.toString = function() { return "{Type:" + this.name + "}"; };
+
+/** Given an encoded string, or a decoded object, returns a decoded object */
+Type.prototype.$normalize = function(val) {
+  return this.is(val) ? val : this.decode(val);
+};
+
+/*
+ * Wraps an existing custom Type as an array of Type, depending on 'mode'.
+ * e.g.:
+ * - urlmatcher pattern "/path?{queryParam[]:int}"
+ * - url: "/path?queryParam=1&queryParam=2
+ * - $stateParams.queryParam will be [1, 2]
+ * if `mode` is "auto", then
+ * - url: "/path?queryParam=1 will create $stateParams.queryParam: 1
+ * - url: "/path?queryParam=1&queryParam=2 will create $stateParams.queryParam: [1, 2]
+ */
+Type.prototype.$asArray = function(mode, isSearch) {
+  if (!mode) return this;
+  if (mode === "auto" && !isSearch) throw new Error("'auto' array mode is for query parameters only");
+
+  function ArrayType(type, mode) {
+    function bindTo(type, callbackName) {
+      return function() {
+        return type[callbackName].apply(type, arguments);
+      };
+    }
+
+    // Wrap non-array value as array
+    function arrayWrap(val) { return isArray(val) ? val : (isDefined(val) ? [ val ] : []); }
+    // Unwrap array value for "auto" mode. Return undefined for empty array.
+    function arrayUnwrap(val) {
+      switch(val.length) {
+        case 0: return undefined;
+        case 1: return mode === "auto" ? val[0] : val;
+        default: return val;
+      }
+    }
+    function falsey(val) { return !val; }
+
+    // Wraps type (.is/.encode/.decode) functions to operate on each value of an array
+    function arrayHandler(callback, allTruthyMode) {
+      return function handleArray(val) {
+        if (isArray(val) && val.length === 0) return val;
+        val = arrayWrap(val);
+        var result = map(val, callback);
+        if (allTruthyMode === true)
+          return filter(result, falsey).length === 0;
+        return arrayUnwrap(result);
+      };
+    }
+
+    // Wraps type (.equals) functions to operate on each value of an array
+    function arrayEqualsHandler(callback) {
+      return function handleArray(val1, val2) {
+        var left = arrayWrap(val1), right = arrayWrap(val2);
+        if (left.length !== right.length) return false;
+        for (var i = 0; i < left.length; i++) {
+          if (!callback(left[i], right[i])) return false;
+        }
+        return true;
+      };
+    }
+
+    this.encode = arrayHandler(bindTo(type, 'encode'));
+    this.decode = arrayHandler(bindTo(type, 'decode'));
+    this.is     = arrayHandler(bindTo(type, 'is'), true);
+    this.equals = arrayEqualsHandler(bindTo(type, 'equals'));
+    this.pattern = type.pattern;
+    this.$normalize = arrayHandler(bindTo(type, '$normalize'));
+    this.name = type.name;
+    this.$arrayMode = mode;
+  }
+
+  return new ArrayType(this, mode);
+};
+
+
+
+/**
+ * @ngdoc object
+ * @name ui.router.util.$urlMatcherFactory
+ *
+ * @description
+ * Factory for {@link ui.router.util.type:UrlMatcher `UrlMatcher`} instances. The factory
+ * is also available to providers under the name `$urlMatcherFactoryProvider`.
+ */
+function $UrlMatcherFactory() {
+  $$UMFP = this;
+
+  var isCaseInsensitive = false, isStrictMode = true, defaultSquashPolicy = false;
+
+  // Use tildes to pre-encode slashes.
+  // If the slashes are simply URLEncoded, the browser can choose to pre-decode them,
+  // and bidirectional encoding/decoding fails.
+  // Tilde was chosen because it's not a RFC 3986 section 2.2 Reserved Character
+  function valToString(val) { return val != null ? val.toString().replace(/(~|\/)/g, function (m) { return {'~':'~~', '/':'~2F'}[m]; }) : val; }
+  function valFromString(val) { return val != null ? val.toString().replace(/(~~|~2F)/g, function (m) { return {'~~':'~', '~2F':'/'}[m]; }) : val; }
+
+  var $types = {}, enqueue = true, typeQueue = [], injector, defaultTypes = {
+    "string": {
+      encode: valToString,
+      decode: valFromString,
+      // TODO: in 1.0, make string .is() return false if value is undefined/null by default.
+      // In 0.2.x, string params are optional by default for backwards compat
+      is: function(val) { return val == null || !isDefined(val) || typeof val === "string"; },
+      pattern: /[^/]*/
+    },
+    "int": {
+      encode: valToString,
+      decode: function(val) { return parseInt(val, 10); },
+      is: function(val) { return val !== undefined && val !== null && this.decode(val.toString()) === val; },
+      pattern: /\d+/
+    },
+    "bool": {
+      encode: function(val) { return val ? 1 : 0; },
+      decode: function(val) { return parseInt(val, 10) !== 0; },
+      is: function(val) { return val === true || val === false; },
+      pattern: /0|1/
+    },
+    "date": {
+      encode: function (val) {
+        if (!this.is(val))
+          return undefined;
+        return [ val.getFullYear(),
+          ('0' + (val.getMonth() + 1)).slice(-2),
+          ('0' + val.getDate()).slice(-2)
+        ].join("-");
+      },
+      decode: function (val) {
+        if (this.is(val)) return val;
+        var match = this.capture.exec(val);
+        return match ? new Date(match[1], match[2] - 1, match[3]) : undefined;
+      },
+      is: function(val) { return val instanceof Date && !isNaN(val.valueOf()); },
+      equals: function (a, b) { return this.is(a) && this.is(b) && a.toISOString() === b.toISOString(); },
+      pattern: /[0-9]{4}-(?:0[1-9]|1[0-2])-(?:0[1-9]|[1-2][0-9]|3[0-1])/,
+      capture: /([0-9]{4})-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1])/
+    },
+    "json": {
+      encode: angular.toJson,
+      decode: angular.fromJson,
+      is: angular.isObject,
+      equals: angular.equals,
+      pattern: /[^/]*/
+    },
+    "any": { // does not encode/decode
+      encode: angular.identity,
+      decode: angular.identity,
+      equals: angular.equals,
+      pattern: /.*/
+    }
+  };
+
+  function getDefaultConfig() {
+    return {
+      strict: isStrictMode,
+      caseInsensitive: isCaseInsensitive
+    };
+  }
+
+  function isInjectable(value) {
+    return (isFunction(value) || (isArray(value) && isFunction(value[value.length - 1])));
+  }
+
+  /**
+   * [Internal] Get the default value of a parameter, which may be an injectable function.
+   */
+  $UrlMatcherFactory.$$getDefaultValue = function(config) {
+    if (!isInjectable(config.value)) return config.value;
+    if (!injector) throw new Error("Injectable functions cannot be called at configuration time");
+    return injector.invoke(config.value);
+  };
+
+  /**
+   * @ngdoc function
+   * @name ui.router.util.$urlMatcherFactory#caseInsensitive
+   * @methodOf ui.router.util.$urlMatcherFactory
+   *
+   * @description
+   * Defines whether URL matching should be case sensitive (the default behavior), or not.
+   *
+   * @param {boolean} value `false` to match URL in a case sensitive manner; otherwise `true`;
+   * @returns {boolean} the current value of caseInsensitive
+   */
+  this.caseInsensitive = function(value) {
+    if (isDefined(value))
+      isCaseInsensitive = value;
+    return isCaseInsensitive;
+  };
+
+  /**
+   * @ngdoc function
+   * @name ui.router.util.$urlMatcherFactory#strictMode
+   * @methodOf ui.router.util.$urlMatcherFactory
+   *
+   * @description
+   * Defines whether URLs should match trailing slashes, or not (the default behavior).
+   *
+   * @param {boolean=} value `false` to match trailing slashes in URLs, otherwise `true`.
+   * @returns {boolean} the current value of strictMode
+   */
+  this.strictMode = function(value) {
+    if (isDefined(value))
+      isStrictMode = value;
+    return isStrictMode;
+  };
+
+  /**
+   * @ngdoc function
+   * @name ui.router.util.$urlMatcherFactory#defaultSquashPolicy
+   * @methodOf ui.router.util.$urlMatcherFactory
+   *
+   * @description
+   * Sets the default behavior when generating or matching URLs with default parameter values.
+   *
+   * @param {string} value A string that defines the default parameter URL squashing behavior.
+   *    `nosquash`: When generating an href with a default parameter value, do not squash the parameter value from the URL
+   *    `slash`: When generating an href with a default parameter value, squash (remove) the parameter value, and, if the
+   *             parameter is surrounded by slashes, squash (remove) one slash from the URL
+   *    any other string, e.g. "~": When generating an href with a default parameter value, squash (remove)
+   *             the parameter value from the URL and replace it with this string.
+   */
+  this.defaultSquashPolicy = function(value) {
+    if (!isDefined(value)) return defaultSquashPolicy;
+    if (value !== true && value !== false && !isString(value))
+      throw new Error("Invalid squash policy: " + value + ". Valid policies: false, true, arbitrary-string");
+    defaultSquashPolicy = value;
+    return value;
+  };
+
+  /**
+   * @ngdoc function
+   * @name ui.router.util.$urlMatcherFactory#compile
+   * @methodOf ui.router.util.$urlMatcherFactory
+   *
+   * @description
+   * Creates a {@link ui.router.util.type:UrlMatcher `UrlMatcher`} for the specified pattern.
+   *
+   * @param {string} pattern  The URL pattern.
+   * @param {Object} config  The config object hash.
+   * @returns {UrlMatcher}  The UrlMatcher.
+   */
+  this.compile = function (pattern, config) {
+    return new UrlMatcher(pattern, extend(getDefaultConfig(), config));
+  };
+
+  /**
+   * @ngdoc function
+   * @name ui.router.util.$urlMatcherFactory#isMatcher
+   * @methodOf ui.router.util.$urlMatcherFactory
+   *
+   * @description
+   * Returns true if the specified object is a `UrlMatcher`, or false otherwise.
+   *
+   * @param {Object} object  The object to perform the type check against.
+   * @returns {Boolean}  Returns `true` if the object matches the `UrlMatcher` interface, by
+   *          implementing all the same methods.
+   */
+  this.isMatcher = function (o) {
+    if (!isObject(o)) return false;
+    var result = true;
+
+    forEach(UrlMatcher.prototype, function(val, name) {
+      if (isFunction(val)) {
+        result = result && (isDefined(o[name]) && isFunction(o[name]));
+      }
+    });
+    return result;
+  };
+
+  /**
+   * @ngdoc function
+   * @name ui.router.util.$urlMatcherFactory#type
+   * @methodOf ui.router.util.$urlMatcherFactory
+   *
+   * @description
+   * Registers a custom {@link ui.router.util.type:Type `Type`} object that can be used to
+   * generate URLs with typed parameters.
+   *
+   * @param {string} name  The type name.
+   * @param {Object|Function} definition   The type definition. See
+   *        {@link ui.router.util.type:Type `Type`} for information on the values accepted.
+   * @param {Object|Function} definitionFn (optional) A function that is injected before the app
+   *        runtime starts.  The result of this function is merged into the existing `definition`.
+   *        See {@link ui.router.util.type:Type `Type`} for information on the values accepted.
+   *
+   * @returns {Object}  Returns `$urlMatcherFactoryProvider`.
+   *
+   * @example
+   * This is a simple example of a custom type that encodes and decodes items from an
+   * array, using the array index as the URL-encoded value:
+   *
+   * <pre>
+   * var list = ['John', 'Paul', 'George', 'Ringo'];
+   *
+   * $urlMatcherFactoryProvider.type('listItem', {
+   *   encode: function(item) {
+   *     // Represent the list item in the URL using its corresponding index
+   *     return list.indexOf(item);
+   *   },
+   *   decode: function(item) {
+   *     // Look up the list item by index
+   *     return list[parseInt(item, 10)];
+   *   },
+   *   is: function(item) {
+   *     // Ensure the item is valid by checking to see that it appears
+   *     // in the list
+   *     return list.indexOf(item) > -1;
+   *   }
+   * });
+   *
+   * $stateProvider.state('list', {
+   *   url: "/list/{item:listItem}",
+   *   controller: function($scope, $stateParams) {
+   *     console.log($stateParams.item);
+   *   }
+   * });
+   *
+   * // ...
+   *
+   * // Changes URL to '/list/3', logs "Ringo" to the console
+   * $state.go('list', { item: "Ringo" });
+   * </pre>
+   *
+   * This is a more complex example of a type that relies on dependency injection to
+   * interact with services, and uses the parameter name from the URL to infer how to
+   * handle encoding and decoding parameter values:
+   *
+   * <pre>
+   * // Defines a custom type that gets a value from a service,
+   * // where each service gets different types of values from
+   * // a backend API:
+   * $urlMatcherFactoryProvider.type('dbObject', {}, function(Users, Posts) {
+   *
+   *   // Matches up services to URL parameter names
+   *   var services = {
+   *     user: Users,
+   *     post: Posts
+   *   };
+   *
+   *   return {
+   *     encode: function(object) {
+   *       // Represent the object in the URL using its unique ID
+   *       return object.id;
+   *     },
+   *     decode: function(value, key) {
+   *       // Look up the object by ID, using the parameter
+   *       // name (key) to call the correct service
+   *       return services[key].findById(value);
+   *     },
+   *     is: function(object, key) {
+   *       // Check that object is a valid dbObject
+   *       return angular.isObject(object) && object.id && services[key];
+   *     }
+   *     equals: function(a, b) {
+   *       // Check the equality of decoded objects by comparing
+   *       // their unique IDs
+   *       return a.id === b.id;
+   *     }
+   *   };
+   * });
+   *
+   * // In a config() block, you can then attach URLs with
+   * // type-annotated parameters:
+   * $stateProvider.state('users', {
+   *   url: "/users",
+   *   // ...
+   * }).state('users.item', {
+   *   url: "/{user:dbObject}",
+   *   controller: function($scope, $stateParams) {
+   *     // $stateParams.user will now be an object returned from
+   *     // the Users service
+   *   },
+   *   // ...
+   * });
+   * </pre>
+   */
+  this.type = function (name, definition, definitionFn) {
+    if (!isDefined(definition)) return $types[name];
+    if ($types.hasOwnProperty(name)) throw new Error("A type named '" + name + "' has already been defined.");
+
+    $types[name] = new Type(extend({ name: name }, definition));
+    if (definitionFn) {
+      typeQueue.push({ name: name, def: definitionFn });
+      if (!enqueue) flushTypeQueue();
+    }
+    return this;
+  };
+
+  // `flushTypeQueue()` waits until `$urlMatcherFactory` is injected before invoking the queued `definitionFn`s
+  function flushTypeQueue() {
+    while(typeQueue.length) {
+      var type = typeQueue.shift();
+      if (type.pattern) throw new Error("You cannot override a type's .pattern at runtime.");
+      angular.extend($types[type.name], injector.invoke(type.def));
+    }
+  }
+
+  // Register default types. Store them in the prototype of $types.
+  forEach(defaultTypes, function(type, name) { $types[name] = new Type(extend({name: name}, type)); });
+  $types = inherit($types, {});
+
+  /* No need to document $get, since it returns this */
+  this.$get = ['$injector', function ($injector) {
+    injector = $injector;
+    enqueue = false;
+    flushTypeQueue();
+
+    forEach(defaultTypes, function(type, name) {
+      if (!$types[name]) $types[name] = new Type(type);
+    });
+    return this;
+  }];
+
+  this.Param = function Param(id, type, config, location) {
+    var self = this;
+    config = unwrapShorthand(config);
+    type = getType(config, type, location);
+    var arrayMode = getArrayMode();
+    type = arrayMode ? type.$asArray(arrayMode, location === "search") : type;
+    if (type.name === "string" && !arrayMode && location === "path" && config.value === undefined)
+      config.value = ""; // for 0.2.x; in 0.3.0+ do not automatically default to ""
+    var isOptional = config.value !== undefined;
+    var squash = getSquashPolicy(config, isOptional);
+    var replace = getReplace(config, arrayMode, isOptional, squash);
+
+    function unwrapShorthand(config) {
+      var keys = isObject(config) ? objectKeys(config) : [];
+      var isShorthand = indexOf(keys, "value") === -1 && indexOf(keys, "type") === -1 &&
+                        indexOf(keys, "squash") === -1 && indexOf(keys, "array") === -1;
+      if (isShorthand) config = { value: config };
+      config.$$fn = isInjectable(config.value) ? config.value : function () { return config.value; };
+      return config;
+    }
+
+    function getType(config, urlType, location) {
+      if (config.type && urlType) throw new Error("Param '"+id+"' has two type configurations.");
+      if (urlType) return urlType;
+      if (!config.type) return (location === "config" ? $types.any : $types.string);
+
+      if (angular.isString(config.type))
+        return $types[config.type];
+      if (config.type instanceof Type)
+        return config.type;
+      return new Type(config.type);
+    }
+
+    // array config: param name (param[]) overrides default settings.  explicit config overrides param name.
+    function getArrayMode() {
+      var arrayDefaults = { array: (location === "search" ? "auto" : false) };
+      var arrayParamNomenclature = id.match(/\[\]$/) ? { array: true } : {};
+      return extend(arrayDefaults, arrayParamNomenclature, config).array;
+    }
+
+    /**
+     * returns false, true, or the squash value to indicate the "default parameter url squash policy".
+     */
+    function getSquashPolicy(config, isOptional) {
+      var squash = config.squash;
+      if (!isOptional || squash === false) return false;
+      if (!isDefined(squash) || squash == null) return defaultSquashPolicy;
+      if (squash === true || isString(squash)) return squash;
+      throw new Error("Invalid squash policy: '" + squash + "'. Valid policies: false, true, or arbitrary string");
+    }
+
+    function getReplace(config, arrayMode, isOptional, squash) {
+      var replace, configuredKeys, defaultPolicy = [
+        { from: "",   to: (isOptional || arrayMode ? undefined : "") },
+        { from: null, to: (isOptional || arrayMode ? undefined : "") }
+      ];
+      replace = isArray(config.replace) ? config.replace : [];
+      if (isString(squash))
+        replace.push({ from: squash, to: undefined });
+      configuredKeys = map(replace, function(item) { return item.from; } );
+      return filter(defaultPolicy, function(item) { return indexOf(configuredKeys, item.from) === -1; }).concat(replace);
+    }
+
+    /**
+     * [Internal] Get the default value of a parameter, which may be an injectable function.
+     */
+    function $$getDefaultValue() {
+      if (!injector) throw new Error("Injectable functions cannot be called at configuration time");
+      var defaultValue = injector.invoke(config.$$fn);
+      if (defaultValue !== null && defaultValue !== undefined && !self.type.is(defaultValue))
+        throw new Error("Default value (" + defaultValue + ") for parameter '" + self.id + "' is not an instance of Type (" + self.type.name + ")");
+      return defaultValue;
+    }
+
+    /**
+     * [Internal] Gets the decoded representation of a value if the value is defined, otherwise, returns the
+     * default value, which may be the result of an injectable function.
+     */
+    function $value(value) {
+      function hasReplaceVal(val) { return function(obj) { return obj.from === val; }; }
+      function $replace(value) {
+        var replacement = map(filter(self.replace, hasReplaceVal(value)), function(obj) { return obj.to; });
+        return replacement.length ? replacement[0] : value;
+      }
+      value = $replace(value);
+      return !isDefined(value) ? $$getDefaultValue() : self.type.$normalize(value);
+    }
+
+    function toString() { return "{Param:" + id + " " + type + " squash: '" + squash + "' optional: " + isOptional + "}"; }
+
+    extend(this, {
+      id: id,
+      type: type,
+      location: location,
+      array: arrayMode,
+      squash: squash,
+      replace: replace,
+      isOptional: isOptional,
+      value: $value,
+      dynamic: undefined,
+      config: config,
+      toString: toString
+    });
+  };
+
+  function ParamSet(params) {
+    extend(this, params || {});
+  }
+
+  ParamSet.prototype = {
+    $$new: function() {
+      return inherit(this, extend(new ParamSet(), { $$parent: this}));
+    },
+    $$keys: function () {
+      var keys = [], chain = [], parent = this,
+        ignore = objectKeys(ParamSet.prototype);
+      while (parent) { chain.push(parent); parent = parent.$$parent; }
+      chain.reverse();
+      forEach(chain, function(paramset) {
+        forEach(objectKeys(paramset), function(key) {
+            if (indexOf(keys, key) === -1 && indexOf(ignore, key) === -1) keys.push(key);
+        });
+      });
+      return keys;
+    },
+    $$values: function(paramValues) {
+      var values = {}, self = this;
+      forEach(self.$$keys(), function(key) {
+        values[key] = self[key].value(paramValues && paramValues[key]);
+      });
+      return values;
+    },
+    $$equals: function(paramValues1, paramValues2) {
+      var equal = true, self = this;
+      forEach(self.$$keys(), function(key) {
+        var left = paramValues1 && paramValues1[key], right = paramValues2 && paramValues2[key];
+        if (!self[key].type.equals(left, right)) equal = false;
+      });
+      return equal;
+    },
+    $$validates: function $$validate(paramValues) {
+      var keys = this.$$keys(), i, param, rawVal, normalized, encoded;
+      for (i = 0; i < keys.length; i++) {
+        param = this[keys[i]];
+        rawVal = paramValues[keys[i]];
+        if ((rawVal === undefined || rawVal === null) && param.isOptional)
+          break; // There was no parameter value, but the param is optional
+        normalized = param.type.$normalize(rawVal);
+        if (!param.type.is(normalized))
+          return false; // The value was not of the correct Type, and could not be decoded to the correct Type
+        encoded = param.type.encode(normalized);
+        if (angular.isString(encoded) && !param.type.pattern.exec(encoded))
+          return false; // The value was of the correct type, but when encoded, did not match the Type's regexp
+      }
+      return true;
+    },
+    $$parent: undefined
+  };
+
+  this.ParamSet = ParamSet;
+}
+
+// Register as a provider so it's available to other providers
+angular.module('ui.router.util').provider('$urlMatcherFactory', $UrlMatcherFactory);
+angular.module('ui.router.util').run(['$urlMatcherFactory', function($urlMatcherFactory) { }]);
+
+/**
+ * @ngdoc object
+ * @name ui.router.router.$urlRouterProvider
+ *
+ * @requires ui.router.util.$urlMatcherFactoryProvider
+ * @requires $locationProvider
+ *
+ * @description
+ * `$urlRouterProvider` has the responsibility of watching `$location`. 
+ * When `$location` changes it runs through a list of rules one by one until a 
+ * match is found. `$urlRouterProvider` is used behind the scenes anytime you specify 
+ * a url in a state configuration. All urls are compiled into a UrlMatcher object.
+ *
+ * There are several methods on `$urlRouterProvider` that make it useful to use directly
+ * in your module config.
+ */
+$UrlRouterProvider.$inject = ['$locationProvider', '$urlMatcherFactoryProvider'];
+function $UrlRouterProvider(   $locationProvider,   $urlMatcherFactory) {
+  var rules = [], otherwise = null, interceptDeferred = false, listener;
+
+  // Returns a string that is a prefix of all strings matching the RegExp
+  function regExpPrefix(re) {
+    var prefix = /^\^((?:\\[^a-zA-Z0-9]|[^\\\[\]\^$*+?.()|{}]+)*)/.exec(re.source);
+    return (prefix != null) ? prefix[1].replace(/\\(.)/g, "$1") : '';
+  }
+
+  // Interpolates matched values into a String.replace()-style pattern
+  function interpolate(pattern, match) {
+    return pattern.replace(/\$(\$|\d{1,2})/, function (m, what) {
+      return match[what === '$' ? 0 : Number(what)];
+    });
+  }
+
+  /**
+   * @ngdoc function
+   * @name ui.router.router.$urlRouterProvider#rule
+   * @methodOf ui.router.router.$urlRouterProvider
+   *
+   * @description
+   * Defines rules that are used by `$urlRouterProvider` to find matches for
+   * specific URLs.
+   *
+   * @example
+   * <pre>
+   * var app = angular.module('app', ['ui.router.router']);
+   *
+   * app.config(function ($urlRouterProvider) {
+   *   // Here's an example of how you might allow case insensitive urls
+   *   $urlRouterProvider.rule(function ($injector, $location) {
+   *     var path = $location.path(),
+   *         normalized = path.toLowerCase();
+   *
+   *     if (path !== normalized) {
+   *       return normalized;
+   *     }
+   *   });
+   * });
+   * </pre>
+   *
+   * @param {function} rule Handler function that takes `$injector` and `$location`
+   * services as arguments. You can use them to return a valid path as a string.
+   *
+   * @return {object} `$urlRouterProvider` - `$urlRouterProvider` instance
+   */
+  this.rule = function (rule) {
+    if (!isFunction(rule)) throw new Error("'rule' must be a function");
+    rules.push(rule);
+    return this;
+  };
+
+  /**
+   * @ngdoc object
+   * @name ui.router.router.$urlRouterProvider#otherwise
+   * @methodOf ui.router.router.$urlRouterProvider
+   *
+   * @description
+   * Defines a path that is used when an invalid route is requested.
+   *
+   * @example
+   * <pre>
+   * var app = angular.module('app', ['ui.router.router']);
+   *
+   * app.config(function ($urlRouterProvider) {
+   *   // if the path doesn't match any of the urls you configured
+   *   // otherwise will take care of routing the user to the
+   *   // specified url
+   *   $urlRouterProvider.otherwise('/index');
+   *
+   *   // Example of using function rule as param
+   *   $urlRouterProvider.otherwise(function ($injector, $location) {
+   *     return '/a/valid/url';
+   *   });
+   * });
+   * </pre>
+   *
+   * @param {string|function} rule The url path you want to redirect to or a function 
+   * rule that returns the url path. The function version is passed two params: 
+   * `$injector` and `$location` services, and must return a url string.
+   *
+   * @return {object} `$urlRouterProvider` - `$urlRouterProvider` instance
+   */
+  this.otherwise = function (rule) {
+    if (isString(rule)) {
+      var redirect = rule;
+      rule = function () { return redirect; };
+    }
+    else if (!isFunction(rule)) throw new Error("'rule' must be a function");
+    otherwise = rule;
+    return this;
+  };
+
+
+  function handleIfMatch($injector, handler, match) {
+    if (!match) return false;
+    var result = $injector.invoke(handler, handler, { $match: match });
+    return isDefined(result) ? result : true;
+  }
+
+  /**
+   * @ngdoc function
+   * @name ui.router.router.$urlRouterProvider#when
+   * @methodOf ui.router.router.$urlRouterProvider
+   *
+   * @description
+   * Registers a handler for a given url matching. 
+   * 
+   * If the handler is a string, it is
+   * treated as a redirect, and is interpolated according to the syntax of match
+   * (i.e. like `String.replace()` for `RegExp`, or like a `UrlMatcher` pattern otherwise).
+   *
+   * If the handler is a function, it is injectable. It gets invoked if `$location`
+   * matches. You have the option of inject the match object as `$match`.
+   *
+   * The handler can return
+   *
+   * - **falsy** to indicate that the rule didn't match after all, then `$urlRouter`
+   *   will continue trying to find another one that matches.
+   * - **string** which is treated as a redirect and passed to `$location.url()`
+   * - **void** or any **truthy** value tells `$urlRouter` that the url was handled.
+   *
+   * @example
+   * <pre>
+   * var app = angular.module('app', ['ui.router.router']);
+   *
+   * app.config(function ($urlRouterProvider) {
+   *   $urlRouterProvider.when($state.url, function ($match, $stateParams) {
+   *     if ($state.$current.navigable !== state ||
+   *         !equalForKeys($match, $stateParams) {
+   *      $state.transitionTo(state, $match, false);
+   *     }
+   *   });
+   * });
+   * </pre>
+   *
+   * @param {string|object} what The incoming path that you want to redirect.
+   * @param {string|function} handler The path you want to redirect your user to.
+   */
+  this.when = function (what, handler) {
+    var redirect, handlerIsString = isString(handler);
+    if (isString(what)) what = $urlMatcherFactory.compile(what);
+
+    if (!handlerIsString && !isFunction(handler) && !isArray(handler))
+      throw new Error("invalid 'handler' in when()");
+
+    var strategies = {
+      matcher: function (what, handler) {
+        if (handlerIsString) {
+          redirect = $urlMatcherFactory.compile(handler);
+          handler = ['$match', function ($match) { return redirect.format($match); }];
+        }
+        return extend(function ($injector, $location) {
+          return handleIfMatch($injector, handler, what.exec($location.path(), $location.search()));
+        }, {
+          prefix: isString(what.prefix) ? what.prefix : ''
+        });
+      },
+      regex: function (what, handler) {
+        if (what.global || what.sticky) throw new Error("when() RegExp must not be global or sticky");
+
+        if (handlerIsString) {
+          redirect = handler;
+          handler = ['$match', function ($match) { return interpolate(redirect, $match); }];
+        }
+        return extend(function ($injector, $location) {
+          return handleIfMatch($injector, handler, what.exec($location.path()));
+        }, {
+          prefix: regExpPrefix(what)
+        });
+      }
+    };
+
+    var check = { matcher: $urlMatcherFactory.isMatcher(what), regex: what instanceof RegExp };
+
+    for (var n in check) {
+      if (check[n]) return this.rule(strategies[n](what, handler));
+    }
+
+    throw new Error("invalid 'what' in when()");
+  };
+
+  /**
+   * @ngdoc function
+   * @name ui.router.router.$urlRouterProvider#deferIntercept
+   * @methodOf ui.router.router.$urlRouterProvider
+   *
+   * @description
+   * Disables (or enables) deferring location change interception.
+   *
+   * If you wish to customize the behavior of syncing the URL (for example, if you wish to
+   * defer a transition but maintain the current URL), call this method at configuration time.
+   * Then, at run time, call `$urlRouter.listen()` after you have configured your own
+   * `$locationChangeSuccess` event handler.
+   *
+   * @example
+   * <pre>
+   * var app = angular.module('app', ['ui.router.router']);
+   *
+   * app.config(function ($urlRouterProvider) {
+   *
+   *   // Prevent $urlRouter from automatically intercepting URL changes;
+   *   // this allows you to configure custom behavior in between
+   *   // location changes and route synchronization:
+   *   $urlRouterProvider.deferIntercept();
+   *
+   * }).run(function ($rootScope, $urlRouter, UserService) {
+   *
+   *   $rootScope.$on('$locationChangeSuccess', function(e) {
+   *     // UserService is an example service for managing user state
+   *     if (UserService.isLoggedIn()) return;
+   *
+   *     // Prevent $urlRouter's default handler from firing
+   *     e.preventDefault();
+   *
+   *     UserService.handleLogin().then(function() {
+   *       // Once the user has logged in, sync the current URL
+   *       // to the router:
+   *       $urlRouter.sync();
+   *     });
+   *   });
+   *
+   *   // Configures $urlRouter's listener *after* your custom listener
+   *   $urlRouter.listen();
+   * });
+   * </pre>
+   *
+   * @param {boolean} defer Indicates whether to defer location change interception. Passing
+            no parameter is equivalent to `true`.
+   */
+  this.deferIntercept = function (defer) {
+    if (defer === undefined) defer = true;
+    interceptDeferred = defer;
+  };
+
+  /**
+   * @ngdoc object
+   * @name ui.router.router.$urlRouter
+   *
+   * @requires $location
+   * @requires $rootScope
+   * @requires $injector
+   * @requires $browser
+   *
+   * @description
+   *
+   */
+  this.$get = $get;
+  $get.$inject = ['$location', '$rootScope', '$injector', '$browser', '$sniffer'];
+  function $get(   $location,   $rootScope,   $injector,   $browser,   $sniffer) {
+
+    var baseHref = $browser.baseHref(), location = $location.url(), lastPushedUrl;
+
+    function appendBasePath(url, isHtml5, absolute) {
+      if (baseHref === '/') return url;
+      if (isHtml5) return baseHref.slice(0, -1) + url;
+      if (absolute) return baseHref.slice(1) + url;
+      return url;
+    }
+
+    // TODO: Optimize groups of rules with non-empty prefix into some sort of decision tree
+    function update(evt) {
+      if (evt && evt.defaultPrevented) return;
+      var ignoreUpdate = lastPushedUrl && $location.url() === lastPushedUrl;
+      lastPushedUrl = undefined;
+      // TODO: Re-implement this in 1.0 for https://github.com/angular-ui/ui-router/issues/1573
+      //if (ignoreUpdate) return true;
+
+      function check(rule) {
+        var handled = rule($injector, $location);
+
+        if (!handled) return false;
+        if (isString(handled)) $location.replace().url(handled);
+        return true;
+      }
+      var n = rules.length, i;
+
+      for (i = 0; i < n; i++) {
+        if (check(rules[i])) return;
+      }
+      // always check otherwise last to allow dynamic updates to the set of rules
+      if (otherwise) check(otherwise);
+    }
+
+    function listen() {
+      listener = listener || $rootScope.$on('$locationChangeSuccess', update);
+      return listener;
+    }
+
+    if (!interceptDeferred) listen();
+
+    return {
+      /**
+       * @ngdoc function
+       * @name ui.router.router.$urlRouter#sync
+       * @methodOf ui.router.router.$urlRouter
+       *
+       * @description
+       * Triggers an update; the same update that happens when the address bar url changes, aka `$locationChangeSuccess`.
+       * This method is useful when you need to use `preventDefault()` on the `$locationChangeSuccess` event,
+       * perform some custom logic (route protection, auth, config, redirection, etc) and then finally proceed
+       * with the transition by calling `$urlRouter.sync()`.
+       *
+       * @example
+       * <pre>
+       * angular.module('app', ['ui.router'])
+       *   .run(function($rootScope, $urlRouter) {
+       *     $rootScope.$on('$locationChangeSuccess', function(evt) {
+       *       // Halt state change from even starting
+       *       evt.preventDefault();
+       *       // Perform custom logic
+       *       var meetsRequirement = ...
+       *       // Continue with the update and state transition if logic allows
+       *       if (meetsRequirement) $urlRouter.sync();
+       *     });
+       * });
+       * </pre>
+       */
+      sync: function() {
+        update();
+      },
+
+      listen: function() {
+        return listen();
+      },
+
+      update: function(read) {
+        if (read) {
+          location = $location.url();
+          return;
+        }
+        if ($location.url() === location) return;
+
+        $location.url(location);
+        $location.replace();
+      },
+
+      push: function(urlMatcher, params, options) {
+         var url = urlMatcher.format(params || {});
+
+        // Handle the special hash param, if needed
+        if (url !== null && params && params['#']) {
+            url += '#' + params['#'];
+        }
+
+        $location.url(url);
+        lastPushedUrl = options && options.$$avoidResync ? $location.url() : undefined;
+        if (options && options.replace) $location.replace();
+      },
+
+      /**
+       * @ngdoc function
+       * @name ui.router.router.$urlRouter#href
+       * @methodOf ui.router.router.$urlRouter
+       *
+       * @description
+       * A URL generation method that returns the compiled URL for a given
+       * {@link ui.router.util.type:UrlMatcher `UrlMatcher`}, populated with the provided parameters.
+       *
+       * @example
+       * <pre>
+       * $bob = $urlRouter.href(new UrlMatcher("/about/:person"), {
+       *   person: "bob"
+       * });
+       * // $bob == "/about/bob";
+       * </pre>
+       *
+       * @param {UrlMatcher} urlMatcher The `UrlMatcher` object which is used as the template of the URL to generate.
+       * @param {object=} params An object of parameter values to fill the matcher's required parameters.
+       * @param {object=} options Options object. The options are:
+       *
+       * - **`absolute`** - {boolean=false},  If true will generate an absolute url, e.g. "http://www.example.com/fullurl".
+       *
+       * @returns {string} Returns the fully compiled URL, or `null` if `params` fail validation against `urlMatcher`
+       */
+      href: function(urlMatcher, params, options) {
+        if (!urlMatcher.validates(params)) return null;
+
+        var isHtml5 = $locationProvider.html5Mode();
+        if (angular.isObject(isHtml5)) {
+          isHtml5 = isHtml5.enabled;
+        }
+
+        isHtml5 = isHtml5 && $sniffer.history;
+        
+        var url = urlMatcher.format(params);
+        options = options || {};
+
+        if (!isHtml5 && url !== null) {
+          url = "#" + $locationProvider.hashPrefix() + url;
+        }
+
+        // Handle special hash param, if needed
+        if (url !== null && params && params['#']) {
+          url += '#' + params['#'];
+        }
+
+        url = appendBasePath(url, isHtml5, options.absolute);
+
+        if (!options.absolute || !url) {
+          return url;
+        }
+
+        var slash = (!isHtml5 && url ? '/' : ''), port = $location.port();
+        port = (port === 80 || port === 443 ? '' : ':' + port);
+
+        return [$location.protocol(), '://', $location.host(), port, slash, url].join('');
+      }
+    };
+  }
+}
+
+angular.module('ui.router.router').provider('$urlRouter', $UrlRouterProvider);
+
+/**
+ * @ngdoc object
+ * @name ui.router.state.$stateProvider
+ *
+ * @requires ui.router.router.$urlRouterProvider
+ * @requires ui.router.util.$urlMatcherFactoryProvider
+ *
+ * @description
+ * The new `$stateProvider` works similar to Angular's v1 router, but it focuses purely
+ * on state.
+ *
+ * A state corresponds to a "place" in the application in terms of the overall UI and
+ * navigation. A state describes (via the controller / template / view properties) what
+ * the UI looks like and does at that place.
+ *
+ * States often have things in common, and the primary way of factoring out these
+ * commonalities in this model is via the state hierarchy, i.e. parent/child states aka
+ * nested states.
+ *
+ * The `$stateProvider` provides interfaces to declare these states for your app.
+ */
+$StateProvider.$inject = ['$urlRouterProvider', '$urlMatcherFactoryProvider'];
+function $StateProvider(   $urlRouterProvider,   $urlMatcherFactory) {
+
+  var root, states = {}, $state, queue = {}, abstractKey = 'abstract';
+
+  // Builds state properties from definition passed to registerState()
+  var stateBuilder = {
+
+    // Derive parent state from a hierarchical name only if 'parent' is not explicitly defined.
+    // state.children = [];
+    // if (parent) parent.children.push(state);
+    parent: function(state) {
+      if (isDefined(state.parent) && state.parent) return findState(state.parent);
+      // regex matches any valid composite state name
+      // would match "contact.list" but not "contacts"
+      var compositeName = /^(.+)\.[^.]+$/.exec(state.name);
+      return compositeName ? findState(compositeName[1]) : root;
+    },
+
+    // inherit 'data' from parent and override by own values (if any)
+    data: function(state) {
+      if (state.parent && state.parent.data) {
+        state.data = state.self.data = inherit(state.parent.data, state.data);
+      }
+      return state.data;
+    },
+
+    // Build a URLMatcher if necessary, either via a relative or absolute URL
+    url: function(state) {
+      var url = state.url, config = { params: state.params || {} };
+
+      if (isString(url)) {
+        if (url.charAt(0) == '^') return $urlMatcherFactory.compile(url.substring(1), config);
+        return (state.parent.navigable || root).url.concat(url, config);
+      }
+
+      if (!url || $urlMatcherFactory.isMatcher(url)) return url;
+      throw new Error("Invalid url '" + url + "' in state '" + state + "'");
+    },
+
+    // Keep track of the closest ancestor state that has a URL (i.e. is navigable)
+    navigable: function(state) {
+      return state.url ? state : (state.parent ? state.parent.navigable : null);
+    },
+
+    // Own parameters for this state. state.url.params is already built at this point. Create and add non-url params
+    ownParams: function(state) {
+      var params = state.url && state.url.params || new $$UMFP.ParamSet();
+      forEach(state.params || {}, function(config, id) {
+        if (!params[id]) params[id] = new $$UMFP.Param(id, null, config, "config");
+      });
+      return params;
+    },
+
+    // Derive parameters for this state and ensure they're a super-set of parent's parameters
+    params: function(state) {
+      var ownParams = pick(state.ownParams, state.ownParams.$$keys());
+      return state.parent && state.parent.params ? extend(state.parent.params.$$new(), ownParams) : new $$UMFP.ParamSet();
+    },
+
+    // If there is no explicit multi-view configuration, make one up so we don't have
+    // to handle both cases in the view directive later. Note that having an explicit
+    // 'views' property will mean the default unnamed view properties are ignored. This
+    // is also a good time to resolve view names to absolute names, so everything is a
+    // straight lookup at link time.
+    views: function(state) {
+      var views = {};
+
+      forEach(isDefined(state.views) ? state.views : { '': state }, function (view, name) {
+        if (name.indexOf('@') < 0) name += '@' + state.parent.name;
+        view.resolveAs = view.resolveAs || state.resolveAs || '$resolve';
+        views[name] = view;
+      });
+      return views;
+    },
+
+    // Keep a full path from the root down to this state as this is needed for state activation.
+    path: function(state) {
+      return state.parent ? state.parent.path.concat(state) : []; // exclude root from path
+    },
+
+    // Speed up $state.contains() as it's used a lot
+    includes: function(state) {
+      var includes = state.parent ? extend({}, state.parent.includes) : {};
+      includes[state.name] = true;
+      return includes;
+    },
+
+    $delegates: {}
+  };
+
+  function isRelative(stateName) {
+    return stateName.indexOf(".") === 0 || stateName.indexOf("^") === 0;
+  }
+
+  function findState(stateOrName, base) {
+    if (!stateOrName) return undefined;
+
+    var isStr = isString(stateOrName),
+        name  = isStr ? stateOrName : stateOrName.name,
+        path  = isRelative(name);
+
+    if (path) {
+      if (!base) throw new Error("No reference point given for path '"  + name + "'");
+      base = findState(base);
+      
+      var rel = name.split("."), i = 0, pathLength = rel.length, current = base;
+
+      for (; i < pathLength; i++) {
+        if (rel[i] === "" && i === 0) {
+          current = base;
+          continue;
+        }
+        if (rel[i] === "^") {
+          if (!current.parent) throw new Error("Path '" + name + "' not valid for state '" + base.name + "'");
+          current = current.parent;
+          continue;
+        }
+        break;
+      }
+      rel = rel.slice(i).join(".");
+      name = current.name + (current.name && rel ? "." : "") + rel;
+    }
+    var state = states[name];
+
+    if (state && (isStr || (!isStr && (state === stateOrName || state.self === stateOrName)))) {
+      return state;
+    }
+    return undefined;
+  }
+
+  function queueState(parentName, state) {
+    if (!queue[parentName]) {
+      queue[parentName] = [];
+    }
+    queue[parentName].push(state);
+  }
+
+  function flushQueuedChildren(parentName) {
+    var queued = queue[parentName] || [];
+    while(queued.length) {
+      registerState(queued.shift());
+    }
+  }
+
+  function registerState(state) {
+    // Wrap a new object around the state so we can store our private details easily.
+    state = inherit(state, {
+      self: state,
+      resolve: state.resolve || {},
+      toString: function() { return this.name; }
+    });
+
+    var name = state.name;
+    if (!isString(name) || name.indexOf('@') >= 0) throw new Error("State must have a valid name");
+    if (states.hasOwnProperty(name)) throw new Error("State '" + name + "' is already defined");
+
+    // Get parent name
+    var parentName = (name.indexOf('.') !== -1) ? name.substring(0, name.lastIndexOf('.'))
+        : (isString(state.parent)) ? state.parent
+        : (isObject(state.parent) && isString(state.parent.name)) ? state.parent.name
+        : '';
+
+    // If parent is not registered yet, add state to queue and register later
+    if (parentName && !states[parentName]) {
+      return queueState(parentName, state.self);
+    }
+
+    for (var key in stateBuilder) {
+      if (isFunction(stateBuilder[key])) state[key] = stateBuilder[key](state, stateBuilder.$delegates[key]);
+    }
+    states[name] = state;
+
+    // Register the state in the global state list and with $urlRouter if necessary.
+    if (!state[abstractKey] && state.url) {
+      $urlRouterProvider.when(state.url, ['$match', '$stateParams', function ($match, $stateParams) {
+        if ($state.$current.navigable != state || !equalForKeys($match, $stateParams)) {
+          $state.transitionTo(state, $match, { inherit: true, location: false });
+        }
+      }]);
+    }
+
+    // Register any queued children
+    flushQueuedChildren(name);
+
+    return state;
+  }
+
+  // Checks text to see if it looks like a glob.
+  function isGlob (text) {
+    return text.indexOf('*') > -1;
+  }
+
+  // Returns true if glob matches current $state name.
+  function doesStateMatchGlob (glob) {
+    var globSegments = glob.split('.'),
+        segments = $state.$current.name.split('.');
+
+    //match single stars
+    for (var i = 0, l = globSegments.length; i < l; i++) {
+      if (globSegments[i] === '*') {
+        segments[i] = '*';
+      }
+    }
+
+    //match greedy starts
+    if (globSegments[0] === '**') {
+       segments = segments.slice(indexOf(segments, globSegments[1]));
+       segments.unshift('**');
+    }
+    //match greedy ends
+    if (globSegments[globSegments.length - 1] === '**') {
+       segments.splice(indexOf(segments, globSegments[globSegments.length - 2]) + 1, Number.MAX_VALUE);
+       segments.push('**');
+    }
+
+    if (globSegments.length != segments.length) {
+      return false;
+    }
+
+    return segments.join('') === globSegments.join('');
+  }
+
+
+  // Implicit root state that is always active
+  root = registerState({
+    name: '',
+    url: '^',
+    views: null,
+    'abstract': true
+  });
+  root.navigable = null;
+
+
+  /**
+   * @ngdoc function
+   * @name ui.router.state.$stateProvider#decorator
+   * @methodOf ui.router.state.$stateProvider
+   *
+   * @description
+   * Allows you to extend (carefully) or override (at your own peril) the 
+   * `stateBuilder` object used internally by `$stateProvider`. This can be used 
+   * to add custom functionality to ui-router, for example inferring templateUrl 
+   * based on the state name.
+   *
+   * When passing only a name, it returns the current (original or decorated) builder
+   * function that matches `name`.
+   *
+   * The builder functions that can be decorated are listed below. Though not all
+   * necessarily have a good use case for decoration, that is up to you to decide.
+   *
+   * In addition, users can attach custom decorators, which will generate new 
+   * properties within the state's internal definition. There is currently no clear 
+   * use-case for this beyond accessing internal states (i.e. $state.$current), 
+   * however, expect this to become increasingly relevant as we introduce additional 
+   * meta-programming features.
+   *
+   * **Warning**: Decorators should not be interdependent because the order of 
+   * execution of the builder functions in non-deterministic. Builder functions 
+   * should only be dependent on the state definition object and super function.
+   *
+   *
+   * Existing builder functions and current return values:
+   *
+   * - **parent** `{object}` - returns the parent state object.
+   * - **data** `{object}` - returns state data, including any inherited data that is not
+   *   overridden by own values (if any).
+   * - **url** `{object}` - returns a {@link ui.router.util.type:UrlMatcher UrlMatcher}
+   *   or `null`.
+   * - **navigable** `{object}` - returns closest ancestor state that has a URL (aka is 
+   *   navigable).
+   * - **params** `{object}` - returns an array of state params that are ensured to 
+   *   be a super-set of parent's params.
+   * - **views** `{object}` - returns a views object where each key is an absolute view 
+   *   name (i.e. "viewName@stateName") and each value is the config object 
+   *   (template, controller) for the view. Even when you don't use the views object 
+   *   explicitly on a state config, one is still created for you internally.
+   *   So by decorating this builder function you have access to decorating template 
+   *   and controller properties.
+   * - **ownParams** `{object}` - returns an array of params that belong to the state, 
+   *   not including any params defined by ancestor states.
+   * - **path** `{string}` - returns the full path from the root down to this state. 
+   *   Needed for state activation.
+   * - **includes** `{object}` - returns an object that includes every state that 
+   *   would pass a `$state.includes()` test.
+   *
+   * @example
+   * <pre>
+   * // Override the internal 'views' builder with a function that takes the state
+   * // definition, and a reference to the internal function being overridden:
+   * $stateProvider.decorator('views', function (state, parent) {
+   *   var result = {},
+   *       views = parent(state);
+   *
+   *   angular.forEach(views, function (config, name) {
+   *     var autoName = (state.name + '.' + name).replace('.', '/');
+   *     config.templateUrl = config.templateUrl || '/partials/' + autoName + '.html';
+   *     result[name] = config;
+   *   });
+   *   return result;
+   * });
+   *
+   * $stateProvider.state('home', {
+   *   views: {
+   *     'contact.list': { controller: 'ListController' },
+   *     'contact.item': { controller: 'ItemController' }
+   *   }
+   * });
+   *
+   * // ...
+   *
+   * $state.go('home');
+   * // Auto-populates list and item views with /partials/home/contact/list.html,
+   * // and /partials/home/contact/item.html, respectively.
+   * </pre>
+   *
+   * @param {string} name The name of the builder function to decorate. 
+   * @param {object} func A function that is responsible for decorating the original 
+   * builder function. The function receives two parameters:
+   *
+   *   - `{object}` - state - The state config object.
+   *   - `{object}` - super - The original builder function.
+   *
+   * @return {object} $stateProvider - $stateProvider instance
+   */
+  this.decorator = decorator;
+  function decorator(name, func) {
+    /*jshint validthis: true */
+    if (isString(name) && !isDefined(func)) {
+      return stateBuilder[name];
+    }
+    if (!isFunction(func) || !isString(name)) {
+      return this;
+    }
+    if (stateBuilder[name] && !stateBuilder.$delegates[name]) {
+      stateBuilder.$delegates[name] = stateBuilder[name];
+    }
+    stateBuilder[name] = func;
+    return this;
+  }
+
+  /**
+   * @ngdoc function
+   * @name ui.router.state.$stateProvider#state
+   * @methodOf ui.router.state.$stateProvider
+   *
+   * @description
+   * Registers a state configuration under a given state name. The stateConfig object
+   * has the following acceptable properties.
+   *
+   * @param {string} name A unique state name, e.g. "home", "about", "contacts".
+   * To create a parent/child state use a dot, e.g. "about.sales", "home.newest".
+   * @param {object} stateConfig State configuration object.
+   * @param {string|function=} stateConfig.template
+   * <a id='template'></a>
+   *   html template as a string or a function that returns
+   *   an html template as a string which should be used by the uiView directives. This property 
+   *   takes precedence over templateUrl.
+   *   
+   *   If `template` is a function, it will be called with the following parameters:
+   *
+   *   - {array.&lt;object&gt;} - state parameters extracted from the current $location.path() by
+   *     applying the current state
+   *
+   * <pre>template:
+   *   "<h1>inline template definition</h1>" +
+   *   "<div ui-view></div>"</pre>
+   * <pre>template: function(params) {
+   *       return "<h1>generated template</h1>"; }</pre>
+   * </div>
+   *
+   * @param {string|function=} stateConfig.templateUrl
+   * <a id='templateUrl'></a>
+   *
+   *   path or function that returns a path to an html
+   *   template that should be used by uiView.
+   *   
+   *   If `templateUrl` is a function, it will be called with the following parameters:
+   *
+   *   - {array.&lt;object&gt;} - state parameters extracted from the current $location.path() by 
+   *     applying the current state
+   *
+   * <pre>templateUrl: "home.html"</pre>
+   * <pre>templateUrl: function(params) {
+   *     return myTemplates[params.pageId]; }</pre>
+   *
+   * @param {function=} stateConfig.templateProvider
+   * <a id='templateProvider'></a>
+   *    Provider function that returns HTML content string.
+   * <pre> templateProvider:
+   *       function(MyTemplateService, params) {
+   *         return MyTemplateService.getTemplate(params.pageId);
+   *       }</pre>
+   *
+   * @param {string|function=} stateConfig.controller
+   * <a id='controller'></a>
+   *
+   *  Controller fn that should be associated with newly
+   *   related scope or the name of a registered controller if passed as a string.
+   *   Optionally, the ControllerAs may be declared here.
+   * <pre>controller: "MyRegisteredController"</pre>
+   * <pre>controller:
+   *     "MyRegisteredController as fooCtrl"}</pre>
+   * <pre>controller: function($scope, MyService) {
+   *     $scope.data = MyService.getData(); }</pre>
+   *
+   * @param {function=} stateConfig.controllerProvider
+   * <a id='controllerProvider'></a>
+   *
+   * Injectable provider function that returns the actual controller or string.
+   * <pre>controllerProvider:
+   *   function(MyResolveData) {
+   *     if (MyResolveData.foo)
+   *       return "FooCtrl"
+   *     else if (MyResolveData.bar)
+   *       return "BarCtrl";
+   *     else return function($scope) {
+   *       $scope.baz = "Qux";
+   *     }
+   *   }</pre>
+   *
+   * @param {string=} stateConfig.controllerAs
+   * <a id='controllerAs'></a>
+   * 
+   * A controller alias name. If present the controller will be
+   *   published to scope under the controllerAs name.
+   * <pre>controllerAs: "myCtrl"</pre>
+   *
+   * @param {string|object=} stateConfig.parent
+   * <a id='parent'></a>
+   * Optionally specifies the parent state of this state.
+   *
+   * <pre>parent: 'parentState'</pre>
+   * <pre>parent: parentState // JS variable</pre>
+   *
+   * @param {object=} stateConfig.resolve
+   * <a id='resolve'></a>
+   *
+   * An optional map&lt;string, function&gt; of dependencies which
+   *   should be injected into the controller. If any of these dependencies are promises, 
+   *   the router will wait for them all to be resolved before the controller is instantiated.
+   *   If all the promises are resolved successfully, the $stateChangeSuccess event is fired
+   *   and the values of the resolved promises are injected into any controllers that reference them.
+   *   If any  of the promises are rejected the $stateChangeError event is fired.
+   *
+   *   The map object is:
+   *   
+   *   - key - {string}: name of dependency to be injected into controller
+   *   - factory - {string|function}: If string then it is alias for service. Otherwise if function, 
+   *     it is injected and return value it treated as dependency. If result is a promise, it is 
+   *     resolved before its value is injected into controller.
+   *
+   * <pre>resolve: {
+   *     myResolve1:
+   *       function($http, $stateParams) {
+   *         return $http.get("/api/foos/"+stateParams.fooID);
+   *       }
+   *     }</pre>
+   *
+   * @param {string=} stateConfig.url
+   * <a id='url'></a>
+   *
+   *   A url fragment with optional parameters. When a state is navigated or
+   *   transitioned to, the `$stateParams` service will be populated with any 
+   *   parameters that were passed.
+   *
+   *   (See {@link ui.router.util.type:UrlMatcher UrlMatcher} `UrlMatcher`} for
+   *   more details on acceptable patterns )
+   *
+   * examples:
+   * <pre>url: "/home"
+   * url: "/users/:userid"
+   * url: "/books/{bookid:[a-zA-Z_-]}"
+   * url: "/books/{categoryid:int}"
+   * url: "/books/{publishername:string}/{categoryid:int}"
+   * url: "/messages?before&after"
+   * url: "/messages?{before:date}&{after:date}"
+   * url: "/messages/:mailboxid?{before:date}&{after:date}"
+   * </pre>
+   *
+   * @param {object=} stateConfig.views
+   * <a id='views'></a>
+   * an optional map&lt;string, object&gt; which defined multiple views, or targets views
+   * manually/explicitly.
+   *
+   * Examples:
+   *
+   * Targets three named `ui-view`s in the parent state's template
+   * <pre>views: {
+   *     header: {
+   *       controller: "headerCtrl",
+   *       templateUrl: "header.html"
+   *     }, body: {
+   *       controller: "bodyCtrl",
+   *       templateUrl: "body.html"
+   *     }, footer: {
+   *       controller: "footCtrl",
+   *       templateUrl: "footer.html"
+   *     }
+   *   }</pre>
+   *
+   * Targets named `ui-view="header"` from grandparent state 'top''s template, and named `ui-view="body" from parent state's template.
+   * <pre>views: {
+   *     'header@top': {
+   *       controller: "msgHeaderCtrl",
+   *       templateUrl: "msgHeader.html"
+   *     }, 'body': {
+   *       controller: "messagesCtrl",
+   *       templateUrl: "messages.html"
+   *     }
+   *   }</pre>
+   *
+   * @param {boolean=} [stateConfig.abstract=false]
+   * <a id='abstract'></a>
+   * An abstract state will never be directly activated,
+   *   but can provide inherited properties to its common children states.
+   * <pre>abstract: true</pre>
+   *
+   * @param {function=} stateConfig.onEnter
+   * <a id='onEnter'></a>
+   *
+   * Callback function for when a state is entered. Good way
+   *   to trigger an action or dispatch an event, such as opening a dialog.
+   * If minifying your scripts, make sure to explicitly annotate this function,
+   * because it won't be automatically annotated by your build tools.
+   *
+   * <pre>onEnter: function(MyService, $stateParams) {
+   *     MyService.foo($stateParams.myParam);
+   * }</pre>
+   *
+   * @param {function=} stateConfig.onExit
+   * <a id='onExit'></a>
+   *
+   * Callback function for when a state is exited. Good way to
+   *   trigger an action or dispatch an event, such as opening a dialog.
+   * If minifying your scripts, make sure to explicitly annotate this function,
+   * because it won't be automatically annotated by your build tools.
+   *
+   * <pre>onExit: function(MyService, $stateParams) {
+   *     MyService.cleanup($stateParams.myParam);
+   * }</pre>
+   *
+   * @param {boolean=} [stateConfig.reloadOnSearch=true]
+   * <a id='reloadOnSearch'></a>
+   *
+   * If `false`, will not retrigger the same state
+   *   just because a search/query parameter has changed (via $location.search() or $location.hash()). 
+   *   Useful for when you'd like to modify $location.search() without triggering a reload.
+   * <pre>reloadOnSearch: false</pre>
+   *
+   * @param {object=} stateConfig.data
+   * <a id='data'></a>
+   *
+   * Arbitrary data object, useful for custom configuration.  The parent state's `data` is
+   *   prototypally inherited.  In other words, adding a data property to a state adds it to
+   *   the entire subtree via prototypal inheritance.
+   *
+   * <pre>data: {
+   *     requiredRole: 'foo'
+   * } </pre>
+   *
+   * @param {object=} stateConfig.params
+   * <a id='params'></a>
+   *
+   * A map which optionally configures parameters declared in the `url`, or
+   *   defines additional non-url parameters.  For each parameter being
+   *   configured, add a configuration object keyed to the name of the parameter.
+   *
+   *   Each parameter configuration object may contain the following properties:
+   *
+   *   - ** value ** - {object|function=}: specifies the default value for this
+   *     parameter.  This implicitly sets this parameter as optional.
+   *
+   *     When UI-Router routes to a state and no value is
+   *     specified for this parameter in the URL or transition, the
+   *     default value will be used instead.  If `value` is a function,
+   *     it will be injected and invoked, and the return value used.
+   *
+   *     *Note*: `undefined` is treated as "no default value" while `null`
+   *     is treated as "the default value is `null`".
+   *
+   *     *Shorthand*: If you only need to configure the default value of the
+   *     parameter, you may use a shorthand syntax.   In the **`params`**
+   *     map, instead mapping the param name to a full parameter configuration
+   *     object, simply set map it to the default parameter value, e.g.:
+   *
+   * <pre>// define a parameter's default value
+   * params: {
+   *     param1: { value: "defaultValue" }
+   * }
+   * // shorthand default values
+   * params: {
+   *     param1: "defaultValue",
+   *     param2: "param2Default"
+   * }</pre>
+   *
+   *   - ** array ** - {boolean=}: *(default: false)* If true, the param value will be
+   *     treated as an array of values.  If you specified a Type, the value will be
+   *     treated as an array of the specified Type.  Note: query parameter values
+   *     default to a special `"auto"` mode.
+   *
+   *     For query parameters in `"auto"` mode, if multiple  values for a single parameter
+   *     are present in the URL (e.g.: `/foo?bar=1&bar=2&bar=3`) then the values
+   *     are mapped to an array (e.g.: `{ foo: [ '1', '2', '3' ] }`).  However, if
+   *     only one value is present (e.g.: `/foo?bar=1`) then the value is treated as single
+   *     value (e.g.: `{ foo: '1' }`).
+   *
+   * <pre>params: {
+   *     param1: { array: true }
+   * }</pre>
+   *
+   *   - ** squash ** - {bool|string=}: `squash` configures how a default parameter value is represented in the URL when
+   *     the current parameter value is the same as the default value. If `squash` is not set, it uses the
+   *     configured default squash policy.
+   *     (See {@link ui.router.util.$urlMatcherFactory#methods_defaultSquashPolicy `defaultSquashPolicy()`})
+   *
+   *   There are three squash settings:
+   *
+   *     - false: The parameter's default value is not squashed.  It is encoded and included in the URL
+   *     - true: The parameter's default value is omitted from the URL.  If the parameter is preceeded and followed
+   *       by slashes in the state's `url` declaration, then one of those slashes are omitted.
+   *       This can allow for cleaner looking URLs.
+   *     - `"<arbitrary string>"`: The parameter's default value is replaced with an arbitrary placeholder of  your choice.
+   *
+   * <pre>params: {
+   *     param1: {
+   *       value: "defaultId",
+   *       squash: true
+   * } }
+   * // squash "defaultValue" to "~"
+   * params: {
+   *     param1: {
+   *       value: "defaultValue",
+   *       squash: "~"
+   * } }
+   * </pre>
+   *
+   *
+   * @example
+   * <pre>
+   * // Some state name examples
+   *
+   * // stateName can be a single top-level name (must be unique).
+   * $stateProvider.state("home", {});
+   *
+   * // Or it can be a nested state name. This state is a child of the
+   * // above "home" state.
+   * $stateProvider.state("home.newest", {});
+   *
+   * // Nest states as deeply as needed.
+   * $stateProvider.state("home.newest.abc.xyz.inception", {});
+   *
+   * // state() returns $stateProvider, so you can chain state declarations.
+   * $stateProvider
+   *   .state("home", {})
+   *   .state("about", {})
+   *   .state("contacts", {});
+   * </pre>
+   *
+   */
+  this.state = state;
+  function state(name, definition) {
+    /*jshint validthis: true */
+    if (isObject(name)) definition = name;
+    else definition.name = name;
+    registerState(definition);
+    return this;
+  }
+
+  /**
+   * @ngdoc object
+   * @name ui.router.state.$state
+   *
+   * @requires $rootScope
+   * @requires $q
+   * @requires ui.router.state.$view
+   * @requires $injector
+   * @requires ui.router.util.$resolve
+   * @requires ui.router.state.$stateParams
+   * @requires ui.router.router.$urlRouter
+   *
+   * @property {object} params A param object, e.g. {sectionId: section.id)}, that 
+   * you'd like to test against the current active state.
+   * @property {object} current A reference to the state's config object. However 
+   * you passed it in. Useful for accessing custom data.
+   * @property {object} transition Currently pending transition. A promise that'll 
+   * resolve or reject.
+   *
+   * @description
+   * `$state` service is responsible for representing states as well as transitioning
+   * between them. It also provides interfaces to ask for current state or even states
+   * you're coming from.
+   */
+  this.$get = $get;
+  $get.$inject = ['$rootScope', '$q', '$view', '$injector', '$resolve', '$stateParams', '$urlRouter', '$location', '$urlMatcherFactory'];
+  function $get(   $rootScope,   $q,   $view,   $injector,   $resolve,   $stateParams,   $urlRouter,   $location,   $urlMatcherFactory) {
+
+    var TransitionSupersededError = new Error('transition superseded');
+
+    var TransitionSuperseded = silenceUncaughtInPromise($q.reject(TransitionSupersededError));
+    var TransitionPrevented = silenceUncaughtInPromise($q.reject(new Error('transition prevented')));
+    var TransitionAborted = silenceUncaughtInPromise($q.reject(new Error('transition aborted')));
+    var TransitionFailed = silenceUncaughtInPromise($q.reject(new Error('transition failed')));
+
+    // Handles the case where a state which is the target of a transition is not found, and the user
+    // can optionally retry or defer the transition
+    function handleRedirect(redirect, state, params, options) {
+      /**
+       * @ngdoc event
+       * @name ui.router.state.$state#$stateNotFound
+       * @eventOf ui.router.state.$state
+       * @eventType broadcast on root scope
+       * @description
+       * Fired when a requested state **cannot be found** using the provided state name during transition.
+       * The event is broadcast allowing any handlers a single chance to deal with the error (usually by
+       * lazy-loading the unfound state). A special `unfoundState` object is passed to the listener handler,
+       * you can see its three properties in the example. You can use `event.preventDefault()` to abort the
+       * transition and the promise returned from `go` will be rejected with a `'transition aborted'` value.
+       *
+       * @param {Object} event Event object.
+       * @param {Object} unfoundState Unfound State information. Contains: `to, toParams, options` properties.
+       * @param {State} fromState Current state object.
+       * @param {Object} fromParams Current state params.
+       *
+       * @example
+       *
+       * <pre>
+       * // somewhere, assume lazy.state has not been defined
+       * $state.go("lazy.state", {a:1, b:2}, {inherit:false});
+       *
+       * // somewhere else
+       * $scope.$on('$stateNotFound',
+       * function(event, unfoundState, fromState, fromParams){
+       *     console.log(unfoundState.to); // "lazy.state"
+       *     console.log(unfoundState.toParams); // {a:1, b:2}
+       *     console.log(unfoundState.options); // {inherit:false} + default options
+       * })
+       * </pre>
+       */
+      var evt = $rootScope.$broadcast('$stateNotFound', redirect, state, params);
+
+      if (evt.defaultPrevented) {
+        $urlRouter.update();
+        return TransitionAborted;
+      }
+
+      if (!evt.retry) {
+        return null;
+      }
+
+      // Allow the handler to return a promise to defer state lookup retry
+      if (options.$retry) {
+        $urlRouter.update();
+        return TransitionFailed;
+      }
+      var retryTransition = $state.transition = $q.when(evt.retry);
+
+      retryTransition.then(function() {
+        if (retryTransition !== $state.transition) {
+          $rootScope.$broadcast('$stateChangeCancel', redirect.to, redirect.toParams, state, params);
+          return TransitionSuperseded;
+        }
+        redirect.options.$retry = true;
+        return $state.transitionTo(redirect.to, redirect.toParams, redirect.options);
+      }, function() {
+        return TransitionAborted;
+      });
+      $urlRouter.update();
+
+      return retryTransition;
+    }
+
+    root.locals = { resolve: null, globals: { $stateParams: {} } };
+
+    $state = {
+      params: {},
+      current: root.self,
+      $current: root,
+      transition: null
+    };
+
+    /**
+     * @ngdoc function
+     * @name ui.router.state.$state#reload
+     * @methodOf ui.router.state.$state
+     *
+     * @description
+     * A method that force reloads the current state. All resolves are re-resolved,
+     * controllers reinstantiated, and events re-fired.
+     *
+     * @example
+     * <pre>
+     * var app angular.module('app', ['ui.router']);
+     *
+     * app.controller('ctrl', function ($scope, $state) {
+     *   $scope.reload = function(){
+     *     $state.reload();
+     *   }
+     * });
+     * </pre>
+     *
+     * `reload()` is just an alias for:
+     * <pre>
+     * $state.transitionTo($state.current, $stateParams, { 
+     *   reload: true, inherit: false, notify: true
+     * });
+     * </pre>
+     *
+     * @param {string=|object=} state - A state name or a state object, which is the root of the resolves to be re-resolved.
+     * @example
+     * <pre>
+     * //assuming app application consists of 3 states: 'contacts', 'contacts.detail', 'contacts.detail.item' 
+     * //and current state is 'contacts.detail.item'
+     * var app angular.module('app', ['ui.router']);
+     *
+     * app.controller('ctrl', function ($scope, $state) {
+     *   $scope.reload = function(){
+     *     //will reload 'contact.detail' and 'contact.detail.item' states
+     *     $state.reload('contact.detail');
+     *   }
+     * });
+     * </pre>
+     *
+     * `reload()` is just an alias for:
+     * <pre>
+     * $state.transitionTo($state.current, $stateParams, { 
+     *   reload: true, inherit: false, notify: true
+     * });
+     * </pre>
+
+     * @returns {promise} A promise representing the state of the new transition. See
+     * {@link ui.router.state.$state#methods_go $state.go}.
+     */
+    $state.reload = function reload(state) {
+      return $state.transitionTo($state.current, $stateParams, { reload: state || true, inherit: false, notify: true});
+    };
+
+    /**
+     * @ngdoc function
+     * @name ui.router.state.$state#go
+     * @methodOf ui.router.state.$state
+     *
+     * @description
+     * Convenience method for transitioning to a new state. `$state.go` calls 
+     * `$state.transitionTo` internally but automatically sets options to 
+     * `{ location: true, inherit: true, relative: $state.$current, notify: true }`. 
+     * This allows you to easily use an absolute or relative to path and specify 
+     * only the parameters you'd like to update (while letting unspecified parameters 
+     * inherit from the currently active ancestor states).
+     *
+     * @example
+     * <pre>
+     * var app = angular.module('app', ['ui.router']);
+     *
+     * app.controller('ctrl', function ($scope, $state) {
+     *   $scope.changeState = function () {
+     *     $state.go('contact.detail');
+     *   };
+     * });
+     * </pre>
+     * <img src='../ngdoc_assets/StateGoExamples.png'/>
+     *
+     * @param {string} to Absolute state name or relative state path. Some examples:
+     *
+     * - `$state.go('contact.detail')` - will go to the `contact.detail` state
+     * - `$state.go('^')` - will go to a parent state
+     * - `$state.go('^.sibling')` - will go to a sibling state
+     * - `$state.go('.child.grandchild')` - will go to grandchild state
+     *
+     * @param {object=} params A map of the parameters that will be sent to the state, 
+     * will populate $stateParams. Any parameters that are not specified will be inherited from currently 
+     * defined parameters. Only parameters specified in the state definition can be overridden, new 
+     * parameters will be ignored. This allows, for example, going to a sibling state that shares parameters
+     * specified in a parent state. Parameter inheritance only works between common ancestor states, I.e.
+     * transitioning to a sibling will get you the parameters for all parents, transitioning to a child
+     * will get you all current parameters, etc.
+     * @param {object=} options Options object. The options are:
+     *
+     * - **`location`** - {boolean=true|string=} - If `true` will update the url in the location bar, if `false`
+     *    will not. If string, must be `"replace"`, which will update url and also replace last history record.
+     * - **`inherit`** - {boolean=true}, If `true` will inherit url parameters from current url.
+     * - **`relative`** - {object=$state.$current}, When transitioning with relative path (e.g '^'), 
+     *    defines which state to be relative from.
+     * - **`notify`** - {boolean=true}, If `true` will broadcast $stateChangeStart and $stateChangeSuccess events.
+     * - **`reload`** (v0.2.5) - {boolean=false|string|object}, If `true` will force transition even if no state or params
+     *    have changed.  It will reload the resolves and views of the current state and parent states.
+     *    If `reload` is a string (or state object), the state object is fetched (by name, or object reference); and \
+     *    the transition reloads the resolves and views for that matched state, and all its children states.
+     *
+     * @returns {promise} A promise representing the state of the new transition.
+     *
+     * Possible success values:
+     *
+     * - $state.current
+     *
+     * <br/>Possible rejection values:
+     *
+     * - 'transition superseded' - when a newer transition has been started after this one
+     * - 'transition prevented' - when `event.preventDefault()` has been called in a `$stateChangeStart` listener
+     * - 'transition aborted' - when `event.preventDefault()` has been called in a `$stateNotFound` listener or
+     *   when a `$stateNotFound` `event.retry` promise errors.
+     * - 'transition failed' - when a state has been unsuccessfully found after 2 tries.
+     * - *resolve error* - when an error has occurred with a `resolve`
+     *
+     */
+    $state.go = function go(to, params, options) {
+      return $state.transitionTo(to, params, extend({ inherit: true, relative: $state.$current }, options));
+    };
+
+    /**
+     * @ngdoc function
+     * @name ui.router.state.$state#transitionTo
+     * @methodOf ui.router.state.$state
+     *
+     * @description
+     * Low-level method for transitioning to a new state. {@link ui.router.state.$state#methods_go $state.go}
+     * uses `transitionTo` internally. `$state.go` is recommended in most situations.
+     *
+     * @example
+     * <pre>
+     * var app = angular.module('app', ['ui.router']);
+     *
+     * app.controller('ctrl', function ($scope, $state) {
+     *   $scope.changeState = function () {
+     *     $state.transitionTo('contact.detail');
+     *   };
+     * });
+     * </pre>
+     *
+     * @param {string} to State name.
+     * @param {object=} toParams A map of the parameters that will be sent to the state,
+     * will populate $stateParams.
+     * @param {object=} options Options object. The options are:
+     *
+     * - **`location`** - {boolean=true|string=} - If `true` will update the url in the location bar, if `false`
+     *    will not. If string, must be `"replace"`, which will update url and also replace last history record.
+     * - **`inherit`** - {boolean=false}, If `true` will inherit url parameters from current url.
+     * - **`relative`** - {object=}, When transitioning with relative path (e.g '^'), 
+     *    defines which state to be relative from.
+     * - **`notify`** - {boolean=true}, If `true` will broadcast $stateChangeStart and $stateChangeSuccess events.
+     * - **`reload`** (v0.2.5) - {boolean=false|string=|object=}, If `true` will force transition even if the state or params 
+     *    have not changed, aka a reload of the same state. It differs from reloadOnSearch because you'd
+     *    use this when you want to force a reload when *everything* is the same, including search params.
+     *    if String, then will reload the state with the name given in reload, and any children.
+     *    if Object, then a stateObj is expected, will reload the state found in stateObj, and any children.
+     *
+     * @returns {promise} A promise representing the state of the new transition. See
+     * {@link ui.router.state.$state#methods_go $state.go}.
+     */
+    $state.transitionTo = function transitionTo(to, toParams, options) {
+      toParams = toParams || {};
+      options = extend({
+        location: true, inherit: false, relative: null, notify: true, reload: false, $retry: false
+      }, options || {});
+
+      var from = $state.$current, fromParams = $state.params, fromPath = from.path;
+      var evt, toState = findState(to, options.relative);
+
+      // Store the hash param for later (since it will be stripped out by various methods)
+      var hash = toParams['#'];
+
+      if (!isDefined(toState)) {
+        var redirect = { to: to, toParams: toParams, options: options };
+        var redirectResult = handleRedirect(redirect, from.self, fromParams, options);
+
+        if (redirectResult) {
+          return redirectResult;
+        }
+
+        // Always retry once if the $stateNotFound was not prevented
+        // (handles either redirect changed or state lazy-definition)
+        to = redirect.to;
+        toParams = redirect.toParams;
+        options = redirect.options;
+        toState = findState(to, options.relative);
+
+        if (!isDefined(toState)) {
+          if (!options.relative) throw new Error("No such state '" + to + "'");
+          throw new Error("Could not resolve '" + to + "' from state '" + options.relative + "'");
+        }
+      }
+      if (toState[abstractKey]) throw new Error("Cannot transition to abstract state '" + to + "'");
+      if (options.inherit) toParams = inheritParams($stateParams, toParams || {}, $state.$current, toState);
+      if (!toState.params.$$validates(toParams)) return TransitionFailed;
+
+      toParams = toState.params.$$values(toParams);
+      to = toState;
+
+      var toPath = to.path;
+
+      // Starting from the root of the path, keep all levels that haven't changed
+      var keep = 0, state = toPath[keep], locals = root.locals, toLocals = [];
+
+      if (!options.reload) {
+        while (state && state === fromPath[keep] && state.ownParams.$$equals(toParams, fromParams)) {
+          locals = toLocals[keep] = state.locals;
+          keep++;
+          state = toPath[keep];
+        }
+      } else if (isString(options.reload) || isObject(options.reload)) {
+        if (isObject(options.reload) && !options.reload.name) {
+          throw new Error('Invalid reload state object');
+        }
+        
+        var reloadState = options.reload === true ? fromPath[0] : findState(options.reload);
+        if (options.reload && !reloadState) {
+          throw new Error("No such reload state '" + (isString(options.reload) ? options.reload : options.reload.name) + "'");
+        }
+
+        while (state && state === fromPath[keep] && state !== reloadState) {
+          locals = toLocals[keep] = state.locals;
+          keep++;
+          state = toPath[keep];
+        }
+      }
+
+      // If we're going to the same state and all locals are kept, we've got nothing to do.
+      // But clear 'transition', as we still want to cancel any other pending transitions.
+      // TODO: We may not want to bump 'transition' if we're called from a location change
+      // that we've initiated ourselves, because we might accidentally abort a legitimate
+      // transition initiated from code?
+      if (shouldSkipReload(to, toParams, from, fromParams, locals, options)) {
+        if (hash) toParams['#'] = hash;
+        $state.params = toParams;
+        copy($state.params, $stateParams);
+        copy(filterByKeys(to.params.$$keys(), $stateParams), to.locals.globals.$stateParams);
+        if (options.location && to.navigable && to.navigable.url) {
+          $urlRouter.push(to.navigable.url, toParams, {
+            $$avoidResync: true, replace: options.location === 'replace'
+          });
+          $urlRouter.update(true);
+        }
+        $state.transition = null;
+        return $q.when($state.current);
+      }
+
+      // Filter parameters before we pass them to event handlers etc.
+      toParams = filterByKeys(to.params.$$keys(), toParams || {});
+      
+      // Re-add the saved hash before we start returning things or broadcasting $stateChangeStart
+      if (hash) toParams['#'] = hash;
+      
+      // Broadcast start event and cancel the transition if requested
+      if (options.notify) {
+        /**
+         * @ngdoc event
+         * @name ui.router.state.$state#$stateChangeStart
+         * @eventOf ui.router.state.$state
+         * @eventType broadcast on root scope
+         * @description
+         * Fired when the state transition **begins**. You can use `event.preventDefault()`
+         * to prevent the transition from happening and then the transition promise will be
+         * rejected with a `'transition prevented'` value.
+         *
+         * @param {Object} event Event object.
+         * @param {State} toState The state being transitioned to.
+         * @param {Object} toParams The params supplied to the `toState`.
+         * @param {State} fromState The current state, pre-transition.
+         * @param {Object} fromParams The params supplied to the `fromState`.
+         *
+         * @example
+         *
+         * <pre>
+         * $rootScope.$on('$stateChangeStart',
+         * function(event, toState, toParams, fromState, fromParams){
+         *     event.preventDefault();
+         *     // transitionTo() promise will be rejected with
+         *     // a 'transition prevented' error
+         * })
+         * </pre>
+         */
+        if ($rootScope.$broadcast('$stateChangeStart', to.self, toParams, from.self, fromParams, options).defaultPrevented) {
+          $rootScope.$broadcast('$stateChangeCancel', to.self, toParams, from.self, fromParams);
+          //Don't update and resync url if there's been a new transition started. see issue #2238, #600
+          if ($state.transition == null) $urlRouter.update();
+          return TransitionPrevented;
+        }
+      }
+
+      // Resolve locals for the remaining states, but don't update any global state just
+      // yet -- if anything fails to resolve the current state needs to remain untouched.
+      // We also set up an inheritance chain for the locals here. This allows the view directive
+      // to quickly look up the correct definition for each view in the current state. Even
+      // though we create the locals object itself outside resolveState(), it is initially
+      // empty and gets filled asynchronously. We need to keep track of the promise for the
+      // (fully resolved) current locals, and pass this down the chain.
+      var resolved = $q.when(locals);
+
+      for (var l = keep; l < toPath.length; l++, state = toPath[l]) {
+        locals = toLocals[l] = inherit(locals);
+        resolved = resolveState(state, toParams, state === to, resolved, locals, options);
+      }
+
+      // Once everything is resolved, we are ready to perform the actual transition
+      // and return a promise for the new state. We also keep track of what the
+      // current promise is, so that we can detect overlapping transitions and
+      // keep only the outcome of the last transition.
+      var transition = $state.transition = resolved.then(function () {
+        var l, entering, exiting;
+
+        if ($state.transition !== transition) {
+          $rootScope.$broadcast('$stateChangeCancel', to.self, toParams, from.self, fromParams);
+          return TransitionSuperseded;
+        }
+
+        // Exit 'from' states not kept
+        for (l = fromPath.length - 1; l >= keep; l--) {
+          exiting = fromPath[l];
+          if (exiting.self.onExit) {
+            $injector.invoke(exiting.self.onExit, exiting.self, exiting.locals.globals);
+          }
+          exiting.locals = null;
+        }
+
+        // Enter 'to' states not kept
+        for (l = keep; l < toPath.length; l++) {
+          entering = toPath[l];
+          entering.locals = toLocals[l];
+          if (entering.self.onEnter) {
+            $injector.invoke(entering.self.onEnter, entering.self, entering.locals.globals);
+          }
+        }
+
+        // Run it again, to catch any transitions in callbacks
+        if ($state.transition !== transition) {
+          $rootScope.$broadcast('$stateChangeCancel', to.self, toParams, from.self, fromParams);
+          return TransitionSuperseded;
+        }
+
+        // Update globals in $state
+        $state.$current = to;
+        $state.current = to.self;
+        $state.params = toParams;
+        copy($state.params, $stateParams);
+        $state.transition = null;
+
+        if (options.location && to.navigable) {
+          $urlRouter.push(to.navigable.url, to.navigable.locals.globals.$stateParams, {
+            $$avoidResync: true, replace: options.location === 'replace'
+          });
+        }
+
+        if (options.notify) {
+        /**
+         * @ngdoc event
+         * @name ui.router.state.$state#$stateChangeSuccess
+         * @eventOf ui.router.state.$state
+         * @eventType broadcast on root scope
+         * @description
+         * Fired once the state transition is **complete**.
+         *
+         * @param {Object} event Event object.
+         * @param {State} toState The state being transitioned to.
+         * @param {Object} toParams The params supplied to the `toState`.
+         * @param {State} fromState The current state, pre-transition.
+         * @param {Object} fromParams The params supplied to the `fromState`.
+         */
+          $rootScope.$broadcast('$stateChangeSuccess', to.self, toParams, from.self, fromParams);
+        }
+        $urlRouter.update(true);
+
+        return $state.current;
+      }).then(null, function (error) {
+        // propagate TransitionSuperseded error without emitting $stateChangeCancel
+        // as it was already emitted in the success handler above
+        if (error === TransitionSupersededError) return TransitionSuperseded;
+
+        if ($state.transition !== transition) {
+          $rootScope.$broadcast('$stateChangeCancel', to.self, toParams, from.self, fromParams);
+          return TransitionSuperseded;
+        }
+
+        $state.transition = null;
+        /**
+         * @ngdoc event
+         * @name ui.router.state.$state#$stateChangeError
+         * @eventOf ui.router.state.$state
+         * @eventType broadcast on root scope
+         * @description
+         * Fired when an **error occurs** during transition. It's important to note that if you
+         * have any errors in your resolve functions (javascript errors, non-existent services, etc)
+         * they will not throw traditionally. You must listen for this $stateChangeError event to
+         * catch **ALL** errors.
+         *
+         * @param {Object} event Event object.
+         * @param {State} toState The state being transitioned to.
+         * @param {Object} toParams The params supplied to the `toState`.
+         * @param {State} fromState The current state, pre-transition.
+         * @param {Object} fromParams The params supplied to the `fromState`.
+         * @param {Error} error The resolve error object.
+         */
+        evt = $rootScope.$broadcast('$stateChangeError', to.self, toParams, from.self, fromParams, error);
+
+        if (!evt.defaultPrevented) {
+          $urlRouter.update();
+        }
+
+        return $q.reject(error);
+      });
+
+      silenceUncaughtInPromise(transition);
+      return transition;
+    };
+
+    /**
+     * @ngdoc function
+     * @name ui.router.state.$state#is
+     * @methodOf ui.router.state.$state
+     *
+     * @description
+     * Similar to {@link ui.router.state.$state#methods_includes $state.includes},
+     * but only checks for the full state name. If params is supplied then it will be
+     * tested for strict equality against the current active params object, so all params
+     * must match with none missing and no extras.
+     *
+     * @example
+     * <pre>
+     * $state.$current.name = 'contacts.details.item';
+     *
+     * // absolute name
+     * $state.is('contact.details.item'); // returns true
+     * $state.is(contactDetailItemStateObject); // returns true
+     *
+     * // relative name (. and ^), typically from a template
+     * // E.g. from the 'contacts.details' template
+     * <div ng-class="{highlighted: $state.is('.item')}">Item</div>
+     * </pre>
+     *
+     * @param {string|object} stateOrName The state name (absolute or relative) or state object you'd like to check.
+     * @param {object=} params A param object, e.g. `{sectionId: section.id}`, that you'd like
+     * to test against the current active state.
+     * @param {object=} options An options object.  The options are:
+     *
+     * - **`relative`** - {string|object} -  If `stateOrName` is a relative state name and `options.relative` is set, .is will
+     * test relative to `options.relative` state (or name).
+     *
+     * @returns {boolean} Returns true if it is the state.
+     */
+    $state.is = function is(stateOrName, params, options) {
+      options = extend({ relative: $state.$current }, options || {});
+      var state = findState(stateOrName, options.relative);
+
+      if (!isDefined(state)) { return undefined; }
+      if ($state.$current !== state) { return false; }
+
+      return !params || objectKeys(params).reduce(function(acc, key) {
+        var paramDef = state.params[key];
+        return acc && !paramDef || paramDef.type.equals($stateParams[key], params[key]);
+      }, true);
+    };
+
+    /**
+     * @ngdoc function
+     * @name ui.router.state.$state#includes
+     * @methodOf ui.router.state.$state
+     *
+     * @description
+     * A method to determine if the current active state is equal to or is the child of the
+     * state stateName. If any params are passed then they will be tested for a match as well.
+     * Not all the parameters need to be passed, just the ones you'd like to test for equality.
+     *
+     * @example
+     * Partial and relative names
+     * <pre>
+     * $state.$current.name = 'contacts.details.item';
+     *
+     * // Using partial names
+     * $state.includes("contacts"); // returns true
+     * $state.includes("contacts.details"); // returns true
+     * $state.includes("contacts.details.item"); // returns true
+     * $state.includes("contacts.list"); // returns false
+     * $state.includes("about"); // returns false
+     *
+     * // Using relative names (. and ^), typically from a template
+     * // E.g. from the 'contacts.details' template
+     * <div ng-class="{highlighted: $state.includes('.item')}">Item</div>
+     * </pre>
+     *
+     * Basic globbing patterns
+     * <pre>
+     * $state.$current.name = 'contacts.details.item.url';
+     *
+     * $state.includes("*.details.*.*"); // returns true
+     * $state.includes("*.details.**"); // returns true
+     * $state.includes("**.item.**"); // returns true
+     * $state.includes("*.details.item.url"); // returns true
+     * $state.includes("*.details.*.url"); // returns true
+     * $state.includes("*.details.*"); // returns false
+     * $state.includes("item.**"); // returns false
+     * </pre>
+     *
+     * @param {string} stateOrName A partial name, relative name, or glob pattern
+     * to be searched for within the current state name.
+     * @param {object=} params A param object, e.g. `{sectionId: section.id}`,
+     * that you'd like to test against the current active state.
+     * @param {object=} options An options object.  The options are:
+     *
+     * - **`relative`** - {string|object=} -  If `stateOrName` is a relative state reference and `options.relative` is set,
+     * .includes will test relative to `options.relative` state (or name).
+     *
+     * @returns {boolean} Returns true if it does include the state
+     */
+    $state.includes = function includes(stateOrName, params, options) {
+      options = extend({ relative: $state.$current }, options || {});
+      if (isString(stateOrName) && isGlob(stateOrName)) {
+        if (!doesStateMatchGlob(stateOrName)) {
+          return false;
+        }
+        stateOrName = $state.$current.name;
+      }
+
+      var state = findState(stateOrName, options.relative);
+      if (!isDefined(state)) { return undefined; }
+      if (!isDefined($state.$current.includes[state.name])) { return false; }
+      if (!params) { return true; }
+
+      var keys = objectKeys(params);
+      for (var i = 0; i < keys.length; i++) {
+        var key = keys[i], paramDef = state.params[key];
+        if (paramDef && !paramDef.type.equals($stateParams[key], params[key])) {
+          return false;
+        }
+      }
+
+      return objectKeys(params).reduce(function(acc, key) {
+        var paramDef = state.params[key];
+        return acc && !paramDef || paramDef.type.equals($stateParams[key], params[key]);
+      }, true);
+    };
+
+
+    /**
+     * @ngdoc function
+     * @name ui.router.state.$state#href
+     * @methodOf ui.router.state.$state
+     *
+     * @description
+     * A url generation method that returns the compiled url for the given state populated with the given params.
+     *
+     * @example
+     * <pre>
+     * expect($state.href("about.person", { person: "bob" })).toEqual("/about/bob");
+     * </pre>
+     *
+     * @param {string|object} stateOrName The state name or state object you'd like to generate a url from.
+     * @param {object=} params An object of parameter values to fill the state's required parameters.
+     * @param {object=} options Options object. The options are:
+     *
+     * - **`lossy`** - {boolean=true} -  If true, and if there is no url associated with the state provided in the
+     *    first parameter, then the constructed href url will be built from the first navigable ancestor (aka
+     *    ancestor with a valid url).
+     * - **`inherit`** - {boolean=true}, If `true` will inherit url parameters from current url.
+     * - **`relative`** - {object=$state.$current}, When transitioning with relative path (e.g '^'), 
+     *    defines which state to be relative from.
+     * - **`absolute`** - {boolean=false},  If true will generate an absolute url, e.g. "http://www.example.com/fullurl".
+     * 
+     * @returns {string} compiled state url
+     */
+    $state.href = function href(stateOrName, params, options) {
+      options = extend({
+        lossy:    true,
+        inherit:  true,
+        absolute: false,
+        relative: $state.$current
+      }, options || {});
+
+      var state = findState(stateOrName, options.relative);
+
+      if (!isDefined(state)) return null;
+      if (options.inherit) params = inheritParams($stateParams, params || {}, $state.$current, state);
+      
+      var nav = (state && options.lossy) ? state.navigable : state;
+
+      if (!nav || nav.url === undefined || nav.url === null) {
+        return null;
+      }
+      return $urlRouter.href(nav.url, filterByKeys(state.params.$$keys().concat('#'), params || {}), {
+        absolute: options.absolute
+      });
+    };
+
+    /**
+     * @ngdoc function
+     * @name ui.router.state.$state#get
+     * @methodOf ui.router.state.$state
+     *
+     * @description
+     * Returns the state configuration object for any specific state or all states.
+     *
+     * @param {string|object=} stateOrName (absolute or relative) If provided, will only get the config for
+     * the requested state. If not provided, returns an array of ALL state configs.
+     * @param {string|object=} context When stateOrName is a relative state reference, the state will be retrieved relative to context.
+     * @returns {Object|Array} State configuration object or array of all objects.
+     */
+    $state.get = function (stateOrName, context) {
+      if (arguments.length === 0) return map(objectKeys(states), function(name) { return states[name].self; });
+      var state = findState(stateOrName, context || $state.$current);
+      return (state && state.self) ? state.self : null;
+    };
+
+    function resolveState(state, params, paramsAreFiltered, inherited, dst, options) {
+      // Make a restricted $stateParams with only the parameters that apply to this state if
+      // necessary. In addition to being available to the controller and onEnter/onExit callbacks,
+      // we also need $stateParams to be available for any $injector calls we make during the
+      // dependency resolution process.
+      var $stateParams = (paramsAreFiltered) ? params : filterByKeys(state.params.$$keys(), params);
+      var locals = { $stateParams: $stateParams };
+
+      // Resolve 'global' dependencies for the state, i.e. those not specific to a view.
+      // We're also including $stateParams in this; that way the parameters are restricted
+      // to the set that should be visible to the state, and are independent of when we update
+      // the global $state and $stateParams values.
+      dst.resolve = $resolve.resolve(state.resolve, locals, dst.resolve, state);
+      var promises = [dst.resolve.then(function (globals) {
+        dst.globals = globals;
+      })];
+      if (inherited) promises.push(inherited);
+
+      function resolveViews() {
+        var viewsPromises = [];
+
+        // Resolve template and dependencies for all views.
+        forEach(state.views, function (view, name) {
+          var injectables = (view.resolve && view.resolve !== state.resolve ? view.resolve : {});
+          injectables.$template = [ function () {
+            return $view.load(name, { view: view, locals: dst.globals, params: $stateParams, notify: options.notify }) || '';
+          }];
+
+          viewsPromises.push($resolve.resolve(injectables, dst.globals, dst.resolve, state).then(function (result) {
+            // References to the controller (only instantiated at link time)
+            if (isFunction(view.controllerProvider) || isArray(view.controllerProvider)) {
+              var injectLocals = angular.extend({}, injectables, dst.globals);
+              result.$$controller = $injector.invoke(view.controllerProvider, null, injectLocals);
+            } else {
+              result.$$controller = view.controller;
+            }
+            // Provide access to the state itself for internal use
+            result.$$state = state;
+            result.$$controllerAs = view.controllerAs;
+            result.$$resolveAs = view.resolveAs;
+            dst[name] = result;
+          }));
+        });
+
+        return $q.all(viewsPromises).then(function(){
+          return dst.globals;
+        });
+      }
+
+      // Wait for all the promises and then return the activation object
+      return $q.all(promises).then(resolveViews).then(function (values) {
+        return dst;
+      });
+    }
+
+    return $state;
+  }
+
+  function shouldSkipReload(to, toParams, from, fromParams, locals, options) {
+    // Return true if there are no differences in non-search (path/object) params, false if there are differences
+    function nonSearchParamsEqual(fromAndToState, fromParams, toParams) {
+      // Identify whether all the parameters that differ between `fromParams` and `toParams` were search params.
+      function notSearchParam(key) {
+        return fromAndToState.params[key].location != "search";
+      }
+      var nonQueryParamKeys = fromAndToState.params.$$keys().filter(notSearchParam);
+      var nonQueryParams = pick.apply({}, [fromAndToState.params].concat(nonQueryParamKeys));
+      var nonQueryParamSet = new $$UMFP.ParamSet(nonQueryParams);
+      return nonQueryParamSet.$$equals(fromParams, toParams);
+    }
+
+    // If reload was not explicitly requested
+    // and we're transitioning to the same state we're already in
+    // and    the locals didn't change
+    //     or they changed in a way that doesn't merit reloading
+    //        (reloadOnParams:false, or reloadOnSearch.false and only search params changed)
+    // Then return true.
+    if (!options.reload && to === from &&
+      (locals === from.locals || (to.self.reloadOnSearch === false && nonSearchParamsEqual(from, fromParams, toParams)))) {
+      return true;
+    }
+  }
+}
+
+angular.module('ui.router.state')
+  .factory('$stateParams', function () { return {}; })
+  .constant("$state.runtime", { autoinject: true })
+  .provider('$state', $StateProvider)
+  // Inject $state to initialize when entering runtime. #2574
+  .run(['$injector', function ($injector) {
+    // Allow tests (stateSpec.js) to turn this off by defining this constant
+    if ($injector.get("$state.runtime").autoinject) {
+      $injector.get('$state');
+    }
+  }]);
+
+
+$ViewProvider.$inject = [];
+function $ViewProvider() {
+
+  this.$get = $get;
+  /**
+   * @ngdoc object
+   * @name ui.router.state.$view
+   *
+   * @requires ui.router.util.$templateFactory
+   * @requires $rootScope
+   *
+   * @description
+   *
+   */
+  $get.$inject = ['$rootScope', '$templateFactory'];
+  function $get(   $rootScope,   $templateFactory) {
+    return {
+      // $view.load('full.viewName', { template: ..., controller: ..., resolve: ..., async: false, params: ... })
+      /**
+       * @ngdoc function
+       * @name ui.router.state.$view#load
+       * @methodOf ui.router.state.$view
+       *
+       * @description
+       *
+       * @param {string} name name
+       * @param {object} options option object.
+       */
+      load: function load(name, options) {
+        var result, defaults = {
+          template: null, controller: null, view: null, locals: null, notify: true, async: true, params: {}
+        };
+        options = extend(defaults, options);
+
+        if (options.view) {
+          result = $templateFactory.fromConfig(options.view, options.params, options.locals);
+        }
+        return result;
+      }
+    };
+  }
+}
+
+angular.module('ui.router.state').provider('$view', $ViewProvider);
+
+/**
+ * @ngdoc object
+ * @name ui.router.state.$uiViewScrollProvider
+ *
+ * @description
+ * Provider that returns the {@link ui.router.state.$uiViewScroll} service function.
+ */
+function $ViewScrollProvider() {
+
+  var useAnchorScroll = false;
+
+  /**
+   * @ngdoc function
+   * @name ui.router.state.$uiViewScrollProvider#useAnchorScroll
+   * @methodOf ui.router.state.$uiViewScrollProvider
+   *
+   * @description
+   * Reverts back to using the core [`$anchorScroll`](http://docs.angularjs.org/api/ng.$anchorScroll) service for
+   * scrolling based on the url anchor.
+   */
+  this.useAnchorScroll = function () {
+    useAnchorScroll = true;
+  };
+
+  /**
+   * @ngdoc object
+   * @name ui.router.state.$uiViewScroll
+   *
+   * @requires $anchorScroll
+   * @requires $timeout
+   *
+   * @description
+   * When called with a jqLite element, it scrolls the element into view (after a
+   * `$timeout` so the DOM has time to refresh).
+   *
+   * If you prefer to rely on `$anchorScroll` to scroll the view to the anchor,
+   * this can be enabled by calling {@link ui.router.state.$uiViewScrollProvider#methods_useAnchorScroll `$uiViewScrollProvider.useAnchorScroll()`}.
+   */
+  this.$get = ['$anchorScroll', '$timeout', function ($anchorScroll, $timeout) {
+    if (useAnchorScroll) {
+      return $anchorScroll;
+    }
+
+    return function ($element) {
+      return $timeout(function () {
+        $element[0].scrollIntoView();
+      }, 0, false);
+    };
+  }];
+}
+
+angular.module('ui.router.state').provider('$uiViewScroll', $ViewScrollProvider);
+
+/**
+ * @ngdoc directive
+ * @name ui.router.state.directive:ui-view
+ *
+ * @requires ui.router.state.$state
+ * @requires $compile
+ * @requires $controller
+ * @requires $injector
+ * @requires ui.router.state.$uiViewScroll
+ * @requires $document
+ *
+ * @restrict ECA
+ *
+ * @description
+ * The ui-view directive tells $state where to place your templates.
+ *
+ * @param {string=} name A view name. The name should be unique amongst the other views in the
+ * same state. You can have views of the same name that live in different states.
+ *
+ * @param {string=} autoscroll It allows you to set the scroll behavior of the browser window
+ * when a view is populated. By default, $anchorScroll is overridden by ui-router's custom scroll
+ * service, {@link ui.router.state.$uiViewScroll}. This custom service let's you
+ * scroll ui-view elements into view when they are populated during a state activation.
+ *
+ * *Note: To revert back to old [`$anchorScroll`](http://docs.angularjs.org/api/ng.$anchorScroll)
+ * functionality, call `$uiViewScrollProvider.useAnchorScroll()`.*
+ *
+ * @param {string=} onload Expression to evaluate whenever the view updates.
+ *
+ * @example
+ * A view can be unnamed or named.
+ * <pre>
+ * <!-- Unnamed -->
+ * <div ui-view></div>
+ *
+ * <!-- Named -->
+ * <div ui-view="viewName"></div>
+ * </pre>
+ *
+ * You can only have one unnamed view within any template (or root html). If you are only using a
+ * single view and it is unnamed then you can populate it like so:
+ * <pre>
+ * <div ui-view></div>
+ * $stateProvider.state("home", {
+ *   template: "<h1>HELLO!</h1>"
+ * })
+ * </pre>
+ *
+ * The above is a convenient shortcut equivalent to specifying your view explicitly with the {@link ui.router.state.$stateProvider#methods_state `views`}
+ * config property, by name, in this case an empty name:
+ * <pre>
+ * $stateProvider.state("home", {
+ *   views: {
+ *     "": {
+ *       template: "<h1>HELLO!</h1>"
+ *     }
+ *   }    
+ * })
+ * </pre>
+ *
+ * But typically you'll only use the views property if you name your view or have more than one view
+ * in the same template. There's not really a compelling reason to name a view if its the only one,
+ * but you could if you wanted, like so:
+ * <pre>
+ * <div ui-view="main"></div>
+ * </pre>
+ * <pre>
+ * $stateProvider.state("home", {
+ *   views: {
+ *     "main": {
+ *       template: "<h1>HELLO!</h1>"
+ *     }
+ *   }    
+ * })
+ * </pre>
+ *
+ * Really though, you'll use views to set up multiple views:
+ * <pre>
+ * <div ui-view></div>
+ * <div ui-view="chart"></div>
+ * <div ui-view="data"></div>
+ * </pre>
+ *
+ * <pre>
+ * $stateProvider.state("home", {
+ *   views: {
+ *     "": {
+ *       template: "<h1>HELLO!</h1>"
+ *     },
+ *     "chart": {
+ *       template: "<chart_thing/>"
+ *     },
+ *     "data": {
+ *       template: "<data_thing/>"
+ *     }
+ *   }    
+ * })
+ * </pre>
+ *
+ * Examples for `autoscroll`:
+ *
+ * <pre>
+ * <!-- If autoscroll present with no expression,
+ *      then scroll ui-view into view -->
+ * <ui-view autoscroll/>
+ *
+ * <!-- If autoscroll present with valid expression,
+ *      then scroll ui-view into view if expression evaluates to true -->
+ * <ui-view autoscroll='true'/>
+ * <ui-view autoscroll='false'/>
+ * <ui-view autoscroll='scopeVariable'/>
+ * </pre>
+ *
+ * Resolve data:
+ *
+ * The resolved data from the state's `resolve` block is placed on the scope as `$resolve` (this
+ * can be customized using [[ViewDeclaration.resolveAs]]).  This can be then accessed from the template.
+ *
+ * Note that when `controllerAs` is being used, `$resolve` is set on the controller instance *after* the
+ * controller is instantiated.  The `$onInit()` hook can be used to perform initialization code which
+ * depends on `$resolve` data.
+ *
+ * Example usage of $resolve in a view template
+ * <pre>
+ * $stateProvider.state('home', {
+ *   template: '<my-component user="$resolve.user"></my-component>',
+ *   resolve: {
+ *     user: function(UserService) { return UserService.fetchUser(); }
+ *   }
+ * });
+ * </pre>
+ */
+$ViewDirective.$inject = ['$state', '$injector', '$uiViewScroll', '$interpolate', '$q'];
+function $ViewDirective(   $state,   $injector,   $uiViewScroll,   $interpolate,   $q) {
+
+  function getService() {
+    return ($injector.has) ? function(service) {
+      return $injector.has(service) ? $injector.get(service) : null;
+    } : function(service) {
+      try {
+        return $injector.get(service);
+      } catch (e) {
+        return null;
+      }
+    };
+  }
+
+  var service = getService(),
+      $animator = service('$animator'),
+      $animate = service('$animate');
+
+  // Returns a set of DOM manipulation functions based on which Angular version
+  // it should use
+  function getRenderer(attrs, scope) {
+    var statics = function() {
+      return {
+        enter: function (element, target, cb) { target.after(element); cb(); },
+        leave: function (element, cb) { element.remove(); cb(); }
+      };
+    };
+
+    if ($animate) {
+      return {
+        enter: function(element, target, cb) {
+          if (angular.version.minor > 2) {
+            $animate.enter(element, null, target).then(cb);
+          } else {
+            $animate.enter(element, null, target, cb);
+          }
+        },
+        leave: function(element, cb) {
+          if (angular.version.minor > 2) {
+            $animate.leave(element).then(cb);
+          } else {
+            $animate.leave(element, cb);
+          }
+        }
+      };
+    }
+
+    if ($animator) {
+      var animate = $animator && $animator(scope, attrs);
+
+      return {
+        enter: function(element, target, cb) {animate.enter(element, null, target); cb(); },
+        leave: function(element, cb) { animate.leave(element); cb(); }
+      };
+    }
+
+    return statics();
+  }
+
+  var directive = {
+    restrict: 'ECA',
+    terminal: true,
+    priority: 400,
+    transclude: 'element',
+    compile: function (tElement, tAttrs, $transclude) {
+      return function (scope, $element, attrs) {
+        var previousEl, currentEl, currentScope, latestLocals,
+            onloadExp     = attrs.onload || '',
+            autoScrollExp = attrs.autoscroll,
+            renderer      = getRenderer(attrs, scope),
+            inherited     = $element.inheritedData('$uiView');
+
+        scope.$on('$stateChangeSuccess', function() {
+          updateView(false);
+        });
+
+        updateView(true);
+
+        function cleanupLastView() {
+          if (previousEl) {
+            previousEl.remove();
+            previousEl = null;
+          }
+
+          if (currentScope) {
+            currentScope.$destroy();
+            currentScope = null;
+          }
+
+          if (currentEl) {
+            var $uiViewData = currentEl.data('$uiViewAnim');
+            renderer.leave(currentEl, function() {
+              $uiViewData.$$animLeave.resolve();
+              previousEl = null;
+            });
+
+            previousEl = currentEl;
+            currentEl = null;
+          }
+        }
+
+        function updateView(firstTime) {
+          var newScope,
+              name            = getUiViewName(scope, attrs, $element, $interpolate),
+              previousLocals  = name && $state.$current && $state.$current.locals[name];
+
+          if (!firstTime && previousLocals === latestLocals) return; // nothing to do
+          newScope = scope.$new();
+          latestLocals = $state.$current.locals[name];
+
+          /**
+           * @ngdoc event
+           * @name ui.router.state.directive:ui-view#$viewContentLoading
+           * @eventOf ui.router.state.directive:ui-view
+           * @eventType emits on ui-view directive scope
+           * @description
+           *
+           * Fired once the view **begins loading**, *before* the DOM is rendered.
+           *
+           * @param {Object} event Event object.
+           * @param {string} viewName Name of the view.
+           */
+          newScope.$emit('$viewContentLoading', name);
+
+          var clone = $transclude(newScope, function(clone) {
+            var animEnter = $q.defer(), animLeave = $q.defer();
+            var viewAnimData = {
+              $animEnter: animEnter.promise,
+              $animLeave: animLeave.promise,
+              $$animLeave: animLeave
+            };
+
+            clone.data('$uiViewAnim', viewAnimData);
+            renderer.enter(clone, $element, function onUiViewEnter() {
+              animEnter.resolve();
+              if(currentScope) {
+                currentScope.$emit('$viewContentAnimationEnded');
+              }
+
+              if (angular.isDefined(autoScrollExp) && !autoScrollExp || scope.$eval(autoScrollExp)) {
+                $uiViewScroll(clone);
+              }
+            });
+            cleanupLastView();
+          });
+
+          currentEl = clone;
+          currentScope = newScope;
+          /**
+           * @ngdoc event
+           * @name ui.router.state.directive:ui-view#$viewContentLoaded
+           * @eventOf ui.router.state.directive:ui-view
+           * @eventType emits on ui-view directive scope
+           * @description
+           * Fired once the view is **loaded**, *after* the DOM is rendered.
+           *
+           * @param {Object} event Event object.
+           * @param {string} viewName Name of the view.
+           */
+          currentScope.$emit('$viewContentLoaded', name);
+          currentScope.$eval(onloadExp);
+        }
+      };
+    }
+  };
+
+  return directive;
+}
+
+$ViewDirectiveFill.$inject = ['$compile', '$controller', '$state', '$interpolate'];
+function $ViewDirectiveFill (  $compile,   $controller,   $state,   $interpolate) {
+  return {
+    restrict: 'ECA',
+    priority: -400,
+    compile: function (tElement) {
+      var initial = tElement.html();
+      if (tElement.empty) {
+        tElement.empty();
+      } else {
+        // ng 1.0.0 doesn't have empty(), which cleans up data and handlers
+        tElement[0].innerHTML = null;
+      }
+
+      return function (scope, $element, attrs) {
+        var current = $state.$current,
+            name = getUiViewName(scope, attrs, $element, $interpolate),
+            locals  = current && current.locals[name];
+
+        if (! locals) {
+          $element.html(initial);
+          $compile($element.contents())(scope);
+          return;
+        }
+
+        $element.data('$uiView', { name: name, state: locals.$$state });
+        $element.html(locals.$template ? locals.$template : initial);
+
+        var resolveData = angular.extend({}, locals);
+        scope[locals.$$resolveAs] = resolveData;
+
+        var link = $compile($element.contents());
+
+        if (locals.$$controller) {
+          locals.$scope = scope;
+          locals.$element = $element;
+          var controller = $controller(locals.$$controller, locals);
+          if (locals.$$controllerAs) {
+            scope[locals.$$controllerAs] = controller;
+            scope[locals.$$controllerAs][locals.$$resolveAs] = resolveData;
+          }
+          if (isFunction(controller.$onInit)) controller.$onInit();
+          $element.data('$ngControllerController', controller);
+          $element.children().data('$ngControllerController', controller);
+        }
+
+        link(scope);
+      };
+    }
+  };
+}
+
+/**
+ * Shared ui-view code for both directives:
+ * Given scope, element, and its attributes, return the view's name
+ */
+function getUiViewName(scope, attrs, element, $interpolate) {
+  var name = $interpolate(attrs.uiView || attrs.name || '')(scope);
+  var uiViewCreatedBy = element.inheritedData('$uiView');
+  return name.indexOf('@') >= 0 ?  name :  (name + '@' + (uiViewCreatedBy ? uiViewCreatedBy.state.name : ''));
+}
+
+angular.module('ui.router.state').directive('uiView', $ViewDirective);
+angular.module('ui.router.state').directive('uiView', $ViewDirectiveFill);
+
+function parseStateRef(ref, current) {
+  var preparsed = ref.match(/^\s*({[^}]*})\s*$/), parsed;
+  if (preparsed) ref = current + '(' + preparsed[1] + ')';
+  parsed = ref.replace(/\n/g, " ").match(/^([^(]+?)\s*(\((.*)\))?$/);
+  if (!parsed || parsed.length !== 4) throw new Error("Invalid state ref '" + ref + "'");
+  return { state: parsed[1], paramExpr: parsed[3] || null };
+}
+
+function stateContext(el) {
+  var stateData = el.parent().inheritedData('$uiView');
+
+  if (stateData && stateData.state && stateData.state.name) {
+    return stateData.state;
+  }
+}
+
+function getTypeInfo(el) {
+  // SVGAElement does not use the href attribute, but rather the 'xlinkHref' attribute.
+  var isSvg = Object.prototype.toString.call(el.prop('href')) === '[object SVGAnimatedString]';
+  var isForm = el[0].nodeName === "FORM";
+
+  return {
+    attr: isForm ? "action" : (isSvg ? 'xlink:href' : 'href'),
+    isAnchor: el.prop("tagName").toUpperCase() === "A",
+    clickable: !isForm
+  };
+}
+
+function clickHook(el, $state, $timeout, type, current) {
+  return function(e) {
+    var button = e.which || e.button, target = current();
+
+    if (!(button > 1 || e.ctrlKey || e.metaKey || e.shiftKey || el.attr('target'))) {
+      // HACK: This is to allow ng-clicks to be processed before the transition is initiated:
+      var transition = $timeout(function() {
+        $state.go(target.state, target.params, target.options);
+      });
+      e.preventDefault();
+
+      // if the state has no URL, ignore one preventDefault from the <a> directive.
+      var ignorePreventDefaultCount = type.isAnchor && !target.href ? 1: 0;
+
+      e.preventDefault = function() {
+        if (ignorePreventDefaultCount-- <= 0) $timeout.cancel(transition);
+      };
+    }
+  };
+}
+
+function defaultOpts(el, $state) {
+  return { relative: stateContext(el) || $state.$current, inherit: true };
+}
+
+/**
+ * @ngdoc directive
+ * @name ui.router.state.directive:ui-sref
+ *
+ * @requires ui.router.state.$state
+ * @requires $timeout
+ *
+ * @restrict A
+ *
+ * @description
+ * A directive that binds a link (`<a>` tag) to a state. If the state has an associated
+ * URL, the directive will automatically generate & update the `href` attribute via
+ * the {@link ui.router.state.$state#methods_href $state.href()} method. Clicking
+ * the link will trigger a state transition with optional parameters.
+ *
+ * Also middle-clicking, right-clicking, and ctrl-clicking on the link will be
+ * handled natively by the browser.
+ *
+ * You can also use relative state paths within ui-sref, just like the relative
+ * paths passed to `$state.go()`. You just need to be aware that the path is relative
+ * to the state that the link lives in, in other words the state that loaded the
+ * template containing the link.
+ *
+ * You can specify options to pass to {@link ui.router.state.$state#methods_go $state.go()}
+ * using the `ui-sref-opts` attribute. Options are restricted to `location`, `inherit`,
+ * and `reload`.
+ *
+ * @example
+ * Here's an example of how you'd use ui-sref and how it would compile. If you have the
+ * following template:
+ * <pre>
+ * <a ui-sref="home">Home</a> | <a ui-sref="about">About</a> | <a ui-sref="{page: 2}">Next page</a>
+ *
+ * <ul>
+ *     <li ng-repeat="contact in contacts">
+ *         <a ui-sref="contacts.detail({ id: contact.id })">{{ contact.name }}</a>
+ *     </li>
+ * </ul>
+ * </pre>
+ *
+ * Then the compiled html would be (assuming Html5Mode is off and current state is contacts):
+ * <pre>
+ * <a href="#/home" ui-sref="home">Home</a> | <a href="#/about" ui-sref="about">About</a> | <a href="#/contacts?page=2" ui-sref="{page: 2}">Next page</a>
+ *
+ * <ul>
+ *     <li ng-repeat="contact in contacts">
+ *         <a href="#/contacts/1" ui-sref="contacts.detail({ id: contact.id })">Joe</a>
+ *     </li>
+ *     <li ng-repeat="contact in contacts">
+ *         <a href="#/contacts/2" ui-sref="contacts.detail({ id: contact.id })">Alice</a>
+ *     </li>
+ *     <li ng-repeat="contact in contacts">
+ *         <a href="#/contacts/3" ui-sref="contacts.detail({ id: contact.id })">Bob</a>
+ *     </li>
+ * </ul>
+ *
+ * <a ui-sref="home" ui-sref-opts="{reload: true}">Home</a>
+ * </pre>
+ *
+ * @param {string} ui-sref 'stateName' can be any valid absolute or relative state
+ * @param {Object} ui-sref-opts options to pass to {@link ui.router.state.$state#methods_go $state.go()}
+ */
+$StateRefDirective.$inject = ['$state', '$timeout'];
+function $StateRefDirective($state, $timeout) {
+  return {
+    restrict: 'A',
+    require: ['?^uiSrefActive', '?^uiSrefActiveEq'],
+    link: function(scope, element, attrs, uiSrefActive) {
+      var ref    = parseStateRef(attrs.uiSref, $state.current.name);
+      var def    = { state: ref.state, href: null, params: null };
+      var type   = getTypeInfo(element);
+      var active = uiSrefActive[1] || uiSrefActive[0];
+      var unlinkInfoFn = null;
+      var hookFn;
+
+      def.options = extend(defaultOpts(element, $state), attrs.uiSrefOpts ? scope.$eval(attrs.uiSrefOpts) : {});
+
+      var update = function(val) {
+        if (val) def.params = angular.copy(val);
+        def.href = $state.href(ref.state, def.params, def.options);
+
+        if (unlinkInfoFn) unlinkInfoFn();
+        if (active) unlinkInfoFn = active.$$addStateInfo(ref.state, def.params);
+        if (def.href !== null) attrs.$set(type.attr, def.href);
+      };
+
+      if (ref.paramExpr) {
+        scope.$watch(ref.paramExpr, function(val) { if (val !== def.params) update(val); }, true);
+        def.params = angular.copy(scope.$eval(ref.paramExpr));
+      }
+      update();
+
+      if (!type.clickable) return;
+      hookFn = clickHook(element, $state, $timeout, type, function() { return def; });
+      element[element.on ? 'on' : 'bind']("click", hookFn);
+      scope.$on('$destroy', function() {
+        element[element.off ? 'off' : 'unbind']("click", hookFn);
+      });
+    }
+  };
+}
+
+/**
+ * @ngdoc directive
+ * @name ui.router.state.directive:ui-state
+ *
+ * @requires ui.router.state.uiSref
+ *
+ * @restrict A
+ *
+ * @description
+ * Much like ui-sref, but will accept named $scope properties to evaluate for a state definition,
+ * params and override options.
+ *
+ * @param {string} ui-state 'stateName' can be any valid absolute or relative state
+ * @param {Object} ui-state-params params to pass to {@link ui.router.state.$state#methods_href $state.href()}
+ * @param {Object} ui-state-opts options to pass to {@link ui.router.state.$state#methods_go $state.go()}
+ */
+$StateRefDynamicDirective.$inject = ['$state', '$timeout'];
+function $StateRefDynamicDirective($state, $timeout) {
+  return {
+    restrict: 'A',
+    require: ['?^uiSrefActive', '?^uiSrefActiveEq'],
+    link: function(scope, element, attrs, uiSrefActive) {
+      var type   = getTypeInfo(element);
+      var active = uiSrefActive[1] || uiSrefActive[0];
+      var group  = [attrs.uiState, attrs.uiStateParams || null, attrs.uiStateOpts || null];
+      var watch  = '[' + group.map(function(val) { return val || 'null'; }).join(', ') + ']';
+      var def    = { state: null, params: null, options: null, href: null };
+      var unlinkInfoFn = null;
+      var hookFn;
+
+      function runStateRefLink (group) {
+        def.state = group[0]; def.params = group[1]; def.options = group[2];
+        def.href = $state.href(def.state, def.params, def.options);
+
+        if (unlinkInfoFn) unlinkInfoFn();
+        if (active) unlinkInfoFn = active.$$addStateInfo(def.state, def.params);
+        if (def.href) attrs.$set(type.attr, def.href);
+      }
+
+      scope.$watch(watch, runStateRefLink, true);
+      runStateRefLink(scope.$eval(watch));
+
+      if (!type.clickable) return;
+      hookFn = clickHook(element, $state, $timeout, type, function() { return def; });
+      element[element.on ? 'on' : 'bind']("click", hookFn);
+      scope.$on('$destroy', function() {
+        element[element.off ? 'off' : 'unbind']("click", hookFn);
+      });
+    }
+  };
+}
+
+
+/**
+ * @ngdoc directive
+ * @name ui.router.state.directive:ui-sref-active
+ *
+ * @requires ui.router.state.$state
+ * @requires ui.router.state.$stateParams
+ * @requires $interpolate
+ *
+ * @restrict A
+ *
+ * @description
+ * A directive working alongside ui-sref to add classes to an element when the
+ * related ui-sref directive's state is active, and removing them when it is inactive.
+ * The primary use-case is to simplify the special appearance of navigation menus
+ * relying on `ui-sref`, by having the "active" state's menu button appear different,
+ * distinguishing it from the inactive menu items.
+ *
+ * ui-sref-active can live on the same element as ui-sref or on a parent element. The first
+ * ui-sref-active found at the same level or above the ui-sref will be used.
+ *
+ * Will activate when the ui-sref's target state or any child state is active. If you
+ * need to activate only when the ui-sref target state is active and *not* any of
+ * it's children, then you will use
+ * {@link ui.router.state.directive:ui-sref-active-eq ui-sref-active-eq}
+ *
+ * @example
+ * Given the following template:
+ * <pre>
+ * <ul>
+ *   <li ui-sref-active="active" class="item">
+ *     <a href ui-sref="app.user({user: 'bilbobaggins'})">@bilbobaggins</a>
+ *   </li>
+ * </ul>
+ * </pre>
+ *
+ *
+ * When the app state is "app.user" (or any children states), and contains the state parameter "user" with value "bilbobaggins",
+ * the resulting HTML will appear as (note the 'active' class):
+ * <pre>
+ * <ul>
+ *   <li ui-sref-active="active" class="item active">
+ *     <a ui-sref="app.user({user: 'bilbobaggins'})" href="/users/bilbobaggins">@bilbobaggins</a>
+ *   </li>
+ * </ul>
+ * </pre>
+ *
+ * The class name is interpolated **once** during the directives link time (any further changes to the
+ * interpolated value are ignored).
+ *
+ * Multiple classes may be specified in a space-separated format:
+ * <pre>
+ * <ul>
+ *   <li ui-sref-active='class1 class2 class3'>
+ *     <a ui-sref="app.user">link</a>
+ *   </li>
+ * </ul>
+ * </pre>
+ *
+ * It is also possible to pass ui-sref-active an expression that evaluates
+ * to an object hash, whose keys represent active class names and whose
+ * values represent the respective state names/globs.
+ * ui-sref-active will match if the current active state **includes** any of
+ * the specified state names/globs, even the abstract ones.
+ *
+ * @Example
+ * Given the following template, with "admin" being an abstract state:
+ * <pre>
+ * <div ui-sref-active="{'active': 'admin.*'}">
+ *   <a ui-sref-active="active" ui-sref="admin.roles">Roles</a>
+ * </div>
+ * </pre>
+ *
+ * When the current state is "admin.roles" the "active" class will be applied
+ * to both the <div> and <a> elements. It is important to note that the state
+ * names/globs passed to ui-sref-active shadow the state provided by ui-sref.
+ */
+
+/**
+ * @ngdoc directive
+ * @name ui.router.state.directive:ui-sref-active-eq
+ *
+ * @requires ui.router.state.$state
+ * @requires ui.router.state.$stateParams
+ * @requires $interpolate
+ *
+ * @restrict A
+ *
+ * @description
+ * The same as {@link ui.router.state.directive:ui-sref-active ui-sref-active} but will only activate
+ * when the exact target state used in the `ui-sref` is active; no child states.
+ *
+ */
+$StateRefActiveDirective.$inject = ['$state', '$stateParams', '$interpolate'];
+function $StateRefActiveDirective($state, $stateParams, $interpolate) {
+  return  {
+    restrict: "A",
+    controller: ['$scope', '$element', '$attrs', '$timeout', function ($scope, $element, $attrs, $timeout) {
+      var states = [], activeClasses = {}, activeEqClass, uiSrefActive;
+
+      // There probably isn't much point in $observing this
+      // uiSrefActive and uiSrefActiveEq share the same directive object with some
+      // slight difference in logic routing
+      activeEqClass = $interpolate($attrs.uiSrefActiveEq || '', false)($scope);
+
+      try {
+        uiSrefActive = $scope.$eval($attrs.uiSrefActive);
+      } catch (e) {
+        // Do nothing. uiSrefActive is not a valid expression.
+        // Fall back to using $interpolate below
+      }
+      uiSrefActive = uiSrefActive || $interpolate($attrs.uiSrefActive || '', false)($scope);
+      if (isObject(uiSrefActive)) {
+        forEach(uiSrefActive, function(stateOrName, activeClass) {
+          if (isString(stateOrName)) {
+            var ref = parseStateRef(stateOrName, $state.current.name);
+            addState(ref.state, $scope.$eval(ref.paramExpr), activeClass);
+          }
+        });
+      }
+
+      // Allow uiSref to communicate with uiSrefActive[Equals]
+      this.$$addStateInfo = function (newState, newParams) {
+        // we already got an explicit state provided by ui-sref-active, so we
+        // shadow the one that comes from ui-sref
+        if (isObject(uiSrefActive) && states.length > 0) {
+          return;
+        }
+        var deregister = addState(newState, newParams, uiSrefActive);
+        update();
+        return deregister;
+      };
+
+      $scope.$on('$stateChangeSuccess', update);
+
+      function addState(stateName, stateParams, activeClass) {
+        var state = $state.get(stateName, stateContext($element));
+        var stateHash = createStateHash(stateName, stateParams);
+
+        var stateInfo = {
+          state: state || { name: stateName },
+          params: stateParams,
+          hash: stateHash
+        };
+
+        states.push(stateInfo);
+        activeClasses[stateHash] = activeClass;
+
+        return function removeState() {
+          var idx = states.indexOf(stateInfo);
+          if (idx !== -1) states.splice(idx, 1);
+        };
+      }
+
+      /**
+       * @param {string} state
+       * @param {Object|string} [params]
+       * @return {string}
+       */
+      function createStateHash(state, params) {
+        if (!isString(state)) {
+          throw new Error('state should be a string');
+        }
+        if (isObject(params)) {
+          return state + toJson(params);
+        }
+        params = $scope.$eval(params);
+        if (isObject(params)) {
+          return state + toJson(params);
+        }
+        return state;
+      }
+
+      // Update route state
+      function update() {
+        for (var i = 0; i < states.length; i++) {
+          if (anyMatch(states[i].state, states[i].params)) {
+            addClass($element, activeClasses[states[i].hash]);
+          } else {
+            removeClass($element, activeClasses[states[i].hash]);
+          }
+
+          if (exactMatch(states[i].state, states[i].params)) {
+            addClass($element, activeEqClass);
+          } else {
+            removeClass($element, activeEqClass);
+          }
+        }
+      }
+
+      function addClass(el, className) { $timeout(function () { el.addClass(className); }); }
+      function removeClass(el, className) { el.removeClass(className); }
+      function anyMatch(state, params) { return $state.includes(state.name, params); }
+      function exactMatch(state, params) { return $state.is(state.name, params); }
+
+      update();
+    }]
+  };
+}
+
+angular.module('ui.router.state')
+  .directive('uiSref', $StateRefDirective)
+  .directive('uiSrefActive', $StateRefActiveDirective)
+  .directive('uiSrefActiveEq', $StateRefActiveDirective)
+  .directive('uiState', $StateRefDynamicDirective);
+
+/**
+ * @ngdoc filter
+ * @name ui.router.state.filter:isState
+ *
+ * @requires ui.router.state.$state
+ *
+ * @description
+ * Translates to {@link ui.router.state.$state#methods_is $state.is("stateName")}.
+ */
+$IsStateFilter.$inject = ['$state'];
+function $IsStateFilter($state) {
+  var isFilter = function (state, params) {
+    return $state.is(state, params);
+  };
+  isFilter.$stateful = true;
+  return isFilter;
+}
+
+/**
+ * @ngdoc filter
+ * @name ui.router.state.filter:includedByState
+ *
+ * @requires ui.router.state.$state
+ *
+ * @description
+ * Translates to {@link ui.router.state.$state#methods_includes $state.includes('fullOrPartialStateName')}.
+ */
+$IncludedByStateFilter.$inject = ['$state'];
+function $IncludedByStateFilter($state) {
+  var includesFilter = function (state, params, options) {
+    return $state.includes(state, params, options);
+  };
+  includesFilter.$stateful = true;
+  return  includesFilter;
+}
+
+angular.module('ui.router.state')
+  .filter('isState', $IsStateFilter)
+  .filter('includedByState', $IncludedByStateFilter);
+})(window, window.angular);
+
+/***/ }),
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var cof = __webpack_require__(18);
@@ -2554,7 +7251,7 @@ module.exports = function(it, msg){
 };
 
 /***/ }),
-/* 86 */
+/* 88 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2586,7 +7283,7 @@ module.exports = [].copyWithin || function copyWithin(target/*= 0*/, start/*= 0,
 };
 
 /***/ }),
-/* 87 */
+/* 89 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var forOf = __webpack_require__(41);
@@ -2599,12 +7296,12 @@ module.exports = function(iter, ITERATOR){
 
 
 /***/ }),
-/* 88 */
+/* 90 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var aFunction = __webpack_require__(11)
   , toObject  = __webpack_require__(9)
-  , IObject   = __webpack_require__(46)
+  , IObject   = __webpack_require__(47)
   , toLength  = __webpack_require__(8);
 
 module.exports = function(that, callbackfn, aLen, memo, isRight){
@@ -2632,14 +7329,14 @@ module.exports = function(that, callbackfn, aLen, memo, isRight){
 };
 
 /***/ }),
-/* 89 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var aFunction  = __webpack_require__(11)
   , isObject   = __webpack_require__(4)
-  , invoke     = __webpack_require__(52)
+  , invoke     = __webpack_require__(53)
   , arraySlice = [].slice
   , factories  = {};
 
@@ -2662,7 +7359,7 @@ module.exports = Function.bind || function bind(that /*, args... */){
 };
 
 /***/ }),
-/* 90 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2674,8 +7371,8 @@ var dP          = __webpack_require__(7).f
   , anInstance  = __webpack_require__(31)
   , defined     = __webpack_require__(19)
   , forOf       = __webpack_require__(41)
-  , $iterDefine = __webpack_require__(69)
-  , step        = __webpack_require__(96)
+  , $iterDefine = __webpack_require__(70)
+  , step        = __webpack_require__(98)
   , setSpecies  = __webpack_require__(37)
   , DESCRIPTORS = __webpack_require__(6)
   , fastKey     = __webpack_require__(28).fastKey
@@ -2810,12 +7507,12 @@ module.exports = {
 };
 
 /***/ }),
-/* 91 */
+/* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/DavidBruant/Map-Set.prototype.toJSON
-var classof = __webpack_require__(45)
-  , from    = __webpack_require__(87);
+var classof = __webpack_require__(46)
+  , from    = __webpack_require__(89);
 module.exports = function(NAME){
   return function toJSON(){
     if(classof(this) != NAME)throw TypeError(NAME + "#toJSON isn't generic");
@@ -2824,7 +7521,7 @@ module.exports = function(NAME){
 };
 
 /***/ }),
-/* 92 */
+/* 94 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2913,15 +7610,15 @@ module.exports = {
 };
 
 /***/ }),
-/* 93 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = !__webpack_require__(6) && !__webpack_require__(3)(function(){
-  return Object.defineProperty(__webpack_require__(61)('div'), 'a', {get: function(){ return 7; }}).a != 7;
+  return Object.defineProperty(__webpack_require__(62)('div'), 'a', {get: function(){ return 7; }}).a != 7;
 });
 
 /***/ }),
-/* 94 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.3 Number.isInteger(number)
@@ -2932,7 +7629,7 @@ module.exports = function isInteger(it){
 };
 
 /***/ }),
-/* 95 */
+/* 97 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // call something on iterator step with safe closing on error
@@ -2949,7 +7646,7 @@ module.exports = function(iterator, fn, value, entries){
 };
 
 /***/ }),
-/* 96 */
+/* 98 */
 /***/ (function(module, exports) {
 
 module.exports = function(done, value){
@@ -2957,7 +7654,7 @@ module.exports = function(done, value){
 };
 
 /***/ }),
-/* 97 */
+/* 99 */
 /***/ (function(module, exports) {
 
 // 20.2.2.20 Math.log1p(x)
@@ -2966,17 +7663,17 @@ module.exports = Math.log1p || function log1p(x){
 };
 
 /***/ }),
-/* 98 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // 19.1.2.1 Object.assign(target, source, ...)
 var getKeys  = __webpack_require__(35)
-  , gOPS     = __webpack_require__(56)
-  , pIE      = __webpack_require__(47)
+  , gOPS     = __webpack_require__(57)
+  , pIE      = __webpack_require__(48)
   , toObject = __webpack_require__(9)
-  , IObject  = __webpack_require__(46)
+  , IObject  = __webpack_require__(47)
   , $assign  = Object.assign;
 
 // should work with symbols and should have deterministic property order (V8 bug)
@@ -3005,7 +7702,7 @@ module.exports = !$assign || __webpack_require__(3)(function(){
 } : $assign;
 
 /***/ }),
-/* 99 */
+/* 101 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var dP       = __webpack_require__(7)
@@ -3023,7 +7720,7 @@ module.exports = __webpack_require__(6) ? Object.defineProperties : function def
 };
 
 /***/ }),
-/* 100 */
+/* 102 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // fallback for IE11 buggy Object.getOwnPropertyNames with iframe and window
@@ -3048,13 +7745,13 @@ module.exports.f = function getOwnPropertyNames(it){
 
 
 /***/ }),
-/* 101 */
+/* 103 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var has          = __webpack_require__(10)
   , toIObject    = __webpack_require__(15)
-  , arrayIndexOf = __webpack_require__(48)(false)
-  , IE_PROTO     = __webpack_require__(74)('IE_PROTO');
+  , arrayIndexOf = __webpack_require__(49)(false)
+  , IE_PROTO     = __webpack_require__(75)('IE_PROTO');
 
 module.exports = function(object, names){
   var O      = toIObject(object)
@@ -3070,12 +7767,12 @@ module.exports = function(object, names){
 };
 
 /***/ }),
-/* 102 */
+/* 104 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getKeys   = __webpack_require__(35)
   , toIObject = __webpack_require__(15)
-  , isEnum    = __webpack_require__(47).f;
+  , isEnum    = __webpack_require__(48).f;
 module.exports = function(isEntries){
   return function(it){
     var O      = toIObject(it)
@@ -3091,12 +7788,12 @@ module.exports = function(isEntries){
 };
 
 /***/ }),
-/* 103 */
+/* 105 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // all object keys, includes non-enumerable and symbols
 var gOPN     = __webpack_require__(34)
-  , gOPS     = __webpack_require__(56)
+  , gOPS     = __webpack_require__(57)
   , anObject = __webpack_require__(1)
   , Reflect  = __webpack_require__(2).Reflect;
 module.exports = Reflect && Reflect.ownKeys || function ownKeys(it){
@@ -3106,25 +7803,25 @@ module.exports = Reflect && Reflect.ownKeys || function ownKeys(it){
 };
 
 /***/ }),
-/* 104 */
+/* 106 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $parseFloat = __webpack_require__(2).parseFloat
   , $trim       = __webpack_require__(44).trim;
 
-module.exports = 1 / $parseFloat(__webpack_require__(79) + '-0') !== -Infinity ? function parseFloat(str){
+module.exports = 1 / $parseFloat(__webpack_require__(80) + '-0') !== -Infinity ? function parseFloat(str){
   var string = $trim(String(str), 3)
     , result = $parseFloat(string);
   return result === 0 && string.charAt(0) == '-' ? -0 : result;
 } : $parseFloat;
 
 /***/ }),
-/* 105 */
+/* 107 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $parseInt = __webpack_require__(2).parseInt
   , $trim     = __webpack_require__(44).trim
-  , ws        = __webpack_require__(79)
+  , ws        = __webpack_require__(80)
   , hex       = /^[\-+]?0[xX]/;
 
 module.exports = $parseInt(ws + '08') !== 8 || $parseInt(ws + '0x16') !== 22 ? function parseInt(str, radix){
@@ -3133,7 +7830,7 @@ module.exports = $parseInt(ws + '08') !== 8 || $parseInt(ws + '0x16') !== 22 ? f
 } : $parseInt;
 
 /***/ }),
-/* 106 */
+/* 108 */
 /***/ (function(module, exports) {
 
 // 7.2.9 SameValue(x, y)
@@ -3142,12 +7839,12 @@ module.exports = Object.is || function is(x, y){
 };
 
 /***/ }),
-/* 107 */
+/* 109 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/tc39/proposal-string-pad-start-end
 var toLength = __webpack_require__(8)
-  , repeat   = __webpack_require__(78)
+  , repeat   = __webpack_require__(79)
   , defined  = __webpack_require__(19);
 
 module.exports = function(that, maxLength, fillString, left){
@@ -3164,21 +7861,21 @@ module.exports = function(that, maxLength, fillString, left){
 
 
 /***/ }),
-/* 108 */
+/* 110 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports.f = __webpack_require__(5);
 
 /***/ }),
-/* 109 */
+/* 111 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var strong = __webpack_require__(90);
+var strong = __webpack_require__(92);
 
 // 23.1 Map Objects
-module.exports = __webpack_require__(49)('Map', function(get){
+module.exports = __webpack_require__(50)('Map', function(get){
   return function Map(){ return get(this, arguments.length > 0 ? arguments[0] : undefined); };
 }, {
   // 23.1.3.6 Map.prototype.get(key)
@@ -3193,25 +7890,25 @@ module.exports = __webpack_require__(49)('Map', function(get){
 }, strong, true);
 
 /***/ }),
-/* 110 */
+/* 112 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 21.2.5.3 get RegExp.prototype.flags()
 if(__webpack_require__(6) && /./g.flags != 'g')__webpack_require__(7).f(RegExp.prototype, 'flags', {
   configurable: true,
-  get: __webpack_require__(51)
+  get: __webpack_require__(52)
 });
 
 /***/ }),
-/* 111 */
+/* 113 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var strong = __webpack_require__(90);
+var strong = __webpack_require__(92);
 
 // 23.2 Set Objects
-module.exports = __webpack_require__(49)('Set', function(get){
+module.exports = __webpack_require__(50)('Set', function(get){
   return function Set(){ return get(this, arguments.length > 0 ? arguments[0] : undefined); };
 }, {
   // 23.2.3.1 Set.prototype.add(value)
@@ -3221,7 +7918,7 @@ module.exports = __webpack_require__(49)('Set', function(get){
 }, strong);
 
 /***/ }),
-/* 112 */
+/* 114 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3229,8 +7926,8 @@ module.exports = __webpack_require__(49)('Set', function(get){
 var each         = __webpack_require__(21)(0)
   , redefine     = __webpack_require__(13)
   , meta         = __webpack_require__(28)
-  , assign       = __webpack_require__(98)
-  , weak         = __webpack_require__(92)
+  , assign       = __webpack_require__(100)
+  , weak         = __webpack_require__(94)
   , isObject     = __webpack_require__(4)
   , getWeak      = meta.getWeak
   , isExtensible = Object.isExtensible
@@ -3260,7 +7957,7 @@ var methods = {
 };
 
 // 23.3 WeakMap Objects
-var $WeakMap = module.exports = __webpack_require__(49)('WeakMap', wrapper, methods, weak, true, true);
+var $WeakMap = module.exports = __webpack_require__(50)('WeakMap', wrapper, methods, weak, true, true);
 
 // IE11 WeakMap frozen keys fix
 if(new $WeakMap().set((Object.freeze || Object)(tmp), 7).get(tmp) != 7){
@@ -3283,7 +7980,7 @@ if(new $WeakMap().set((Object.freeze || Object)(tmp), 7).get(tmp) != 7){
 }
 
 /***/ }),
-/* 113 */
+/* 115 */
 /***/ (function(module, exports) {
 
 var g;
@@ -3310,14 +8007,21 @@ module.exports = g;
 
 
 /***/ }),
-/* 114 */
+/* 116 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Directives_incomingDrc__ = __webpack_require__(305);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__styles_css_style_css__ = __webpack_require__(313);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__styles_css_style_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__styles_css_style_css__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_ui_router__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_angular_ui_router___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_angular_ui_router__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ng_facebook__ = __webpack_require__(309);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ng_facebook___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_ng_facebook__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Components__ = __webpack_require__(120);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Services__ = __webpack_require__(122);
 /**
  * Created by User on 02.02.2017.
  */
@@ -3325,54 +8029,55 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-const myApp = angular.module('postBox', ['incomingDir']);
 
-myApp.controller('postController', function(){
 
-    this.inc = {
-        title: 'Входящие',
-        msg: [{name: "name1"},{name: "name2"}]
-    };
+const myApp = angular.module('myApp', ['ui.router', 'ngFacebook', __WEBPACK_IMPORTED_MODULE_4__Components__["a" /* default */].name, __WEBPACK_IMPORTED_MODULE_5__Services__["a" /* default */].name]);
 
-    this.out = {
-        title: 'Исходящие',
-        msg: [{name: "name3"},{name: "name4"}]
-    };
+myApp.config(function($facebookProvider) {
+    $facebookProvider
+        .setAppId("333688740303109");
+    $facebookProvider
+        .setPermissions("email,public_profile, user_posts, publish_actions, user_photos");
+    $facebookProvider.setCustomInit({
+        cookie: true
+    });
+});
 
-    this.mail = this.inc;
-
-    this.onChange = function(){
-
-        if(this.mail == this.inc){
-            this.mail = this.out;
-        } else {
-            this.mail = this.inc;
-        }
-    }
-
+myApp.run(function(){
+        // Code from FBook JS SDK
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
 });
 
 /***/ }),
-/* 115 */
+/* 117 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* eslint max-len: 0 */
 // TODO: eventually deprecate this console.trace("use the `babel-register` package instead of `babel-core/register`");
-module.exports = __webpack_require__(119);
+module.exports = __webpack_require__(124);
 
 
 /***/ }),
-/* 116 */
+/* 118 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(global) {
 
-__webpack_require__(300);
+__webpack_require__(305);
 
-__webpack_require__(303);
+__webpack_require__(311);
 
-__webpack_require__(120);
+__webpack_require__(125);
 
 if (global._babelPolyfill) {
   throw new Error("only one instance of babel-polyfill is allowed");
@@ -3394,10 +8099,219 @@ define(String.prototype, "padRight", "".padEnd);
 "pop,reverse,shift,keys,values,entries,indexOf,every,some,forEach,map,filter,find,findIndex,includes,join,slice,concat,push,splice,unshift,sort,lastIndexOf,reduce,reduceRight,copyWithin,fill".split(",").forEach(function (key) {
   [][key] && define(Array, key, Function.call.bind([][key]));
 });
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(113)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(115)))
 
 /***/ }),
-/* 117 */
+/* 119 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular_ui_router__ = __webpack_require__(86);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_angular_ui_router___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_angular_ui_router__);
+/**
+ * Created by User on 07.02.2017.
+ */
+
+
+
+
+    let authModule = __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module('auth', [
+        __WEBPACK_IMPORTED_MODULE_1_angular_ui_router___default.a
+    ]);
+
+    authModule.config(($stateProvider, $urlRouterProvider) => {
+        $urlRouterProvider.otherwise('/');
+
+        $stateProvider
+            .state('auth', {
+                url: '/',
+                template:  '<auth></auth>',
+            });
+    });
+
+    authModule.component('auth', {
+            template: __webpack_require__(308),
+            controller: function(){
+                    this.name = 'my test name';
+            },
+            /*bindings: {
+                count: '='
+            }*/
+    });
+
+/* harmony default export */ __webpack_exports__["a"] = authModule;
+
+
+/***/ }),
+/* 120 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__auth_auth__ = __webpack_require__(119);
+/**
+ * Created by User on 07.02.2017.
+ */
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module('myApp.components', [
+    __WEBPACK_IMPORTED_MODULE_1__auth_auth__["a" /* default */].name
+]);
+
+/***/ }),
+/* 121 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
+/**
+ * Created by User on 07.02.2017.
+ */
+
+
+/* harmony default export */ __webpack_exports__["a"] = __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module('facebookApiSvc', [])
+    .factory('facebookApiSvc', ['$facebook', '$location',
+        function ($facebook, $location) {
+            return facebookApiSvc = {
+
+                login: function() {
+
+                    $facebook.login()
+                        .then(function(response) {
+
+                            $location.path("/albums");
+                            sessionStorage.setItem('access_token', response.authResponse.accessToken);
+
+                        });
+
+                },
+
+                refresh: function() {
+                    $facebook.api("/me").then(
+                        function(response) {
+                        },
+                        function(err) {
+                            $location.path("/");
+                        });
+                },
+
+                getPhotos: function ($scope) {
+
+                    if ($scope.flagEndPhotoDownload) return;
+
+                    $scope.flagEndPhotoDownload = true;
+
+                    if(!$scope.images){
+
+                        $facebook.api($scope.albumId + '/photos/?fields=images,id,name,created_time&order=reverse_chronological&limit='+$scope.photoLimit)
+
+                            .then(function (response) {
+                                $scope.images = response.data;
+                            })
+                    } else {
+
+                        $facebook.api($scope.albumId + '/photos/?fields=images,id,name,created_time&order=reverse_chronological&limit='+$scope.photoLimit+'&offset='+ $scope.offset)
+                            .then(function (response) {
+
+                                var newImages = response.data;
+                                $scope.images = $scope.images.concat(newImages);
+                                $scope.offset += newImages.length;
+
+                            })
+                    }
+
+                    $scope.flagEndPhotoDownload = false;
+
+                    return $scope;
+
+                },
+
+                getName: function () {
+                    return $facebook.api('/me')
+                        .then(function (response) {
+                            return response.name;
+                        });
+                },
+
+
+                getAlbums: function () {
+                    return $facebook.api('/me/albums?fields=picture,name,count,created_time,updated_time')
+                        .then(function (response) {
+                            return response.data;
+                        });
+                },
+                getAlbumsID: function () {
+                    return $facebook.api('me/albums')
+                        .then(function (response) {
+                            return response.data;
+                        });
+                },
+
+                getImage: function(imgId){
+
+                    return $facebook.api('/' + imgId + '/?fields=images,name')
+                        .then(function (response) {
+                            return response;
+                        })
+                }
+
+            }
+        }]);
+
+/*
+class GithubService {
+
+    constructor($http) {
+        this.$http = $http;
+    }
+
+    getItems(githubUsername) {
+        var githubUrl = 'https://api.github.com';
+        return this.$http({
+            method: 'JSONP',
+            url: githubUrl + '/users/' +
+            githubUsername + '?callback=JSON_CALLBACK'
+        }).success(function(data) {
+            // this callback will be called asynchronously
+            // when the response is available
+            return data.data.toJSON();
+        }).
+        error(function(data, status) {
+            // called asynchronously if an error occurs
+            // or server returns response with an error status.
+            alert(status);
+        });
+    }
+
+}
+
+export default GithubService;*/
+
+/***/ }),
+/* 122 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__faceBookSvc__ = __webpack_require__(121);
+/**
+ * Created by User on 07.02.2017.
+ */
+
+
+
+/* harmony default export */ __webpack_exports__["a"] = __WEBPACK_IMPORTED_MODULE_0_angular___default.a.module('myApp.services', [
+    __WEBPACK_IMPORTED_MODULE_1__faceBookSvc__["a" /* default */].name
+]);
+
+/***/ }),
+/* 123 */
 /***/ (function(module, exports) {
 
 /**
@@ -36384,15 +41298,7 @@ $provide.value("$locale", {
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
 
 /***/ }),
-/* 118 */
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(117);
-module.exports = angular;
-
-
-/***/ }),
-/* 119 */
+/* 124 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36405,18 +41311,18 @@ exports.default = function () {};
 module.exports = exports["default"];
 
 /***/ }),
-/* 120 */
+/* 125 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(129);
+__webpack_require__(134);
 module.exports = __webpack_require__(24).RegExp.escape;
 
 /***/ }),
-/* 121 */
+/* 126 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var isObject = __webpack_require__(4)
-  , isArray  = __webpack_require__(67)
+  , isArray  = __webpack_require__(68)
   , SPECIES  = __webpack_require__(5)('species');
 
 module.exports = function(original){
@@ -36433,18 +41339,18 @@ module.exports = function(original){
 };
 
 /***/ }),
-/* 122 */
+/* 127 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 9.4.2.3 ArraySpeciesCreate(originalArray, length)
-var speciesConstructor = __webpack_require__(121);
+var speciesConstructor = __webpack_require__(126);
 
 module.exports = function(original, length){
   return new (speciesConstructor(original))(length);
 };
 
 /***/ }),
-/* 123 */
+/* 128 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36459,13 +41365,13 @@ module.exports = function(hint){
 };
 
 /***/ }),
-/* 124 */
+/* 129 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // all enumerable object keys, includes symbols
 var getKeys = __webpack_require__(35)
-  , gOPS    = __webpack_require__(56)
-  , pIE     = __webpack_require__(47);
+  , gOPS    = __webpack_require__(57)
+  , pIE     = __webpack_require__(48);
 module.exports = function(it){
   var result     = getKeys(it)
     , getSymbols = gOPS.f;
@@ -36479,7 +41385,7 @@ module.exports = function(it){
 };
 
 /***/ }),
-/* 125 */
+/* 130 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var getKeys   = __webpack_require__(35)
@@ -36494,13 +41400,13 @@ module.exports = function(object, el){
 };
 
 /***/ }),
-/* 126 */
+/* 131 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var path      = __webpack_require__(127)
-  , invoke    = __webpack_require__(52)
+var path      = __webpack_require__(132)
+  , invoke    = __webpack_require__(53)
   , aFunction = __webpack_require__(11);
 module.exports = function(/* ...pargs */){
   var fn     = aFunction(this)
@@ -36523,13 +41429,13 @@ module.exports = function(/* ...pargs */){
 };
 
 /***/ }),
-/* 127 */
+/* 132 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__(2);
 
 /***/ }),
-/* 128 */
+/* 133 */
 /***/ (function(module, exports) {
 
 module.exports = function(regExp, replace){
@@ -36542,29 +41448,29 @@ module.exports = function(regExp, replace){
 };
 
 /***/ }),
-/* 129 */
+/* 134 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/benjamingr/RexExp.escape
 var $export = __webpack_require__(0)
-  , $re     = __webpack_require__(128)(/[\\^$*+?.()|[\]{}]/g, '\\$&');
+  , $re     = __webpack_require__(133)(/[\\^$*+?.()|[\]{}]/g, '\\$&');
 
 $export($export.S, 'RegExp', {escape: function escape(it){ return $re(it); }});
 
 
 /***/ }),
-/* 130 */
+/* 135 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 22.1.3.3 Array.prototype.copyWithin(target, start, end = this.length)
 var $export = __webpack_require__(0);
 
-$export($export.P, 'Array', {copyWithin: __webpack_require__(86)});
+$export($export.P, 'Array', {copyWithin: __webpack_require__(88)});
 
 __webpack_require__(40)('copyWithin');
 
 /***/ }),
-/* 131 */
+/* 136 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36580,18 +41486,18 @@ $export($export.P + $export.F * !__webpack_require__(20)([].every, true), 'Array
 });
 
 /***/ }),
-/* 132 */
+/* 137 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 22.1.3.6 Array.prototype.fill(value, start = 0, end = this.length)
 var $export = __webpack_require__(0);
 
-$export($export.P, 'Array', {fill: __webpack_require__(59)});
+$export($export.P, 'Array', {fill: __webpack_require__(60)});
 
 __webpack_require__(40)('fill');
 
 /***/ }),
-/* 133 */
+/* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36607,7 +41513,7 @@ $export($export.P + $export.F * !__webpack_require__(20)([].filter, true), 'Arra
 });
 
 /***/ }),
-/* 134 */
+/* 139 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36627,7 +41533,7 @@ $export($export.P + $export.F * forced, 'Array', {
 __webpack_require__(40)(KEY);
 
 /***/ }),
-/* 135 */
+/* 140 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36647,7 +41553,7 @@ $export($export.P + $export.F * forced, 'Array', {
 __webpack_require__(40)(KEY);
 
 /***/ }),
-/* 136 */
+/* 141 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36664,7 +41570,7 @@ $export($export.P + $export.F * !STRICT, 'Array', {
 });
 
 /***/ }),
-/* 137 */
+/* 142 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36672,13 +41578,13 @@ $export($export.P + $export.F * !STRICT, 'Array', {
 var ctx            = __webpack_require__(25)
   , $export        = __webpack_require__(0)
   , toObject       = __webpack_require__(9)
-  , call           = __webpack_require__(95)
-  , isArrayIter    = __webpack_require__(66)
+  , call           = __webpack_require__(97)
+  , isArrayIter    = __webpack_require__(67)
   , toLength       = __webpack_require__(8)
-  , createProperty = __webpack_require__(60)
-  , getIterFn      = __webpack_require__(83);
+  , createProperty = __webpack_require__(61)
+  , getIterFn      = __webpack_require__(84);
 
-$export($export.S + $export.F * !__webpack_require__(54)(function(iter){ Array.from(iter); }), 'Array', {
+$export($export.S + $export.F * !__webpack_require__(55)(function(iter){ Array.from(iter); }), 'Array', {
   // 22.1.2.1 Array.from(arrayLike, mapfn = undefined, thisArg = undefined)
   from: function from(arrayLike/*, mapfn = undefined, thisArg = undefined*/){
     var O       = toObject(arrayLike)
@@ -36708,13 +41614,13 @@ $export($export.S + $export.F * !__webpack_require__(54)(function(iter){ Array.f
 
 
 /***/ }),
-/* 138 */
+/* 143 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var $export       = __webpack_require__(0)
-  , $indexOf      = __webpack_require__(48)(false)
+  , $indexOf      = __webpack_require__(49)(false)
   , $native       = [].indexOf
   , NEGATIVE_ZERO = !!$native && 1 / [1].indexOf(1, -0) < 0;
 
@@ -36729,16 +41635,16 @@ $export($export.P + $export.F * (NEGATIVE_ZERO || !__webpack_require__(20)($nati
 });
 
 /***/ }),
-/* 139 */
+/* 144 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 22.1.2.2 / 15.4.3.2 Array.isArray(arg)
 var $export = __webpack_require__(0);
 
-$export($export.S, 'Array', {isArray: __webpack_require__(67)});
+$export($export.S, 'Array', {isArray: __webpack_require__(68)});
 
 /***/ }),
-/* 140 */
+/* 145 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36749,14 +41655,14 @@ var $export   = __webpack_require__(0)
   , arrayJoin = [].join;
 
 // fallback for not array-like strings
-$export($export.P + $export.F * (__webpack_require__(46) != Object || !__webpack_require__(20)(arrayJoin)), 'Array', {
+$export($export.P + $export.F * (__webpack_require__(47) != Object || !__webpack_require__(20)(arrayJoin)), 'Array', {
   join: function join(separator){
     return arrayJoin.call(toIObject(this), separator === undefined ? ',' : separator);
   }
 });
 
 /***/ }),
-/* 141 */
+/* 146 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36784,7 +41690,7 @@ $export($export.P + $export.F * (NEGATIVE_ZERO || !__webpack_require__(20)($nati
 });
 
 /***/ }),
-/* 142 */
+/* 147 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36800,13 +41706,13 @@ $export($export.P + $export.F * !__webpack_require__(20)([].map, true), 'Array',
 });
 
 /***/ }),
-/* 143 */
+/* 148 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var $export        = __webpack_require__(0)
-  , createProperty = __webpack_require__(60);
+  , createProperty = __webpack_require__(61);
 
 // WebKit Array.of isn't generic
 $export($export.S + $export.F * __webpack_require__(3)(function(){
@@ -36825,13 +41731,13 @@ $export($export.S + $export.F * __webpack_require__(3)(function(){
 });
 
 /***/ }),
-/* 144 */
+/* 149 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var $export = __webpack_require__(0)
-  , $reduce = __webpack_require__(88);
+  , $reduce = __webpack_require__(90);
 
 $export($export.P + $export.F * !__webpack_require__(20)([].reduceRight, true), 'Array', {
   // 22.1.3.19 / 15.4.4.22 Array.prototype.reduceRight(callbackfn [, initialValue])
@@ -36841,13 +41747,13 @@ $export($export.P + $export.F * !__webpack_require__(20)([].reduceRight, true), 
 });
 
 /***/ }),
-/* 145 */
+/* 150 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var $export = __webpack_require__(0)
-  , $reduce = __webpack_require__(88);
+  , $reduce = __webpack_require__(90);
 
 $export($export.P + $export.F * !__webpack_require__(20)([].reduce, true), 'Array', {
   // 22.1.3.18 / 15.4.4.21 Array.prototype.reduce(callbackfn [, initialValue])
@@ -36857,13 +41763,13 @@ $export($export.P + $export.F * !__webpack_require__(20)([].reduce, true), 'Arra
 });
 
 /***/ }),
-/* 146 */
+/* 151 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var $export    = __webpack_require__(0)
-  , html       = __webpack_require__(64)
+  , html       = __webpack_require__(65)
   , cof        = __webpack_require__(18)
   , toIndex    = __webpack_require__(38)
   , toLength   = __webpack_require__(8)
@@ -36891,7 +41797,7 @@ $export($export.P + $export.F * __webpack_require__(3)(function(){
 });
 
 /***/ }),
-/* 147 */
+/* 152 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36907,7 +41813,7 @@ $export($export.P + $export.F * !__webpack_require__(20)([].some, true), 'Array'
 });
 
 /***/ }),
-/* 148 */
+/* 153 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36936,13 +41842,13 @@ $export($export.P + $export.F * (fails(function(){
 });
 
 /***/ }),
-/* 149 */
+/* 154 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(37)('Array');
 
 /***/ }),
-/* 150 */
+/* 155 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.3.3.1 / 15.9.4.4 Date.now()
@@ -36951,7 +41857,7 @@ var $export = __webpack_require__(0);
 $export($export.S, 'Date', {now: function(){ return new Date().getTime(); }});
 
 /***/ }),
-/* 151 */
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -36985,7 +41891,7 @@ $export($export.P + $export.F * (fails(function(){
 });
 
 /***/ }),
-/* 152 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37005,16 +41911,16 @@ $export($export.P + $export.F * __webpack_require__(3)(function(){
 });
 
 /***/ }),
-/* 153 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var TO_PRIMITIVE = __webpack_require__(5)('toPrimitive')
   , proto        = Date.prototype;
 
-if(!(TO_PRIMITIVE in proto))__webpack_require__(12)(proto, TO_PRIMITIVE, __webpack_require__(123));
+if(!(TO_PRIMITIVE in proto))__webpack_require__(12)(proto, TO_PRIMITIVE, __webpack_require__(128));
 
 /***/ }),
-/* 154 */
+/* 159 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var DateProto    = Date.prototype
@@ -37030,16 +41936,16 @@ if(new Date(NaN) + '' != INVALID_DATE){
 }
 
 /***/ }),
-/* 155 */
+/* 160 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.2.3.2 / 15.3.4.5 Function.prototype.bind(thisArg, args...)
 var $export = __webpack_require__(0);
 
-$export($export.P, 'Function', {bind: __webpack_require__(89)});
+$export($export.P, 'Function', {bind: __webpack_require__(91)});
 
 /***/ }),
-/* 156 */
+/* 161 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37058,7 +41964,7 @@ if(!(HAS_INSTANCE in FunctionProto))__webpack_require__(7).f(FunctionProto, HAS_
 }});
 
 /***/ }),
-/* 157 */
+/* 162 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var dP         = __webpack_require__(7).f
@@ -37088,12 +41994,12 @@ NAME in FProto || __webpack_require__(6) && dP(FProto, NAME, {
 });
 
 /***/ }),
-/* 158 */
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.3 Math.acosh(x)
 var $export = __webpack_require__(0)
-  , log1p   = __webpack_require__(97)
+  , log1p   = __webpack_require__(99)
   , sqrt    = Math.sqrt
   , $acosh  = Math.acosh;
 
@@ -37111,7 +42017,7 @@ $export($export.S + $export.F * !($acosh
 });
 
 /***/ }),
-/* 159 */
+/* 164 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.5 Math.asinh(x)
@@ -37126,7 +42032,7 @@ function asinh(x){
 $export($export.S + $export.F * !($asinh && 1 / $asinh(0) > 0), 'Math', {asinh: asinh});
 
 /***/ }),
-/* 160 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.7 Math.atanh(x)
@@ -37141,12 +42047,12 @@ $export($export.S + $export.F * !($atanh && 1 / $atanh(-0) < 0), 'Math', {
 });
 
 /***/ }),
-/* 161 */
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.9 Math.cbrt(x)
 var $export = __webpack_require__(0)
-  , sign    = __webpack_require__(71);
+  , sign    = __webpack_require__(72);
 
 $export($export.S, 'Math', {
   cbrt: function cbrt(x){
@@ -37155,7 +42061,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ }),
-/* 162 */
+/* 167 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.11 Math.clz32(x)
@@ -37168,7 +42074,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ }),
-/* 163 */
+/* 168 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.12 Math.cosh(x)
@@ -37182,22 +42088,22 @@ $export($export.S, 'Math', {
 });
 
 /***/ }),
-/* 164 */
+/* 169 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.14 Math.expm1(x)
 var $export = __webpack_require__(0)
-  , $expm1  = __webpack_require__(70);
+  , $expm1  = __webpack_require__(71);
 
 $export($export.S + $export.F * ($expm1 != Math.expm1), 'Math', {expm1: $expm1});
 
 /***/ }),
-/* 165 */
+/* 170 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.16 Math.fround(x)
 var $export   = __webpack_require__(0)
-  , sign      = __webpack_require__(71)
+  , sign      = __webpack_require__(72)
   , pow       = Math.pow
   , EPSILON   = pow(2, -52)
   , EPSILON32 = pow(2, -23)
@@ -37223,7 +42129,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ }),
-/* 166 */
+/* 171 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.17 Math.hypot([value1[, value2[, … ]]])
@@ -37253,7 +42159,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ }),
-/* 167 */
+/* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.18 Math.imul(x, y)
@@ -37275,7 +42181,7 @@ $export($export.S + $export.F * __webpack_require__(3)(function(){
 });
 
 /***/ }),
-/* 168 */
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.21 Math.log10(x)
@@ -37288,16 +42194,16 @@ $export($export.S, 'Math', {
 });
 
 /***/ }),
-/* 169 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.20 Math.log1p(x)
 var $export = __webpack_require__(0);
 
-$export($export.S, 'Math', {log1p: __webpack_require__(97)});
+$export($export.S, 'Math', {log1p: __webpack_require__(99)});
 
 /***/ }),
-/* 170 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.22 Math.log2(x)
@@ -37310,21 +42216,21 @@ $export($export.S, 'Math', {
 });
 
 /***/ }),
-/* 171 */
+/* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.28 Math.sign(x)
 var $export = __webpack_require__(0);
 
-$export($export.S, 'Math', {sign: __webpack_require__(71)});
+$export($export.S, 'Math', {sign: __webpack_require__(72)});
 
 /***/ }),
-/* 172 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.30 Math.sinh(x)
 var $export = __webpack_require__(0)
-  , expm1   = __webpack_require__(70)
+  , expm1   = __webpack_require__(71)
   , exp     = Math.exp;
 
 // V8 near Chromium 38 has a problem with very small numbers
@@ -37339,12 +42245,12 @@ $export($export.S + $export.F * __webpack_require__(3)(function(){
 });
 
 /***/ }),
-/* 173 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.33 Math.tanh(x)
 var $export = __webpack_require__(0)
-  , expm1   = __webpack_require__(70)
+  , expm1   = __webpack_require__(71)
   , exp     = Math.exp;
 
 $export($export.S, 'Math', {
@@ -37356,7 +42262,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ }),
-/* 174 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.2.2.34 Math.trunc(x)
@@ -37369,7 +42275,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ }),
-/* 175 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37377,7 +42283,7 @@ $export($export.S, 'Math', {
 var global            = __webpack_require__(2)
   , has               = __webpack_require__(10)
   , cof               = __webpack_require__(18)
-  , inheritIfRequired = __webpack_require__(65)
+  , inheritIfRequired = __webpack_require__(66)
   , toPrimitive       = __webpack_require__(23)
   , fails             = __webpack_require__(3)
   , gOPN              = __webpack_require__(34).f
@@ -37444,7 +42350,7 @@ if(!$Number(' 0o1') || !$Number('0b1') || $Number('+0x1')){
 }
 
 /***/ }),
-/* 176 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.1 Number.EPSILON
@@ -37453,7 +42359,7 @@ var $export = __webpack_require__(0);
 $export($export.S, 'Number', {EPSILON: Math.pow(2, -52)});
 
 /***/ }),
-/* 177 */
+/* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.2 Number.isFinite(number)
@@ -37467,16 +42373,16 @@ $export($export.S, 'Number', {
 });
 
 /***/ }),
-/* 178 */
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.3 Number.isInteger(number)
 var $export = __webpack_require__(0);
 
-$export($export.S, 'Number', {isInteger: __webpack_require__(94)});
+$export($export.S, 'Number', {isInteger: __webpack_require__(96)});
 
 /***/ }),
-/* 179 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.4 Number.isNaN(number)
@@ -37489,12 +42395,12 @@ $export($export.S, 'Number', {
 });
 
 /***/ }),
-/* 180 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.5 Number.isSafeInteger(number)
 var $export   = __webpack_require__(0)
-  , isInteger = __webpack_require__(94)
+  , isInteger = __webpack_require__(96)
   , abs       = Math.abs;
 
 $export($export.S, 'Number', {
@@ -37504,7 +42410,7 @@ $export($export.S, 'Number', {
 });
 
 /***/ }),
-/* 181 */
+/* 186 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.6 Number.MAX_SAFE_INTEGER
@@ -37513,7 +42419,7 @@ var $export = __webpack_require__(0);
 $export($export.S, 'Number', {MAX_SAFE_INTEGER: 0x1fffffffffffff});
 
 /***/ }),
-/* 182 */
+/* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 20.1.2.10 Number.MIN_SAFE_INTEGER
@@ -37522,33 +42428,33 @@ var $export = __webpack_require__(0);
 $export($export.S, 'Number', {MIN_SAFE_INTEGER: -0x1fffffffffffff});
 
 /***/ }),
-/* 183 */
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export     = __webpack_require__(0)
-  , $parseFloat = __webpack_require__(104);
+  , $parseFloat = __webpack_require__(106);
 // 20.1.2.12 Number.parseFloat(string)
 $export($export.S + $export.F * (Number.parseFloat != $parseFloat), 'Number', {parseFloat: $parseFloat});
 
 /***/ }),
-/* 184 */
+/* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export   = __webpack_require__(0)
-  , $parseInt = __webpack_require__(105);
+  , $parseInt = __webpack_require__(107);
 // 20.1.2.13 Number.parseInt(string, radix)
 $export($export.S + $export.F * (Number.parseInt != $parseInt), 'Number', {parseInt: $parseInt});
 
 /***/ }),
-/* 185 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var $export      = __webpack_require__(0)
   , toInteger    = __webpack_require__(30)
-  , aNumberValue = __webpack_require__(85)
-  , repeat       = __webpack_require__(78)
+  , aNumberValue = __webpack_require__(87)
+  , repeat       = __webpack_require__(79)
   , $toFixed     = 1..toFixed
   , floor        = Math.floor
   , data         = [0, 0, 0, 0, 0, 0]
@@ -37659,14 +42565,14 @@ $export($export.P + $export.F * (!!$toFixed && (
 });
 
 /***/ }),
-/* 186 */
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var $export      = __webpack_require__(0)
   , $fails       = __webpack_require__(3)
-  , aNumberValue = __webpack_require__(85)
+  , aNumberValue = __webpack_require__(87)
   , $toPrecision = 1..toPrecision;
 
 $export($export.P + $export.F * ($fails(function(){
@@ -37683,16 +42589,16 @@ $export($export.P + $export.F * ($fails(function(){
 });
 
 /***/ }),
-/* 187 */
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.3.1 Object.assign(target, source)
 var $export = __webpack_require__(0);
 
-$export($export.S + $export.F, 'Object', {assign: __webpack_require__(98)});
+$export($export.S + $export.F, 'Object', {assign: __webpack_require__(100)});
 
 /***/ }),
-/* 188 */
+/* 193 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0)
@@ -37700,15 +42606,15 @@ var $export = __webpack_require__(0)
 $export($export.S, 'Object', {create: __webpack_require__(33)});
 
 /***/ }),
-/* 189 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
 // 19.1.2.3 / 15.2.3.7 Object.defineProperties(O, Properties)
-$export($export.S + $export.F * !__webpack_require__(6), 'Object', {defineProperties: __webpack_require__(99)});
+$export($export.S + $export.F * !__webpack_require__(6), 'Object', {defineProperties: __webpack_require__(101)});
 
 /***/ }),
-/* 190 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
@@ -37716,7 +42622,7 @@ var $export = __webpack_require__(0);
 $export($export.S + $export.F * !__webpack_require__(6), 'Object', {defineProperty: __webpack_require__(7).f});
 
 /***/ }),
-/* 191 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.5 Object.freeze(O)
@@ -37730,7 +42636,7 @@ __webpack_require__(22)('freeze', function($freeze){
 });
 
 /***/ }),
-/* 192 */
+/* 197 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.6 Object.getOwnPropertyDescriptor(O, P)
@@ -37744,16 +42650,16 @@ __webpack_require__(22)('getOwnPropertyDescriptor', function(){
 });
 
 /***/ }),
-/* 193 */
+/* 198 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.7 Object.getOwnPropertyNames(O)
 __webpack_require__(22)('getOwnPropertyNames', function(){
-  return __webpack_require__(100).f;
+  return __webpack_require__(102).f;
 });
 
 /***/ }),
-/* 194 */
+/* 199 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.9 Object.getPrototypeOf(O)
@@ -37767,7 +42673,7 @@ __webpack_require__(22)('getPrototypeOf', function(){
 });
 
 /***/ }),
-/* 195 */
+/* 200 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.11 Object.isExtensible(O)
@@ -37780,7 +42686,7 @@ __webpack_require__(22)('isExtensible', function($isExtensible){
 });
 
 /***/ }),
-/* 196 */
+/* 201 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.12 Object.isFrozen(O)
@@ -37793,7 +42699,7 @@ __webpack_require__(22)('isFrozen', function($isFrozen){
 });
 
 /***/ }),
-/* 197 */
+/* 202 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.13 Object.isSealed(O)
@@ -37806,15 +42712,15 @@ __webpack_require__(22)('isSealed', function($isSealed){
 });
 
 /***/ }),
-/* 198 */
+/* 203 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.3.10 Object.is(value1, value2)
 var $export = __webpack_require__(0);
-$export($export.S, 'Object', {is: __webpack_require__(106)});
+$export($export.S, 'Object', {is: __webpack_require__(108)});
 
 /***/ }),
-/* 199 */
+/* 204 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.14 Object.keys(O)
@@ -37828,7 +42734,7 @@ __webpack_require__(22)('keys', function(){
 });
 
 /***/ }),
-/* 200 */
+/* 205 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.15 Object.preventExtensions(O)
@@ -37842,7 +42748,7 @@ __webpack_require__(22)('preventExtensions', function($preventExtensions){
 });
 
 /***/ }),
-/* 201 */
+/* 206 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.2.17 Object.seal(O)
@@ -37856,21 +42762,21 @@ __webpack_require__(22)('seal', function($seal){
 });
 
 /***/ }),
-/* 202 */
+/* 207 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 19.1.3.19 Object.setPrototypeOf(O, proto)
 var $export = __webpack_require__(0);
-$export($export.S, 'Object', {setPrototypeOf: __webpack_require__(73).set});
+$export($export.S, 'Object', {setPrototypeOf: __webpack_require__(74).set});
 
 /***/ }),
-/* 203 */
+/* 208 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // 19.1.3.6 Object.prototype.toString()
-var classof = __webpack_require__(45)
+var classof = __webpack_require__(46)
   , test    = {};
 test[__webpack_require__(5)('toStringTag')] = 'z';
 if(test + '' != '[object z]'){
@@ -37880,25 +42786,25 @@ if(test + '' != '[object z]'){
 }
 
 /***/ }),
-/* 204 */
+/* 209 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export     = __webpack_require__(0)
-  , $parseFloat = __webpack_require__(104);
+  , $parseFloat = __webpack_require__(106);
 // 18.2.4 parseFloat(string)
 $export($export.G + $export.F * (parseFloat != $parseFloat), {parseFloat: $parseFloat});
 
 /***/ }),
-/* 205 */
+/* 210 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export   = __webpack_require__(0)
-  , $parseInt = __webpack_require__(105);
+  , $parseInt = __webpack_require__(107);
 // 18.2.5 parseInt(string, radix)
 $export($export.G + $export.F * (parseInt != $parseInt), {parseInt: $parseInt});
 
 /***/ }),
-/* 206 */
+/* 211 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -37906,15 +42812,15 @@ $export($export.G + $export.F * (parseInt != $parseInt), {parseInt: $parseInt});
 var LIBRARY            = __webpack_require__(32)
   , global             = __webpack_require__(2)
   , ctx                = __webpack_require__(25)
-  , classof            = __webpack_require__(45)
+  , classof            = __webpack_require__(46)
   , $export            = __webpack_require__(0)
   , isObject           = __webpack_require__(4)
   , aFunction          = __webpack_require__(11)
   , anInstance         = __webpack_require__(31)
   , forOf              = __webpack_require__(41)
-  , speciesConstructor = __webpack_require__(75)
-  , task               = __webpack_require__(80).set
-  , microtask          = __webpack_require__(72)()
+  , speciesConstructor = __webpack_require__(76)
+  , task               = __webpack_require__(81).set
+  , microtask          = __webpack_require__(73)()
   , PROMISE            = 'Promise'
   , TypeError          = global.TypeError
   , process            = global.process
@@ -38157,7 +43063,7 @@ $export($export.S + $export.F * (LIBRARY || !USE_NATIVE), PROMISE, {
     return capability.promise;
   }
 });
-$export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(54)(function(iter){
+$export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(55)(function(iter){
   $Promise.all(iter)['catch'](empty);
 })), PROMISE, {
   // 25.4.4.1 Promise.all(iterable)
@@ -38203,7 +43109,7 @@ $export($export.S + $export.F * !(USE_NATIVE && __webpack_require__(54)(function
 });
 
 /***/ }),
-/* 207 */
+/* 212 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.1 Reflect.apply(target, thisArgument, argumentsList)
@@ -38224,7 +43130,7 @@ $export($export.S + $export.F * !__webpack_require__(3)(function(){
 });
 
 /***/ }),
-/* 208 */
+/* 213 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.2 Reflect.construct(target, argumentsList [, newTarget])
@@ -38234,7 +43140,7 @@ var $export    = __webpack_require__(0)
   , anObject   = __webpack_require__(1)
   , isObject   = __webpack_require__(4)
   , fails      = __webpack_require__(3)
-  , bind       = __webpack_require__(89)
+  , bind       = __webpack_require__(91)
   , rConstruct = (__webpack_require__(2).Reflect || {}).construct;
 
 // MS Edge supports only 2 arguments and argumentsList argument is optional
@@ -38276,7 +43182,7 @@ $export($export.S + $export.F * (NEW_TARGET_BUG || ARGS_BUG), 'Reflect', {
 });
 
 /***/ }),
-/* 209 */
+/* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.3 Reflect.defineProperty(target, propertyKey, attributes)
@@ -38303,7 +43209,7 @@ $export($export.S + $export.F * __webpack_require__(3)(function(){
 });
 
 /***/ }),
-/* 210 */
+/* 215 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.4 Reflect.deleteProperty(target, propertyKey)
@@ -38319,7 +43225,7 @@ $export($export.S, 'Reflect', {
 });
 
 /***/ }),
-/* 211 */
+/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38334,7 +43240,7 @@ var Enumerate = function(iterated){
     , key;
   for(key in iterated)keys.push(key);
 };
-__webpack_require__(68)(Enumerate, 'Object', function(){
+__webpack_require__(69)(Enumerate, 'Object', function(){
   var that = this
     , keys = that._k
     , key;
@@ -38351,7 +43257,7 @@ $export($export.S, 'Reflect', {
 });
 
 /***/ }),
-/* 212 */
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.7 Reflect.getOwnPropertyDescriptor(target, propertyKey)
@@ -38366,7 +43272,7 @@ $export($export.S, 'Reflect', {
 });
 
 /***/ }),
-/* 213 */
+/* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.8 Reflect.getPrototypeOf(target)
@@ -38381,7 +43287,7 @@ $export($export.S, 'Reflect', {
 });
 
 /***/ }),
-/* 214 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.6 Reflect.get(target, propertyKey [, receiver])
@@ -38407,7 +43313,7 @@ function get(target, propertyKey/*, receiver*/){
 $export($export.S, 'Reflect', {get: get});
 
 /***/ }),
-/* 215 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.9 Reflect.has(target, propertyKey)
@@ -38420,7 +43326,7 @@ $export($export.S, 'Reflect', {
 });
 
 /***/ }),
-/* 216 */
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.10 Reflect.isExtensible(target)
@@ -38436,16 +43342,16 @@ $export($export.S, 'Reflect', {
 });
 
 /***/ }),
-/* 217 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.11 Reflect.ownKeys(target)
 var $export = __webpack_require__(0);
 
-$export($export.S, 'Reflect', {ownKeys: __webpack_require__(103)});
+$export($export.S, 'Reflect', {ownKeys: __webpack_require__(105)});
 
 /***/ }),
-/* 218 */
+/* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.12 Reflect.preventExtensions(target)
@@ -38466,12 +43372,12 @@ $export($export.S, 'Reflect', {
 });
 
 /***/ }),
-/* 219 */
+/* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.14 Reflect.setPrototypeOf(target, proto)
 var $export  = __webpack_require__(0)
-  , setProto = __webpack_require__(73);
+  , setProto = __webpack_require__(74);
 
 if(setProto)$export($export.S, 'Reflect', {
   setPrototypeOf: function setPrototypeOf(target, proto){
@@ -38486,7 +43392,7 @@ if(setProto)$export($export.S, 'Reflect', {
 });
 
 /***/ }),
-/* 220 */
+/* 225 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // 26.1.13 Reflect.set(target, propertyKey, V [, receiver])
@@ -38522,15 +43428,15 @@ function set(target, propertyKey, V/*, receiver*/){
 $export($export.S, 'Reflect', {set: set});
 
 /***/ }),
-/* 221 */
+/* 226 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var global            = __webpack_require__(2)
-  , inheritIfRequired = __webpack_require__(65)
+  , inheritIfRequired = __webpack_require__(66)
   , dP                = __webpack_require__(7).f
   , gOPN              = __webpack_require__(34).f
-  , isRegExp          = __webpack_require__(53)
-  , $flags            = __webpack_require__(51)
+  , isRegExp          = __webpack_require__(54)
+  , $flags            = __webpack_require__(52)
   , $RegExp           = global.RegExp
   , Base              = $RegExp
   , proto             = $RegExp.prototype
@@ -38570,11 +43476,11 @@ if(__webpack_require__(6) && (!CORRECT_NEW || __webpack_require__(3)(function(){
 __webpack_require__(37)('RegExp');
 
 /***/ }),
-/* 222 */
+/* 227 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // @@match logic
-__webpack_require__(50)('match', 1, function(defined, MATCH, $match){
+__webpack_require__(51)('match', 1, function(defined, MATCH, $match){
   // 21.1.3.11 String.prototype.match(regexp)
   return [function match(regexp){
     'use strict';
@@ -38585,11 +43491,11 @@ __webpack_require__(50)('match', 1, function(defined, MATCH, $match){
 });
 
 /***/ }),
-/* 223 */
+/* 228 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // @@replace logic
-__webpack_require__(50)('replace', 2, function(defined, REPLACE, $replace){
+__webpack_require__(51)('replace', 2, function(defined, REPLACE, $replace){
   // 21.1.3.14 String.prototype.replace(searchValue, replaceValue)
   return [function replace(searchValue, replaceValue){
     'use strict';
@@ -38602,11 +43508,11 @@ __webpack_require__(50)('replace', 2, function(defined, REPLACE, $replace){
 });
 
 /***/ }),
-/* 224 */
+/* 229 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // @@search logic
-__webpack_require__(50)('search', 1, function(defined, SEARCH, $search){
+__webpack_require__(51)('search', 1, function(defined, SEARCH, $search){
   // 21.1.3.15 String.prototype.search(regexp)
   return [function search(regexp){
     'use strict';
@@ -38617,13 +43523,13 @@ __webpack_require__(50)('search', 1, function(defined, SEARCH, $search){
 });
 
 /***/ }),
-/* 225 */
+/* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // @@split logic
-__webpack_require__(50)('split', 2, function(defined, SPLIT, $split){
+__webpack_require__(51)('split', 2, function(defined, SPLIT, $split){
   'use strict';
-  var isRegExp   = __webpack_require__(53)
+  var isRegExp   = __webpack_require__(54)
     , _split     = $split
     , $push      = [].push
     , $SPLIT     = 'split'
@@ -38692,14 +43598,14 @@ __webpack_require__(50)('split', 2, function(defined, SPLIT, $split){
 });
 
 /***/ }),
-/* 226 */
+/* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-__webpack_require__(110);
+__webpack_require__(112);
 var anObject    = __webpack_require__(1)
-  , $flags      = __webpack_require__(51)
+  , $flags      = __webpack_require__(52)
   , DESCRIPTORS = __webpack_require__(6)
   , TO_STRING   = 'toString'
   , $toString   = /./[TO_STRING];
@@ -38723,7 +43629,7 @@ if(__webpack_require__(3)(function(){ return $toString.call({source: 'a', flags:
 }
 
 /***/ }),
-/* 227 */
+/* 232 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38736,7 +43642,7 @@ __webpack_require__(14)('anchor', function(createHTML){
 });
 
 /***/ }),
-/* 228 */
+/* 233 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38749,7 +43655,7 @@ __webpack_require__(14)('big', function(createHTML){
 });
 
 /***/ }),
-/* 229 */
+/* 234 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38762,7 +43668,7 @@ __webpack_require__(14)('blink', function(createHTML){
 });
 
 /***/ }),
-/* 230 */
+/* 235 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38775,13 +43681,13 @@ __webpack_require__(14)('bold', function(createHTML){
 });
 
 /***/ }),
-/* 231 */
+/* 236 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var $export = __webpack_require__(0)
-  , $at     = __webpack_require__(76)(false);
+  , $at     = __webpack_require__(77)(false);
 $export($export.P, 'String', {
   // 21.1.3.3 String.prototype.codePointAt(pos)
   codePointAt: function codePointAt(pos){
@@ -38790,7 +43696,7 @@ $export($export.P, 'String', {
 });
 
 /***/ }),
-/* 232 */
+/* 237 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38798,11 +43704,11 @@ $export($export.P, 'String', {
 
 var $export   = __webpack_require__(0)
   , toLength  = __webpack_require__(8)
-  , context   = __webpack_require__(77)
+  , context   = __webpack_require__(78)
   , ENDS_WITH = 'endsWith'
   , $endsWith = ''[ENDS_WITH];
 
-$export($export.P + $export.F * __webpack_require__(63)(ENDS_WITH), 'String', {
+$export($export.P + $export.F * __webpack_require__(64)(ENDS_WITH), 'String', {
   endsWith: function endsWith(searchString /*, endPosition = @length */){
     var that = context(this, searchString, ENDS_WITH)
       , endPosition = arguments.length > 1 ? arguments[1] : undefined
@@ -38816,7 +43722,7 @@ $export($export.P + $export.F * __webpack_require__(63)(ENDS_WITH), 'String', {
 });
 
 /***/ }),
-/* 233 */
+/* 238 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38829,7 +43735,7 @@ __webpack_require__(14)('fixed', function(createHTML){
 });
 
 /***/ }),
-/* 234 */
+/* 239 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38842,7 +43748,7 @@ __webpack_require__(14)('fontcolor', function(createHTML){
 });
 
 /***/ }),
-/* 235 */
+/* 240 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38855,7 +43761,7 @@ __webpack_require__(14)('fontsize', function(createHTML){
 });
 
 /***/ }),
-/* 236 */
+/* 241 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export        = __webpack_require__(0)
@@ -38883,17 +43789,17 @@ $export($export.S + $export.F * (!!$fromCodePoint && $fromCodePoint.length != 1)
 });
 
 /***/ }),
-/* 237 */
+/* 242 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 // 21.1.3.7 String.prototype.includes(searchString, position = 0)
 
 var $export  = __webpack_require__(0)
-  , context  = __webpack_require__(77)
+  , context  = __webpack_require__(78)
   , INCLUDES = 'includes';
 
-$export($export.P + $export.F * __webpack_require__(63)(INCLUDES), 'String', {
+$export($export.P + $export.F * __webpack_require__(64)(INCLUDES), 'String', {
   includes: function includes(searchString /*, position = 0 */){
     return !!~context(this, searchString, INCLUDES)
       .indexOf(searchString, arguments.length > 1 ? arguments[1] : undefined);
@@ -38901,7 +43807,7 @@ $export($export.P + $export.F * __webpack_require__(63)(INCLUDES), 'String', {
 });
 
 /***/ }),
-/* 238 */
+/* 243 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38914,15 +43820,15 @@ __webpack_require__(14)('italics', function(createHTML){
 });
 
 /***/ }),
-/* 239 */
+/* 244 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var $at  = __webpack_require__(76)(true);
+var $at  = __webpack_require__(77)(true);
 
 // 21.1.3.27 String.prototype[@@iterator]()
-__webpack_require__(69)(String, 'String', function(iterated){
+__webpack_require__(70)(String, 'String', function(iterated){
   this._t = String(iterated); // target
   this._i = 0;                // next index
 // 21.1.5.2.1 %StringIteratorPrototype%.next()
@@ -38937,7 +43843,7 @@ __webpack_require__(69)(String, 'String', function(iterated){
 });
 
 /***/ }),
-/* 240 */
+/* 245 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38950,7 +43856,7 @@ __webpack_require__(14)('link', function(createHTML){
 });
 
 /***/ }),
-/* 241 */
+/* 246 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export   = __webpack_require__(0)
@@ -38973,18 +43879,18 @@ $export($export.S, 'String', {
 });
 
 /***/ }),
-/* 242 */
+/* 247 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
 
 $export($export.P, 'String', {
   // 21.1.3.13 String.prototype.repeat(count)
-  repeat: __webpack_require__(78)
+  repeat: __webpack_require__(79)
 });
 
 /***/ }),
-/* 243 */
+/* 248 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -38997,7 +43903,7 @@ __webpack_require__(14)('small', function(createHTML){
 });
 
 /***/ }),
-/* 244 */
+/* 249 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39005,11 +43911,11 @@ __webpack_require__(14)('small', function(createHTML){
 
 var $export     = __webpack_require__(0)
   , toLength    = __webpack_require__(8)
-  , context     = __webpack_require__(77)
+  , context     = __webpack_require__(78)
   , STARTS_WITH = 'startsWith'
   , $startsWith = ''[STARTS_WITH];
 
-$export($export.P + $export.F * __webpack_require__(63)(STARTS_WITH), 'String', {
+$export($export.P + $export.F * __webpack_require__(64)(STARTS_WITH), 'String', {
   startsWith: function startsWith(searchString /*, position = 0 */){
     var that   = context(this, searchString, STARTS_WITH)
       , index  = toLength(Math.min(arguments.length > 1 ? arguments[1] : undefined, that.length))
@@ -39021,7 +43927,7 @@ $export($export.P + $export.F * __webpack_require__(63)(STARTS_WITH), 'String', 
 });
 
 /***/ }),
-/* 245 */
+/* 250 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39034,7 +43940,7 @@ __webpack_require__(14)('strike', function(createHTML){
 });
 
 /***/ }),
-/* 246 */
+/* 251 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39047,7 +43953,7 @@ __webpack_require__(14)('sub', function(createHTML){
 });
 
 /***/ }),
-/* 247 */
+/* 252 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39060,7 +43966,7 @@ __webpack_require__(14)('sup', function(createHTML){
 });
 
 /***/ }),
-/* 248 */
+/* 253 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39073,7 +43979,7 @@ __webpack_require__(44)('trim', function($trim){
 });
 
 /***/ }),
-/* 249 */
+/* 254 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39086,21 +43992,21 @@ var global         = __webpack_require__(2)
   , redefine       = __webpack_require__(13)
   , META           = __webpack_require__(28).KEY
   , $fails         = __webpack_require__(3)
-  , shared         = __webpack_require__(57)
+  , shared         = __webpack_require__(58)
   , setToStringTag = __webpack_require__(43)
   , uid            = __webpack_require__(39)
   , wks            = __webpack_require__(5)
-  , wksExt         = __webpack_require__(108)
-  , wksDefine      = __webpack_require__(82)
-  , keyOf          = __webpack_require__(125)
-  , enumKeys       = __webpack_require__(124)
-  , isArray        = __webpack_require__(67)
+  , wksExt         = __webpack_require__(110)
+  , wksDefine      = __webpack_require__(83)
+  , keyOf          = __webpack_require__(130)
+  , enumKeys       = __webpack_require__(129)
+  , isArray        = __webpack_require__(68)
   , anObject       = __webpack_require__(1)
   , toIObject      = __webpack_require__(15)
   , toPrimitive    = __webpack_require__(23)
   , createDesc     = __webpack_require__(29)
   , _create        = __webpack_require__(33)
-  , gOPNExt        = __webpack_require__(100)
+  , gOPNExt        = __webpack_require__(102)
   , $GOPD          = __webpack_require__(16)
   , $DP            = __webpack_require__(7)
   , $keys          = __webpack_require__(35)
@@ -39227,8 +44133,8 @@ if(!USE_NATIVE){
   $GOPD.f = $getOwnPropertyDescriptor;
   $DP.f   = $defineProperty;
   __webpack_require__(34).f = gOPNExt.f = $getOwnPropertyNames;
-  __webpack_require__(47).f  = $propertyIsEnumerable;
-  __webpack_require__(56).f = $getOwnPropertySymbols;
+  __webpack_require__(48).f  = $propertyIsEnumerable;
+  __webpack_require__(57).f = $getOwnPropertySymbols;
 
   if(DESCRIPTORS && !__webpack_require__(32)){
     redefine(ObjectProto, 'propertyIsEnumerable', $propertyIsEnumerable, true);
@@ -39314,20 +44220,20 @@ setToStringTag(Math, 'Math', true);
 setToStringTag(global.JSON, 'JSON', true);
 
 /***/ }),
-/* 250 */
+/* 255 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 var $export      = __webpack_require__(0)
-  , $typed       = __webpack_require__(58)
-  , buffer       = __webpack_require__(81)
+  , $typed       = __webpack_require__(59)
+  , buffer       = __webpack_require__(82)
   , anObject     = __webpack_require__(1)
   , toIndex      = __webpack_require__(38)
   , toLength     = __webpack_require__(8)
   , isObject     = __webpack_require__(4)
   , ArrayBuffer  = __webpack_require__(2).ArrayBuffer
-  , speciesConstructor = __webpack_require__(75)
+  , speciesConstructor = __webpack_require__(76)
   , $ArrayBuffer = buffer.ArrayBuffer
   , $DataView    = buffer.DataView
   , $isView      = $typed.ABV && ArrayBuffer.isView
@@ -39366,16 +44272,16 @@ $export($export.P + $export.U + $export.F * __webpack_require__(3)(function(){
 __webpack_require__(37)(ARRAY_BUFFER);
 
 /***/ }),
-/* 251 */
+/* 256 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0);
-$export($export.G + $export.W + $export.F * !__webpack_require__(58).ABV, {
-  DataView: __webpack_require__(81).DataView
+$export($export.G + $export.W + $export.F * !__webpack_require__(59).ABV, {
+  DataView: __webpack_require__(82).DataView
 });
 
 /***/ }),
-/* 252 */
+/* 257 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(27)('Float32', 4, function(init){
@@ -39385,7 +44291,7 @@ __webpack_require__(27)('Float32', 4, function(init){
 });
 
 /***/ }),
-/* 253 */
+/* 258 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(27)('Float64', 8, function(init){
@@ -39395,7 +44301,7 @@ __webpack_require__(27)('Float64', 8, function(init){
 });
 
 /***/ }),
-/* 254 */
+/* 259 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(27)('Int16', 2, function(init){
@@ -39405,7 +44311,7 @@ __webpack_require__(27)('Int16', 2, function(init){
 });
 
 /***/ }),
-/* 255 */
+/* 260 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(27)('Int32', 4, function(init){
@@ -39415,7 +44321,7 @@ __webpack_require__(27)('Int32', 4, function(init){
 });
 
 /***/ }),
-/* 256 */
+/* 261 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(27)('Int8', 1, function(init){
@@ -39425,7 +44331,7 @@ __webpack_require__(27)('Int8', 1, function(init){
 });
 
 /***/ }),
-/* 257 */
+/* 262 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(27)('Uint16', 2, function(init){
@@ -39435,7 +44341,7 @@ __webpack_require__(27)('Uint16', 2, function(init){
 });
 
 /***/ }),
-/* 258 */
+/* 263 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(27)('Uint32', 4, function(init){
@@ -39445,7 +44351,7 @@ __webpack_require__(27)('Uint32', 4, function(init){
 });
 
 /***/ }),
-/* 259 */
+/* 264 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(27)('Uint8', 1, function(init){
@@ -39455,7 +44361,7 @@ __webpack_require__(27)('Uint8', 1, function(init){
 });
 
 /***/ }),
-/* 260 */
+/* 265 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(27)('Uint8', 1, function(init){
@@ -39465,15 +44371,15 @@ __webpack_require__(27)('Uint8', 1, function(init){
 }, true);
 
 /***/ }),
-/* 261 */
+/* 266 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var weak = __webpack_require__(92);
+var weak = __webpack_require__(94);
 
 // 23.4 WeakSet Objects
-__webpack_require__(49)('WeakSet', function(get){
+__webpack_require__(50)('WeakSet', function(get){
   return function WeakSet(){ return get(this, arguments.length > 0 ? arguments[0] : undefined); };
 }, {
   // 23.4.3.1 WeakSet.prototype.add(value)
@@ -39483,14 +44389,14 @@ __webpack_require__(49)('WeakSet', function(get){
 }, weak, false, true);
 
 /***/ }),
-/* 262 */
+/* 267 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // https://github.com/tc39/Array.prototype.includes
 var $export   = __webpack_require__(0)
-  , $includes = __webpack_require__(48)(true);
+  , $includes = __webpack_require__(49)(true);
 
 $export($export.P, 'Array', {
   includes: function includes(el /*, fromIndex = 0 */){
@@ -39501,12 +44407,12 @@ $export($export.P, 'Array', {
 __webpack_require__(40)('includes');
 
 /***/ }),
-/* 263 */
+/* 268 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/rwaldron/tc39-notes/blob/master/es6/2014-09/sept-25.md#510-globalasap-for-enqueuing-a-microtask
 var $export   = __webpack_require__(0)
-  , microtask = __webpack_require__(72)()
+  , microtask = __webpack_require__(73)()
   , process   = __webpack_require__(2).process
   , isNode    = __webpack_require__(18)(process) == 'process';
 
@@ -39518,7 +44424,7 @@ $export($export.G, {
 });
 
 /***/ }),
-/* 264 */
+/* 269 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/ljharb/proposal-is-error
@@ -39532,16 +44438,16 @@ $export($export.S, 'Error', {
 });
 
 /***/ }),
-/* 265 */
+/* 270 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/DavidBruant/Map-Set.prototype.toJSON
 var $export  = __webpack_require__(0);
 
-$export($export.P + $export.R, 'Map', {toJSON: __webpack_require__(91)('Map')});
+$export($export.P + $export.R, 'Map', {toJSON: __webpack_require__(93)('Map')});
 
 /***/ }),
-/* 266 */
+/* 271 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://gist.github.com/BrendanEich/4294d5c212a6d2254703
@@ -39557,7 +44463,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ }),
-/* 267 */
+/* 272 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://gist.github.com/BrendanEich/4294d5c212a6d2254703
@@ -39578,7 +44484,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ }),
-/* 268 */
+/* 273 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://gist.github.com/BrendanEich/4294d5c212a6d2254703
@@ -39594,7 +44500,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ }),
-/* 269 */
+/* 274 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://gist.github.com/BrendanEich/4294d5c212a6d2254703
@@ -39615,7 +44521,7 @@ $export($export.S, 'Math', {
 });
 
 /***/ }),
-/* 270 */
+/* 275 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39626,14 +44532,14 @@ var $export         = __webpack_require__(0)
   , $defineProperty = __webpack_require__(7);
 
 // B.2.2.2 Object.prototype.__defineGetter__(P, getter)
-__webpack_require__(6) && $export($export.P + __webpack_require__(55), 'Object', {
+__webpack_require__(6) && $export($export.P + __webpack_require__(56), 'Object', {
   __defineGetter__: function __defineGetter__(P, getter){
     $defineProperty.f(toObject(this), P, {get: aFunction(getter), enumerable: true, configurable: true});
   }
 });
 
 /***/ }),
-/* 271 */
+/* 276 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39644,19 +44550,19 @@ var $export         = __webpack_require__(0)
   , $defineProperty = __webpack_require__(7);
 
 // B.2.2.3 Object.prototype.__defineSetter__(P, setter)
-__webpack_require__(6) && $export($export.P + __webpack_require__(55), 'Object', {
+__webpack_require__(6) && $export($export.P + __webpack_require__(56), 'Object', {
   __defineSetter__: function __defineSetter__(P, setter){
     $defineProperty.f(toObject(this), P, {set: aFunction(setter), enumerable: true, configurable: true});
   }
 });
 
 /***/ }),
-/* 272 */
+/* 277 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/tc39/proposal-object-values-entries
 var $export  = __webpack_require__(0)
-  , $entries = __webpack_require__(102)(true);
+  , $entries = __webpack_require__(104)(true);
 
 $export($export.S, 'Object', {
   entries: function entries(it){
@@ -39665,15 +44571,15 @@ $export($export.S, 'Object', {
 });
 
 /***/ }),
-/* 273 */
+/* 278 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/tc39/proposal-object-getownpropertydescriptors
 var $export        = __webpack_require__(0)
-  , ownKeys        = __webpack_require__(103)
+  , ownKeys        = __webpack_require__(105)
   , toIObject      = __webpack_require__(15)
   , gOPD           = __webpack_require__(16)
-  , createProperty = __webpack_require__(60);
+  , createProperty = __webpack_require__(61);
 
 $export($export.S, 'Object', {
   getOwnPropertyDescriptors: function getOwnPropertyDescriptors(object){
@@ -39689,7 +44595,7 @@ $export($export.S, 'Object', {
 });
 
 /***/ }),
-/* 274 */
+/* 279 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39701,7 +44607,7 @@ var $export                  = __webpack_require__(0)
   , getOwnPropertyDescriptor = __webpack_require__(16).f;
 
 // B.2.2.4 Object.prototype.__lookupGetter__(P)
-__webpack_require__(6) && $export($export.P + __webpack_require__(55), 'Object', {
+__webpack_require__(6) && $export($export.P + __webpack_require__(56), 'Object', {
   __lookupGetter__: function __lookupGetter__(P){
     var O = toObject(this)
       , K = toPrimitive(P, true)
@@ -39713,7 +44619,7 @@ __webpack_require__(6) && $export($export.P + __webpack_require__(55), 'Object',
 });
 
 /***/ }),
-/* 275 */
+/* 280 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39725,7 +44631,7 @@ var $export                  = __webpack_require__(0)
   , getOwnPropertyDescriptor = __webpack_require__(16).f;
 
 // B.2.2.5 Object.prototype.__lookupSetter__(P)
-__webpack_require__(6) && $export($export.P + __webpack_require__(55), 'Object', {
+__webpack_require__(6) && $export($export.P + __webpack_require__(56), 'Object', {
   __lookupSetter__: function __lookupSetter__(P){
     var O = toObject(this)
       , K = toPrimitive(P, true)
@@ -39737,12 +44643,12 @@ __webpack_require__(6) && $export($export.P + __webpack_require__(55), 'Object',
 });
 
 /***/ }),
-/* 276 */
+/* 281 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/tc39/proposal-object-values-entries
 var $export = __webpack_require__(0)
-  , $values = __webpack_require__(102)(false);
+  , $values = __webpack_require__(104)(false);
 
 $export($export.S, 'Object', {
   values: function values(it){
@@ -39751,7 +44657,7 @@ $export($export.S, 'Object', {
 });
 
 /***/ }),
-/* 277 */
+/* 282 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -39760,7 +44666,7 @@ $export($export.S, 'Object', {
 var $export     = __webpack_require__(0)
   , global      = __webpack_require__(2)
   , core        = __webpack_require__(24)
-  , microtask   = __webpack_require__(72)()
+  , microtask   = __webpack_require__(73)()
   , OBSERVABLE  = __webpack_require__(5)('observable')
   , aFunction   = __webpack_require__(11)
   , anObject    = __webpack_require__(1)
@@ -39956,7 +44862,7 @@ $export($export.G, {Observable: $Observable});
 __webpack_require__(37)('Observable');
 
 /***/ }),
-/* 278 */
+/* 283 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata                  = __webpack_require__(26)
@@ -39969,7 +44875,7 @@ metadata.exp({defineMetadata: function defineMetadata(metadataKey, metadataValue
 }});
 
 /***/ }),
-/* 279 */
+/* 284 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata               = __webpack_require__(26)
@@ -39989,11 +44895,11 @@ metadata.exp({deleteMetadata: function deleteMetadata(metadataKey, target /*, ta
 }});
 
 /***/ }),
-/* 280 */
+/* 285 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Set                     = __webpack_require__(111)
-  , from                    = __webpack_require__(87)
+var Set                     = __webpack_require__(113)
+  , from                    = __webpack_require__(89)
   , metadata                = __webpack_require__(26)
   , anObject                = __webpack_require__(1)
   , getPrototypeOf          = __webpack_require__(17)
@@ -40013,7 +44919,7 @@ metadata.exp({getMetadataKeys: function getMetadataKeys(target /*, targetKey */)
 }});
 
 /***/ }),
-/* 281 */
+/* 286 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata               = __webpack_require__(26)
@@ -40035,7 +44941,7 @@ metadata.exp({getMetadata: function getMetadata(metadataKey, target /*, targetKe
 }});
 
 /***/ }),
-/* 282 */
+/* 287 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata                = __webpack_require__(26)
@@ -40048,7 +44954,7 @@ metadata.exp({getOwnMetadataKeys: function getOwnMetadataKeys(target /*, targetK
 }});
 
 /***/ }),
-/* 283 */
+/* 288 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata               = __webpack_require__(26)
@@ -40062,7 +44968,7 @@ metadata.exp({getOwnMetadata: function getOwnMetadata(metadataKey, target /*, ta
 }});
 
 /***/ }),
-/* 284 */
+/* 289 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata               = __webpack_require__(26)
@@ -40083,7 +44989,7 @@ metadata.exp({hasMetadata: function hasMetadata(metadataKey, target /*, targetKe
 }});
 
 /***/ }),
-/* 285 */
+/* 290 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata               = __webpack_require__(26)
@@ -40097,7 +45003,7 @@ metadata.exp({hasOwnMetadata: function hasOwnMetadata(metadataKey, target /*, ta
 }});
 
 /***/ }),
-/* 286 */
+/* 291 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var metadata                  = __webpack_require__(26)
@@ -40117,23 +45023,23 @@ metadata.exp({metadata: function metadata(metadataKey, metadataValue){
 }});
 
 /***/ }),
-/* 287 */
+/* 292 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/DavidBruant/Map-Set.prototype.toJSON
 var $export  = __webpack_require__(0);
 
-$export($export.P + $export.R, 'Set', {toJSON: __webpack_require__(91)('Set')});
+$export($export.P + $export.R, 'Set', {toJSON: __webpack_require__(93)('Set')});
 
 /***/ }),
-/* 288 */
+/* 293 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // https://github.com/mathiasbynens/String.prototype.at
 var $export = __webpack_require__(0)
-  , $at     = __webpack_require__(76)(true);
+  , $at     = __webpack_require__(77)(true);
 
 $export($export.P, 'String', {
   at: function at(pos){
@@ -40142,7 +45048,7 @@ $export($export.P, 'String', {
 });
 
 /***/ }),
-/* 289 */
+/* 294 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40151,8 +45057,8 @@ $export($export.P, 'String', {
 var $export     = __webpack_require__(0)
   , defined     = __webpack_require__(19)
   , toLength    = __webpack_require__(8)
-  , isRegExp    = __webpack_require__(53)
-  , getFlags    = __webpack_require__(51)
+  , isRegExp    = __webpack_require__(54)
+  , getFlags    = __webpack_require__(52)
   , RegExpProto = RegExp.prototype;
 
 var $RegExpStringIterator = function(regexp, string){
@@ -40160,7 +45066,7 @@ var $RegExpStringIterator = function(regexp, string){
   this._s = string;
 };
 
-__webpack_require__(68)($RegExpStringIterator, 'RegExp String', function next(){
+__webpack_require__(69)($RegExpStringIterator, 'RegExp String', function next(){
   var match = this._r.exec(this._s);
   return {value: match, done: match === null};
 });
@@ -40178,14 +45084,14 @@ $export($export.P, 'String', {
 });
 
 /***/ }),
-/* 290 */
+/* 295 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // https://github.com/tc39/proposal-string-pad-start-end
 var $export = __webpack_require__(0)
-  , $pad    = __webpack_require__(107);
+  , $pad    = __webpack_require__(109);
 
 $export($export.P, 'String', {
   padEnd: function padEnd(maxLength /*, fillString = ' ' */){
@@ -40194,14 +45100,14 @@ $export($export.P, 'String', {
 });
 
 /***/ }),
-/* 291 */
+/* 296 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 // https://github.com/tc39/proposal-string-pad-start-end
 var $export = __webpack_require__(0)
-  , $pad    = __webpack_require__(107);
+  , $pad    = __webpack_require__(109);
 
 $export($export.P, 'String', {
   padStart: function padStart(maxLength /*, fillString = ' ' */){
@@ -40210,7 +45116,7 @@ $export($export.P, 'String', {
 });
 
 /***/ }),
-/* 292 */
+/* 297 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40223,7 +45129,7 @@ __webpack_require__(44)('trimLeft', function($trim){
 }, 'trimStart');
 
 /***/ }),
-/* 293 */
+/* 298 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -40236,19 +45142,19 @@ __webpack_require__(44)('trimRight', function($trim){
 }, 'trimEnd');
 
 /***/ }),
-/* 294 */
+/* 299 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(82)('asyncIterator');
+__webpack_require__(83)('asyncIterator');
 
 /***/ }),
-/* 295 */
+/* 300 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(82)('observable');
+__webpack_require__(83)('observable');
 
 /***/ }),
-/* 296 */
+/* 301 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // https://github.com/ljharb/proposal-global
@@ -40257,10 +45163,10 @@ var $export = __webpack_require__(0);
 $export($export.S, 'System', {global: __webpack_require__(2)});
 
 /***/ }),
-/* 297 */
+/* 302 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var $iterators    = __webpack_require__(84)
+var $iterators    = __webpack_require__(85)
   , redefine      = __webpack_require__(13)
   , global        = __webpack_require__(2)
   , hide          = __webpack_require__(12)
@@ -40284,25 +45190,25 @@ for(var collections = ['NodeList', 'DOMTokenList', 'MediaList', 'StyleSheetList'
 }
 
 /***/ }),
-/* 298 */
+/* 303 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var $export = __webpack_require__(0)
-  , $task   = __webpack_require__(80);
+  , $task   = __webpack_require__(81);
 $export($export.G + $export.B, {
   setImmediate:   $task.set,
   clearImmediate: $task.clear
 });
 
 /***/ }),
-/* 299 */
+/* 304 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // ie9- setTimeout & setInterval additional parameters fix
 var global     = __webpack_require__(2)
   , $export    = __webpack_require__(0)
-  , invoke     = __webpack_require__(52)
-  , partial    = __webpack_require__(126)
+  , invoke     = __webpack_require__(53)
+  , partial    = __webpack_require__(131)
   , navigator  = global.navigator
   , MSIE       = !!navigator && /MSIE .\./.test(navigator.userAgent); // <- dirty ie9- check
 var wrap = function(set){
@@ -40320,49 +45226,44 @@ $export($export.G + $export.B + $export.F * MSIE, {
 });
 
 /***/ }),
-/* 300 */
+/* 305 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(249);
-__webpack_require__(188);
-__webpack_require__(190);
-__webpack_require__(189);
-__webpack_require__(192);
-__webpack_require__(194);
-__webpack_require__(199);
+__webpack_require__(254);
 __webpack_require__(193);
-__webpack_require__(191);
-__webpack_require__(201);
-__webpack_require__(200);
-__webpack_require__(196);
-__webpack_require__(197);
 __webpack_require__(195);
-__webpack_require__(187);
-__webpack_require__(198);
-__webpack_require__(202);
-__webpack_require__(203);
-__webpack_require__(155);
-__webpack_require__(157);
-__webpack_require__(156);
-__webpack_require__(205);
+__webpack_require__(194);
+__webpack_require__(197);
+__webpack_require__(199);
 __webpack_require__(204);
-__webpack_require__(175);
-__webpack_require__(185);
-__webpack_require__(186);
-__webpack_require__(176);
-__webpack_require__(177);
-__webpack_require__(178);
-__webpack_require__(179);
+__webpack_require__(198);
+__webpack_require__(196);
+__webpack_require__(206);
+__webpack_require__(205);
+__webpack_require__(201);
+__webpack_require__(202);
+__webpack_require__(200);
+__webpack_require__(192);
+__webpack_require__(203);
+__webpack_require__(207);
+__webpack_require__(208);
+__webpack_require__(160);
+__webpack_require__(162);
+__webpack_require__(161);
+__webpack_require__(210);
+__webpack_require__(209);
 __webpack_require__(180);
+__webpack_require__(190);
+__webpack_require__(191);
 __webpack_require__(181);
 __webpack_require__(182);
 __webpack_require__(183);
 __webpack_require__(184);
-__webpack_require__(158);
-__webpack_require__(159);
-__webpack_require__(160);
-__webpack_require__(161);
-__webpack_require__(162);
+__webpack_require__(185);
+__webpack_require__(186);
+__webpack_require__(187);
+__webpack_require__(188);
+__webpack_require__(189);
 __webpack_require__(163);
 __webpack_require__(164);
 __webpack_require__(165);
@@ -40375,139 +45276,464 @@ __webpack_require__(171);
 __webpack_require__(172);
 __webpack_require__(173);
 __webpack_require__(174);
-__webpack_require__(236);
+__webpack_require__(175);
+__webpack_require__(176);
+__webpack_require__(177);
+__webpack_require__(178);
+__webpack_require__(179);
 __webpack_require__(241);
-__webpack_require__(248);
-__webpack_require__(239);
-__webpack_require__(231);
-__webpack_require__(232);
+__webpack_require__(246);
+__webpack_require__(253);
+__webpack_require__(244);
+__webpack_require__(236);
 __webpack_require__(237);
 __webpack_require__(242);
-__webpack_require__(244);
-__webpack_require__(227);
-__webpack_require__(228);
-__webpack_require__(229);
-__webpack_require__(230);
+__webpack_require__(247);
+__webpack_require__(249);
+__webpack_require__(232);
 __webpack_require__(233);
 __webpack_require__(234);
 __webpack_require__(235);
 __webpack_require__(238);
+__webpack_require__(239);
 __webpack_require__(240);
 __webpack_require__(243);
 __webpack_require__(245);
-__webpack_require__(246);
-__webpack_require__(247);
-__webpack_require__(150);
-__webpack_require__(152);
-__webpack_require__(151);
-__webpack_require__(154);
-__webpack_require__(153);
-__webpack_require__(139);
-__webpack_require__(137);
-__webpack_require__(143);
-__webpack_require__(140);
-__webpack_require__(146);
-__webpack_require__(148);
-__webpack_require__(136);
-__webpack_require__(142);
-__webpack_require__(133);
-__webpack_require__(147);
-__webpack_require__(131);
-__webpack_require__(145);
-__webpack_require__(144);
-__webpack_require__(138);
-__webpack_require__(141);
-__webpack_require__(130);
-__webpack_require__(132);
-__webpack_require__(135);
-__webpack_require__(134);
-__webpack_require__(149);
-__webpack_require__(84);
-__webpack_require__(221);
-__webpack_require__(226);
-__webpack_require__(110);
-__webpack_require__(222);
-__webpack_require__(223);
-__webpack_require__(224);
-__webpack_require__(225);
-__webpack_require__(206);
-__webpack_require__(109);
-__webpack_require__(111);
-__webpack_require__(112);
-__webpack_require__(261);
+__webpack_require__(248);
 __webpack_require__(250);
 __webpack_require__(251);
-__webpack_require__(256);
-__webpack_require__(259);
-__webpack_require__(260);
-__webpack_require__(254);
-__webpack_require__(257);
-__webpack_require__(255);
-__webpack_require__(258);
 __webpack_require__(252);
-__webpack_require__(253);
-__webpack_require__(207);
-__webpack_require__(208);
-__webpack_require__(209);
-__webpack_require__(210);
+__webpack_require__(155);
+__webpack_require__(157);
+__webpack_require__(156);
+__webpack_require__(159);
+__webpack_require__(158);
+__webpack_require__(144);
+__webpack_require__(142);
+__webpack_require__(148);
+__webpack_require__(145);
+__webpack_require__(151);
+__webpack_require__(153);
+__webpack_require__(141);
+__webpack_require__(147);
+__webpack_require__(138);
+__webpack_require__(152);
+__webpack_require__(136);
+__webpack_require__(150);
+__webpack_require__(149);
+__webpack_require__(143);
+__webpack_require__(146);
+__webpack_require__(135);
+__webpack_require__(137);
+__webpack_require__(140);
+__webpack_require__(139);
+__webpack_require__(154);
+__webpack_require__(85);
+__webpack_require__(226);
+__webpack_require__(231);
+__webpack_require__(112);
+__webpack_require__(227);
+__webpack_require__(228);
+__webpack_require__(229);
+__webpack_require__(230);
 __webpack_require__(211);
-__webpack_require__(214);
+__webpack_require__(111);
+__webpack_require__(113);
+__webpack_require__(114);
+__webpack_require__(266);
+__webpack_require__(255);
+__webpack_require__(256);
+__webpack_require__(261);
+__webpack_require__(264);
+__webpack_require__(265);
+__webpack_require__(259);
+__webpack_require__(262);
+__webpack_require__(260);
+__webpack_require__(263);
+__webpack_require__(257);
+__webpack_require__(258);
 __webpack_require__(212);
 __webpack_require__(213);
+__webpack_require__(214);
 __webpack_require__(215);
 __webpack_require__(216);
+__webpack_require__(219);
 __webpack_require__(217);
 __webpack_require__(218);
 __webpack_require__(220);
-__webpack_require__(219);
-__webpack_require__(262);
-__webpack_require__(288);
-__webpack_require__(291);
-__webpack_require__(290);
-__webpack_require__(292);
-__webpack_require__(293);
-__webpack_require__(289);
-__webpack_require__(294);
-__webpack_require__(295);
-__webpack_require__(273);
-__webpack_require__(276);
-__webpack_require__(272);
-__webpack_require__(270);
-__webpack_require__(271);
-__webpack_require__(274);
-__webpack_require__(275);
-__webpack_require__(265);
-__webpack_require__(287);
-__webpack_require__(296);
-__webpack_require__(264);
-__webpack_require__(266);
-__webpack_require__(268);
+__webpack_require__(221);
+__webpack_require__(222);
+__webpack_require__(223);
+__webpack_require__(225);
+__webpack_require__(224);
 __webpack_require__(267);
-__webpack_require__(269);
-__webpack_require__(278);
-__webpack_require__(279);
-__webpack_require__(281);
-__webpack_require__(280);
-__webpack_require__(283);
-__webpack_require__(282);
-__webpack_require__(284);
-__webpack_require__(285);
-__webpack_require__(286);
-__webpack_require__(263);
-__webpack_require__(277);
-__webpack_require__(299);
-__webpack_require__(298);
+__webpack_require__(293);
+__webpack_require__(296);
+__webpack_require__(295);
 __webpack_require__(297);
+__webpack_require__(298);
+__webpack_require__(294);
+__webpack_require__(299);
+__webpack_require__(300);
+__webpack_require__(278);
+__webpack_require__(281);
+__webpack_require__(277);
+__webpack_require__(275);
+__webpack_require__(276);
+__webpack_require__(279);
+__webpack_require__(280);
+__webpack_require__(270);
+__webpack_require__(292);
+__webpack_require__(301);
+__webpack_require__(269);
+__webpack_require__(271);
+__webpack_require__(273);
+__webpack_require__(272);
+__webpack_require__(274);
+__webpack_require__(283);
+__webpack_require__(284);
+__webpack_require__(286);
+__webpack_require__(285);
+__webpack_require__(288);
+__webpack_require__(287);
+__webpack_require__(289);
+__webpack_require__(290);
+__webpack_require__(291);
+__webpack_require__(268);
+__webpack_require__(282);
+__webpack_require__(304);
+__webpack_require__(303);
+__webpack_require__(302);
 module.exports = __webpack_require__(24);
 
 /***/ }),
-/* 301 */
-/***/ (function(module, exports) {
+/* 306 */
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = "<h1>directive {{1+1}}{{ctr.mail.title}}</h1>\r\n<div ng-repeat=\"msg in ctr.mail.msg\">\r\n    <p>{{msg.name}}</p>\r\n</div>\r\n<input type=\"button\" ng-click=\"ctr.onChange()\" value=\"Change\">";
+exports = module.exports = __webpack_require__(307)();
+// imports
+
+
+// module
+exports.push([module.i, "/*Variables*/\r\n/*$blue:#337ab7;*/\r\n/* line 17, scss/style.scss */\r\n.blue {\r\n  color: #2496d4;\r\n}\r\n/* line 19, scss/style.scss */\r\n.blue:hover {\r\n  color: #0064aa;\r\n  cursor: pointer;\r\n}\r\n\r\n/* line 24, scss/style.scss */\r\n.green {\r\n  color: #009317;\r\n}\r\n\r\n/*Base rules*/\r\n/* line 31, scss/style.scss */\r\nhtml {\r\n  overflow: auto;\r\n}\r\n\r\n/* line 34, scss/style.scss */\r\nbody {\r\n  padding-top: 40px;\r\n  padding-bottom: 40px;\r\n}\r\n\r\n/*Layout rules*/\r\n/* line 39, scss/style.scss */\r\n.main-wrapper {\r\n  max-width: 1170px;\r\n  margin-right: auto;\r\n  margin-left: auto;\r\n}\r\n\r\n/* line 44, scss/style.scss */\r\n.footer {\r\n  background-color: #efefef;\r\n  padding-top: 5px;\r\n  padding-bottom: 0;\r\n  margin-bottom: -5px;\r\n  border-top: 1px solid lightgrey;\r\n}\r\n/* line 50, scss/style.scss */\r\n.footer .muted {\r\n  margin-left: 15px;\r\n  color: #7f7f7f;\r\n}\r\n\r\n/*Bootstrap corrections*/\r\n/* line 56, scss/style.scss */\r\n.nav-tabs > li > a {\r\n  color: #b1ddec;\r\n}\r\n\r\n/* line 59, scss/style.scss */\r\n.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {\r\n  color: #2496d4;\r\n}\r\n\r\n/***************/\r\n/*Modules rules*/\r\n/***************/\r\n/*Auth*/\r\n/* line 67, scss/style.scss */\r\n.form-signin {\r\n  max-width: 330px;\r\n  padding: 15px;\r\n  margin: 0 auto;\r\n}\r\n\r\n/* line 72, scss/style.scss */\r\n.form-signin .form-signin-heading {\r\n  margin-bottom: 10px;\r\n}\r\n\r\n/* line 75, scss/style.scss */\r\n.form-signin .form-control {\r\n  position: relative;\r\n  height: auto;\r\n  -webkit-box-sizing: border-box;\r\n  -moz-box-sizing: border-box;\r\n  box-sizing: border-box;\r\n  padding: 10px;\r\n  font-size: 16px;\r\n}\r\n\r\n/* line 84, scss/style.scss */\r\n.form-signin .form-control:focus {\r\n  z-index: 2;\r\n}\r\n\r\n/* line 87, scss/style.scss */\r\n.form-signin input {\r\n  margin-bottom: 5px;\r\n}\r\n\r\n/* line 90, scss/style.scss */\r\n.logo-images {\r\n  width: 70px;\r\n  display: inline-block;\r\n}\r\n\r\n/* line 94, scss/style.scss */\r\n.user-name-string {\r\n  margin-top: 10px;\r\n  margin-bottom: 10px;\r\n  font-size: 16px;\r\n  color: #7f7f7f;\r\n  margin-left: 10px;\r\n}\r\n\r\n/*Tab*/\r\n/* line 104, scss/style.scss */\r\n.tab--list li i {\r\n  padding: 0 6px;\r\n  font-size: 20px;\r\n}\r\n\r\n/*Album list*/\r\n/* line 112, scss/style.scss */\r\n.album--list .album--item {\r\n  margin-top: -1px;\r\n  border-top: 1px solid lightgrey;\r\n  border-bottom: 1px solid lightgrey;\r\n  background: #f6f6f6;\r\n  padding: 5px 0;\r\n}\r\n/* line 118, scss/style.scss */\r\n.album--list .album--item > div {\r\n  vertical-align: top;\r\n}\r\n/* line 121, scss/style.scss */\r\n.album--list .album--item .album--thumb-wrapper {\r\n  width: 138px;\r\n  text-align: center;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n/* line 127, scss/style.scss */\r\n.album--list .album--item .album--thumb-wrapper .album--thumb-image {\r\n  max-height: 98px;\r\n    max-width: 130px;\r\n}\r\n/* line 131, scss/style.scss */\r\n.album--list .album--item .album--details {\r\n  padding: 0 7px;\r\n}\r\n/* line 133, scss/style.scss */\r\n.album--list .album--item .album--details > h4 {\r\n  margin: 5px 0;\r\n  font-size: 17px;\r\n}\r\n/* line 137, scss/style.scss */\r\n.album--list .album--item .album--details > p {\r\n  margin: 0 0 5px;\r\n  font-size: 11px;\r\n}\r\n/* line 142, scss/style.scss */\r\n.album--list .album--item .album--link-direction-wrapper {\r\n  width: 40px;\r\n  vertical-align: middle;\r\n  font-size: 40px;\r\n  color: #2496d4;\r\n}\r\n/* line 147, scss/style.scss */\r\n.album--list .album--item .album--link-direction-wrapper .album--link-direction {\r\n  position: relative;\r\n  top: 19px;\r\n}\r\n\r\n/*Album View - Images list*/\r\n/* line 155, scss/style.scss */\r\n.images--list {\r\n  /*height: 0px;*/\r\n  overflow: auto;\r\n}\r\n\r\n/* line 159, scss/style.scss */\r\n.images--item {\r\n  background-color: #efefef;\r\n  border: 1px solid #7f7f7f;\r\n  -webkit-border-radius: 5px;\r\n  -moz-border-radius: 5px;\r\n  border-radius: 5px;\r\n  margin-bottom: 5px;\r\n  margin-right: 5px;\r\n}\r\n/* line 167, scss/style.scss */\r\n.images--item .images--thumb-wrapper {\r\n  background-color: #f6f6f6;\r\n  -webkit-border-top-left-radius: 5px;\r\n  -webkit-border-top-right-radius: 5px;\r\n  -moz-border-radius-topleft: 5px;\r\n  -moz-border-radius-topright: 5px;\r\n  border-top-left-radius: 5px;\r\n  border-top-right-radius: 5px;\r\n  width: 130px;\r\n  height: 98px;\r\n  text-align: center;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n/* line 181, scss/style.scss */\r\n.images--item .images--thumb-wrapper .images--thumb-image {\r\n /* display: inline-block;*/\r\n  max-height: 98px;\r\n  max-width: 130px;\r\n}\r\n/* line 187, scss/style.scss */\r\n.images--item .images--thumb-select-link {\r\n  text-align: left;\r\n}\r\n\r\n/*Album View - Popover*/\r\n/* line 192, scss/style.scss */\r\n.popover {\r\n  width: 1140px;\r\n  max-width: 95%;\r\n  left: auto !important;\r\n  right: auto !important;\r\n  background-color: rgba(0, 0, 0, 0.8);\r\n  border: 0px;\r\n  color: #efefef;\r\n}\r\n/* line 200, scss/style.scss */\r\n.popover.bottom {\r\n  margin-top: 2px;\r\n}\r\n/* line 203, scss/style.scss */\r\n.popover .arrow {\r\n  display: none;\r\n}\r\n\r\n/*Photo Details = Popover + Photo View*/\r\n/* line 208, scss/style.scss */\r\n.photo-details--table {\r\n  font-size: 12px;\r\n}\r\n/* line 210, scss/style.scss */\r\n.photo-details--table .photo-details--col1 {\r\n  width: 70px;\r\n  font-weight: bold;\r\n  vertical-align: top;\r\n}\r\n\r\n/*Photo View*/\r\n/* line 217, scss/style.scss */\r\n.photo--image-wrapper {\r\n  border-top: 1px solid lightgrey;\r\n  text-align: center;\r\n  padding: 10px;\r\n}\r\n/* line 221, scss/style.scss */\r\n.photo--image-wrapper .photo--image {\r\n  max-width: 100%;\r\n}\r\n\r\n/* line 228, scss/style.scss */\r\n.photo--image-size3,\r\n.photo--image-size4,\r\n.photo--image-size6,\r\n.photo--image-size7 {\r\n  display: none;\r\n}\r\n\r\n@media screen and (min-width: 654px) {\r\n  /* line 232, scss/style.scss */\r\n  .photo--image-size7 {\r\n    display: inline-block;\r\n  }\r\n}\r\n@media screen and (min-width: 560px) and (max-width: 653px) {\r\n  /* line 237, scss/style.scss */\r\n  .photo--image-size6 {\r\n    display: inline-block;\r\n  }\r\n}\r\n@media screen and (min-width: 370px) and (max-width: 559px) {\r\n  /* line 242, scss/style.scss */\r\n  .photo--image-size4 {\r\n    display: inline-block;\r\n  }\r\n}\r\n@media screen and (min-width: 1px) and (max-width: 369px) {\r\n  /* line 247, scss/style.scss */\r\n  .photo--image-size3 {\r\n    display: inline-block;\r\n  }\r\n}\r\n/*Image Preloader*/\r\n/* line 254, scss/style.scss */\r\n.spinner-show,\r\n.spinner-hide + .loading,\r\n.srcFailShow > .srcFail {\r\n  display: inline-block;\r\n}\r\n\r\n/* line 260, scss/style.scss */\r\n.spinner-hide,\r\n.spinner-show + .loading,\r\n.spinner-error + .loading,\r\n.srcFail {\r\n  display: none;\r\n}\r\n\r\n/*Infinite scroll*/\r\n/* line 264, scss/style.scss */\r\n.loading-data {\r\n  text-align: center;\r\n  font-size: 30px;\r\n  color: #2496d4;\r\n  margin-bottom: 5px;\r\n  margin-top: 5px;\r\n}\r\n/* line 270, scss/style.scss */\r\n.loading-data img {\r\n  position: relative;\r\n  top: -4px;\r\n  left: -3px;\r\n}\r\n\r\n/*Drug-n-drop*/\r\n/* line 277, scss/style.scss */\r\n.drop {\r\n  padding: 100px 15px;\r\n  text-align: center;\r\n  border: 3px dashed #d3d3d3;\r\n  border-radius: 5px;\r\n  line-height: 22px;\r\n  font-size: 16px;\r\n  margin-bottom: 16px;\r\n}\r\n\r\n/* line 286, scss/style.scss */\r\n.drag-over {\r\n  border: 3px #2496d4 dashed;\r\n  background-color: #f6f6f6;\r\n}\r\n\r\n/* line 290, scss/style.scss */\r\n.micro-spinner {\r\n  margin: -2px 0px 0 5px;\r\n  width: 12px;\r\n}\r\n\r\n.dropzone {\r\n    min-height: 150px;\r\n    border: 2px solid rgba(0,0,0,0.3);\r\n    background: transparent;\r\n    padding: 0px 0px 10px 0px;\r\n    border: 3px dashed #d3d3d3;\r\n    position: relative;\r\n    border-radius: 5px;\r\n}\r\n\r\n.dropzone .dz-preview.dz-processing .dz-progress {\r\n    top: 88%;\r\n    margin: 0;\r\n    left: 0;\r\n    width: 100%;\r\n    border-radius: 0 0 5px 5px;\r\n    overflow: hidden;\r\n}\r\n\r\n.dropzone .dz-preview .dz-progress .dz-upload {\r\n    background: #82CC7A;\r\n}\r\n\r\n.dropzone .dz-preview .dz-image {\r\n    border-radius: 5px;\r\n\r\n}\r\n\r\n.dropzone.dz-clickable .dz-message, .dropzone.dz-clickable .dz-message * {\r\n    cursor: pointer;\r\n    position: relative;\r\n    padding: 33px 0 0 0;\r\n}\r\n\r\n.dropzone span.browse {\r\n    color: #23527c;\r\n    text-decoration: underline;\r\n}\r\n\r\n.dn{display:none}.db{display:block}.dib{display:inline-block}.tac{text-align:center}.bold{font-weight:700!important}.uline{text-decoration:underline}.pre-line{white-space:pre-line}.inline-block{display:inline-block!important}.m-20{padding:-20px}.m-15{margin:-15px}.m-10{margin:-10px}.m-5{margin:-5px}.m-3{margin:-3px}.m0{margin:0}.m3{margin:3px}.m5{margin:5px}.m10{margin:10px}.m15{margin:15px}.m20{padding:20px}.p-20{padding:-20px}.p-15{padding:-15px}.p-10{padding:-10px}.p-5{padding:-5px}.p-3{padding:-3px}.p0{padding:0}.p3{padding:3px}.p5{padding:5px}.p10{padding:10px}.p15{padding:15px}.p20{padding:20px}.mt-20{margin-top:-20px!important}.mr-20{margin-right:-20px!important}.mb-20{margin-bottom:-20px!important}.ml-20{margin-left:-20px!important}.mt-15{margin-top:-15px!important}.mr-15{margin-right:-15px!important}.mb-15{margin-bottom:-15px!important}.ml-15{margin-left:-15px!important}.mt-10{margin-top:-10px!important}.mr-10{margin-right:-10px!important}.mb-10{margin-bottom:-10px!important}.ml-10{margin-left:-10px!important}.mt-5{margin-top:-5px!important}.mr-5{margin-right:-5px!important}.mb-5{margin-bottom:-5px!important}.ml-5{margin-left:-5px!important}.mt-3{margin-top:-3px!important}.mr-3{margin-right:-3px!important}.mb-3{margin-bottom:-3px!important}.ml-3{margin-left:-3px!important}.mt0{margin-top:0!important}.mr0{margin-right:0!important}.mb0{margin-bottom:0!important}.ml0{margin-left:0!important}.mt3{margin-top:3px!important}.mr3{margin-right:3px!important}.mb3{margin-bottom:3px!important}.ml3{margin-left:3px!important}.mt5{margin-top:5px!important}.mr5{margin-right:5px!important}.mb5{margin-bottom:5px!important}.ml5{margin-left:5px!important}.mt10{margin-top:10px!important}.mr10{margin-right:10px!important}.mb10{margin-bottom:10px!important}.ml10{margin-left:10px!important}.mt15{margin-top:15px!important}.mr15{margin-right:15px!important}.mb15{margin-bottom:15px!important}.ml15{margin-left:15px!important}.mt20{margin-top:20px!important}.mr20{margin-right:20px!important}.mb20{margin-bottom:20px!important}.ml20{margin-left:20px!important}.pt0{padding-top:0!important}.pr0{padding-right:0!important}.pb0{padding-bottom:0!important}.pl0{padding-left:0!important}.pt3{padding-top:3px!important}.pr3{padding-right:3px!important}.pb3{padding-bottom:3px!important}.pl3{padding-left:3px!important}.pt5{padding-top:5px!important}.pr5{padding-right:5px!important}.pb5{padding-bottom:5px!important}.pl5{padding-left:5px!important}.pt10{padding-top:10px!important}.pr10{padding-right:10px!important}.pb10{padding-bottom:10px!important}.pl10{padding-left:10px!important}.pt15{padding-top:15px!important}.pr15{padding-right:15px!important}.pb15{padding-bottom:15px!important}.pl15{padding-left:15px!important}.pt20{padding-top:20px!important}.pr20{padding-right:20px!important}.pb20{padding-bottom:20px!important}.pl20{padding-left:20px!important}.w50{width:50px}.w100{width:100px}.w150{width:150px}.w200{width:200px}.w250{width:250px}.w300{width:300px}.w350{width:350px}.w400{width:400px}.w450{width:450px}.w500{width:500px}.w550{width:550px}.w600{width:600px}.w650{width:650px}.w700{width:700px}.w750{width:750px}.w800{width:800px}.w850{width:850px}.w900{width:900px}.w950{width:950px}.w1000{width:1000px}.w5p{width:5%}.w10p{width:10%}.w15p{width:15%}.w20p{width:20%}.w25p{width:25%}.w30p{width:30%}.w35p{width:35%}.w40p{width:40%}.w45p{width:45%}.w50p{width:50%}.w55p{width:55%}.w60p{width:60%}.w65p{width:65%}.w70p{width:70%}.w75p{width:75%}.w80p{width:80%}.w85p{width:85%}.w90p{width:90%}.w95p{width:95%}.w100p{width:100%}.fz6{font-size:6px!important}.fz7{font-size:7px!important}.fz8{font-size:8px!important}.fz9{font-size:9px!important}.fz10{font-size:10px!important}.fz11{font-size:11px!important}.fz12{font-size:12px!important}.fz13{font-size:13px!important}.fz14{font-size:14px!important}.fz15{font-size:15px!important}.fz16{font-size:16px!important}.fz17{font-size:17px!important}.fz18{font-size:18px!important}.fz19{font-size:19px!important}.fz20{font-size:20px!important}.fz22{font-size:22px!important}.fz24{font-size:24px!important}.fz26{font-size:26px!important}.fz28{font-size:28px!important}.fz30{font-size:30px!important}.fz35{font-size:35px!important}.fz40{font-size:40px!important}.fz45{font-size:45px!important}.fz50{font-size:50px!important}.table-striped-tbody>tbody:nth-of-type(2n+1){background-color:#f9f9f9}.table-striped-tbody>tbody:nth-of-type(2n),.table-striped>tbody>tr:nth-of-type(2n),thead tr{background-color:hsla(0,0%,100%,.4)}.table>thead>tr>th{border-top:2px solid #ddd!important}.flex-container{display:-webkit-box;display:-ms-flexbox;display:flex}.flex-fixed{-webkit-box-flex:0;-ms-flex:none;flex:none}.flex-column,.flex-flex{-webkit-box-flex:1;-ms-flex:1;flex:1}.flex-column{display:-webkit-box;display:-ms-flexbox;display:flex}.color_inherit{color:inherit}", "", {"version":3,"sources":["/./app/styles/css/style.css"],"names":[],"mappings":"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","file":"style.css","sourcesContent":["/*Variables*/\r\n/*$blue:#337ab7;*/\r\n/* line 17, scss/style.scss */\r\n.blue {\r\n  color: #2496d4;\r\n}\r\n/* line 19, scss/style.scss */\r\n.blue:hover {\r\n  color: #0064aa;\r\n  cursor: pointer;\r\n}\r\n\r\n/* line 24, scss/style.scss */\r\n.green {\r\n  color: #009317;\r\n}\r\n\r\n/*Base rules*/\r\n/* line 31, scss/style.scss */\r\nhtml {\r\n  overflow: auto;\r\n}\r\n\r\n/* line 34, scss/style.scss */\r\nbody {\r\n  padding-top: 40px;\r\n  padding-bottom: 40px;\r\n}\r\n\r\n/*Layout rules*/\r\n/* line 39, scss/style.scss */\r\n.main-wrapper {\r\n  max-width: 1170px;\r\n  margin-right: auto;\r\n  margin-left: auto;\r\n}\r\n\r\n/* line 44, scss/style.scss */\r\n.footer {\r\n  background-color: #efefef;\r\n  padding-top: 5px;\r\n  padding-bottom: 0;\r\n  margin-bottom: -5px;\r\n  border-top: 1px solid lightgrey;\r\n}\r\n/* line 50, scss/style.scss */\r\n.footer .muted {\r\n  margin-left: 15px;\r\n  color: #7f7f7f;\r\n}\r\n\r\n/*Bootstrap corrections*/\r\n/* line 56, scss/style.scss */\r\n.nav-tabs > li > a {\r\n  color: #b1ddec;\r\n}\r\n\r\n/* line 59, scss/style.scss */\r\n.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {\r\n  color: #2496d4;\r\n}\r\n\r\n/***************/\r\n/*Modules rules*/\r\n/***************/\r\n/*Auth*/\r\n/* line 67, scss/style.scss */\r\n.form-signin {\r\n  max-width: 330px;\r\n  padding: 15px;\r\n  margin: 0 auto;\r\n}\r\n\r\n/* line 72, scss/style.scss */\r\n.form-signin .form-signin-heading {\r\n  margin-bottom: 10px;\r\n}\r\n\r\n/* line 75, scss/style.scss */\r\n.form-signin .form-control {\r\n  position: relative;\r\n  height: auto;\r\n  -webkit-box-sizing: border-box;\r\n  -moz-box-sizing: border-box;\r\n  box-sizing: border-box;\r\n  padding: 10px;\r\n  font-size: 16px;\r\n}\r\n\r\n/* line 84, scss/style.scss */\r\n.form-signin .form-control:focus {\r\n  z-index: 2;\r\n}\r\n\r\n/* line 87, scss/style.scss */\r\n.form-signin input {\r\n  margin-bottom: 5px;\r\n}\r\n\r\n/* line 90, scss/style.scss */\r\n.logo-images {\r\n  width: 70px;\r\n  display: inline-block;\r\n}\r\n\r\n/* line 94, scss/style.scss */\r\n.user-name-string {\r\n  margin-top: 10px;\r\n  margin-bottom: 10px;\r\n  font-size: 16px;\r\n  color: #7f7f7f;\r\n  margin-left: 10px;\r\n}\r\n\r\n/*Tab*/\r\n/* line 104, scss/style.scss */\r\n.tab--list li i {\r\n  padding: 0 6px;\r\n  font-size: 20px;\r\n}\r\n\r\n/*Album list*/\r\n/* line 112, scss/style.scss */\r\n.album--list .album--item {\r\n  margin-top: -1px;\r\n  border-top: 1px solid lightgrey;\r\n  border-bottom: 1px solid lightgrey;\r\n  background: #f6f6f6;\r\n  padding: 5px 0;\r\n}\r\n/* line 118, scss/style.scss */\r\n.album--list .album--item > div {\r\n  vertical-align: top;\r\n}\r\n/* line 121, scss/style.scss */\r\n.album--list .album--item .album--thumb-wrapper {\r\n  width: 138px;\r\n  text-align: center;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n/* line 127, scss/style.scss */\r\n.album--list .album--item .album--thumb-wrapper .album--thumb-image {\r\n  max-height: 98px;\r\n    max-width: 130px;\r\n}\r\n/* line 131, scss/style.scss */\r\n.album--list .album--item .album--details {\r\n  padding: 0 7px;\r\n}\r\n/* line 133, scss/style.scss */\r\n.album--list .album--item .album--details > h4 {\r\n  margin: 5px 0;\r\n  font-size: 17px;\r\n}\r\n/* line 137, scss/style.scss */\r\n.album--list .album--item .album--details > p {\r\n  margin: 0 0 5px;\r\n  font-size: 11px;\r\n}\r\n/* line 142, scss/style.scss */\r\n.album--list .album--item .album--link-direction-wrapper {\r\n  width: 40px;\r\n  vertical-align: middle;\r\n  font-size: 40px;\r\n  color: #2496d4;\r\n}\r\n/* line 147, scss/style.scss */\r\n.album--list .album--item .album--link-direction-wrapper .album--link-direction {\r\n  position: relative;\r\n  top: 19px;\r\n}\r\n\r\n/*Album View - Images list*/\r\n/* line 155, scss/style.scss */\r\n.images--list {\r\n  /*height: 0px;*/\r\n  overflow: auto;\r\n}\r\n\r\n/* line 159, scss/style.scss */\r\n.images--item {\r\n  background-color: #efefef;\r\n  border: 1px solid #7f7f7f;\r\n  -webkit-border-radius: 5px;\r\n  -moz-border-radius: 5px;\r\n  border-radius: 5px;\r\n  margin-bottom: 5px;\r\n  margin-right: 5px;\r\n}\r\n/* line 167, scss/style.scss */\r\n.images--item .images--thumb-wrapper {\r\n  background-color: #f6f6f6;\r\n  -webkit-border-top-left-radius: 5px;\r\n  -webkit-border-top-right-radius: 5px;\r\n  -moz-border-radius-topleft: 5px;\r\n  -moz-border-radius-topright: 5px;\r\n  border-top-left-radius: 5px;\r\n  border-top-right-radius: 5px;\r\n  width: 130px;\r\n  height: 98px;\r\n  text-align: center;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n/* line 181, scss/style.scss */\r\n.images--item .images--thumb-wrapper .images--thumb-image {\r\n /* display: inline-block;*/\r\n  max-height: 98px;\r\n  max-width: 130px;\r\n}\r\n/* line 187, scss/style.scss */\r\n.images--item .images--thumb-select-link {\r\n  text-align: left;\r\n}\r\n\r\n/*Album View - Popover*/\r\n/* line 192, scss/style.scss */\r\n.popover {\r\n  width: 1140px;\r\n  max-width: 95%;\r\n  left: auto !important;\r\n  right: auto !important;\r\n  background-color: rgba(0, 0, 0, 0.8);\r\n  border: 0px;\r\n  color: #efefef;\r\n}\r\n/* line 200, scss/style.scss */\r\n.popover.bottom {\r\n  margin-top: 2px;\r\n}\r\n/* line 203, scss/style.scss */\r\n.popover .arrow {\r\n  display: none;\r\n}\r\n\r\n/*Photo Details = Popover + Photo View*/\r\n/* line 208, scss/style.scss */\r\n.photo-details--table {\r\n  font-size: 12px;\r\n}\r\n/* line 210, scss/style.scss */\r\n.photo-details--table .photo-details--col1 {\r\n  width: 70px;\r\n  font-weight: bold;\r\n  vertical-align: top;\r\n}\r\n\r\n/*Photo View*/\r\n/* line 217, scss/style.scss */\r\n.photo--image-wrapper {\r\n  border-top: 1px solid lightgrey;\r\n  text-align: center;\r\n  padding: 10px;\r\n}\r\n/* line 221, scss/style.scss */\r\n.photo--image-wrapper .photo--image {\r\n  max-width: 100%;\r\n}\r\n\r\n/* line 228, scss/style.scss */\r\n.photo--image-size3,\r\n.photo--image-size4,\r\n.photo--image-size6,\r\n.photo--image-size7 {\r\n  display: none;\r\n}\r\n\r\n@media screen and (min-width: 654px) {\r\n  /* line 232, scss/style.scss */\r\n  .photo--image-size7 {\r\n    display: inline-block;\r\n  }\r\n}\r\n@media screen and (min-width: 560px) and (max-width: 653px) {\r\n  /* line 237, scss/style.scss */\r\n  .photo--image-size6 {\r\n    display: inline-block;\r\n  }\r\n}\r\n@media screen and (min-width: 370px) and (max-width: 559px) {\r\n  /* line 242, scss/style.scss */\r\n  .photo--image-size4 {\r\n    display: inline-block;\r\n  }\r\n}\r\n@media screen and (min-width: 1px) and (max-width: 369px) {\r\n  /* line 247, scss/style.scss */\r\n  .photo--image-size3 {\r\n    display: inline-block;\r\n  }\r\n}\r\n/*Image Preloader*/\r\n/* line 254, scss/style.scss */\r\n.spinner-show,\r\n.spinner-hide + .loading,\r\n.srcFailShow > .srcFail {\r\n  display: inline-block;\r\n}\r\n\r\n/* line 260, scss/style.scss */\r\n.spinner-hide,\r\n.spinner-show + .loading,\r\n.spinner-error + .loading,\r\n.srcFail {\r\n  display: none;\r\n}\r\n\r\n/*Infinite scroll*/\r\n/* line 264, scss/style.scss */\r\n.loading-data {\r\n  text-align: center;\r\n  font-size: 30px;\r\n  color: #2496d4;\r\n  margin-bottom: 5px;\r\n  margin-top: 5px;\r\n}\r\n/* line 270, scss/style.scss */\r\n.loading-data img {\r\n  position: relative;\r\n  top: -4px;\r\n  left: -3px;\r\n}\r\n\r\n/*Drug-n-drop*/\r\n/* line 277, scss/style.scss */\r\n.drop {\r\n  padding: 100px 15px;\r\n  text-align: center;\r\n  border: 3px dashed #d3d3d3;\r\n  border-radius: 5px;\r\n  line-height: 22px;\r\n  font-size: 16px;\r\n  margin-bottom: 16px;\r\n}\r\n\r\n/* line 286, scss/style.scss */\r\n.drag-over {\r\n  border: 3px #2496d4 dashed;\r\n  background-color: #f6f6f6;\r\n}\r\n\r\n/* line 290, scss/style.scss */\r\n.micro-spinner {\r\n  margin: -2px 0px 0 5px;\r\n  width: 12px;\r\n}\r\n\r\n.dropzone {\r\n    min-height: 150px;\r\n    border: 2px solid rgba(0,0,0,0.3);\r\n    background: transparent;\r\n    padding: 0px 0px 10px 0px;\r\n    border: 3px dashed #d3d3d3;\r\n    position: relative;\r\n    border-radius: 5px;\r\n}\r\n\r\n.dropzone .dz-preview.dz-processing .dz-progress {\r\n    top: 88%;\r\n    margin: 0;\r\n    left: 0;\r\n    width: 100%;\r\n    border-radius: 0 0 5px 5px;\r\n    overflow: hidden;\r\n}\r\n\r\n.dropzone .dz-preview .dz-progress .dz-upload {\r\n    background: #82CC7A;\r\n}\r\n\r\n.dropzone .dz-preview .dz-image {\r\n    border-radius: 5px;\r\n\r\n}\r\n\r\n.dropzone.dz-clickable .dz-message, .dropzone.dz-clickable .dz-message * {\r\n    cursor: pointer;\r\n    position: relative;\r\n    padding: 33px 0 0 0;\r\n}\r\n\r\n.dropzone span.browse {\r\n    color: #23527c;\r\n    text-decoration: underline;\r\n}\r\n\r\n.dn{display:none}.db{display:block}.dib{display:inline-block}.tac{text-align:center}.bold{font-weight:700!important}.uline{text-decoration:underline}.pre-line{white-space:pre-line}.inline-block{display:inline-block!important}.m-20{padding:-20px}.m-15{margin:-15px}.m-10{margin:-10px}.m-5{margin:-5px}.m-3{margin:-3px}.m0{margin:0}.m3{margin:3px}.m5{margin:5px}.m10{margin:10px}.m15{margin:15px}.m20{padding:20px}.p-20{padding:-20px}.p-15{padding:-15px}.p-10{padding:-10px}.p-5{padding:-5px}.p-3{padding:-3px}.p0{padding:0}.p3{padding:3px}.p5{padding:5px}.p10{padding:10px}.p15{padding:15px}.p20{padding:20px}.mt-20{margin-top:-20px!important}.mr-20{margin-right:-20px!important}.mb-20{margin-bottom:-20px!important}.ml-20{margin-left:-20px!important}.mt-15{margin-top:-15px!important}.mr-15{margin-right:-15px!important}.mb-15{margin-bottom:-15px!important}.ml-15{margin-left:-15px!important}.mt-10{margin-top:-10px!important}.mr-10{margin-right:-10px!important}.mb-10{margin-bottom:-10px!important}.ml-10{margin-left:-10px!important}.mt-5{margin-top:-5px!important}.mr-5{margin-right:-5px!important}.mb-5{margin-bottom:-5px!important}.ml-5{margin-left:-5px!important}.mt-3{margin-top:-3px!important}.mr-3{margin-right:-3px!important}.mb-3{margin-bottom:-3px!important}.ml-3{margin-left:-3px!important}.mt0{margin-top:0!important}.mr0{margin-right:0!important}.mb0{margin-bottom:0!important}.ml0{margin-left:0!important}.mt3{margin-top:3px!important}.mr3{margin-right:3px!important}.mb3{margin-bottom:3px!important}.ml3{margin-left:3px!important}.mt5{margin-top:5px!important}.mr5{margin-right:5px!important}.mb5{margin-bottom:5px!important}.ml5{margin-left:5px!important}.mt10{margin-top:10px!important}.mr10{margin-right:10px!important}.mb10{margin-bottom:10px!important}.ml10{margin-left:10px!important}.mt15{margin-top:15px!important}.mr15{margin-right:15px!important}.mb15{margin-bottom:15px!important}.ml15{margin-left:15px!important}.mt20{margin-top:20px!important}.mr20{margin-right:20px!important}.mb20{margin-bottom:20px!important}.ml20{margin-left:20px!important}.pt0{padding-top:0!important}.pr0{padding-right:0!important}.pb0{padding-bottom:0!important}.pl0{padding-left:0!important}.pt3{padding-top:3px!important}.pr3{padding-right:3px!important}.pb3{padding-bottom:3px!important}.pl3{padding-left:3px!important}.pt5{padding-top:5px!important}.pr5{padding-right:5px!important}.pb5{padding-bottom:5px!important}.pl5{padding-left:5px!important}.pt10{padding-top:10px!important}.pr10{padding-right:10px!important}.pb10{padding-bottom:10px!important}.pl10{padding-left:10px!important}.pt15{padding-top:15px!important}.pr15{padding-right:15px!important}.pb15{padding-bottom:15px!important}.pl15{padding-left:15px!important}.pt20{padding-top:20px!important}.pr20{padding-right:20px!important}.pb20{padding-bottom:20px!important}.pl20{padding-left:20px!important}.w50{width:50px}.w100{width:100px}.w150{width:150px}.w200{width:200px}.w250{width:250px}.w300{width:300px}.w350{width:350px}.w400{width:400px}.w450{width:450px}.w500{width:500px}.w550{width:550px}.w600{width:600px}.w650{width:650px}.w700{width:700px}.w750{width:750px}.w800{width:800px}.w850{width:850px}.w900{width:900px}.w950{width:950px}.w1000{width:1000px}.w5p{width:5%}.w10p{width:10%}.w15p{width:15%}.w20p{width:20%}.w25p{width:25%}.w30p{width:30%}.w35p{width:35%}.w40p{width:40%}.w45p{width:45%}.w50p{width:50%}.w55p{width:55%}.w60p{width:60%}.w65p{width:65%}.w70p{width:70%}.w75p{width:75%}.w80p{width:80%}.w85p{width:85%}.w90p{width:90%}.w95p{width:95%}.w100p{width:100%}.fz6{font-size:6px!important}.fz7{font-size:7px!important}.fz8{font-size:8px!important}.fz9{font-size:9px!important}.fz10{font-size:10px!important}.fz11{font-size:11px!important}.fz12{font-size:12px!important}.fz13{font-size:13px!important}.fz14{font-size:14px!important}.fz15{font-size:15px!important}.fz16{font-size:16px!important}.fz17{font-size:17px!important}.fz18{font-size:18px!important}.fz19{font-size:19px!important}.fz20{font-size:20px!important}.fz22{font-size:22px!important}.fz24{font-size:24px!important}.fz26{font-size:26px!important}.fz28{font-size:28px!important}.fz30{font-size:30px!important}.fz35{font-size:35px!important}.fz40{font-size:40px!important}.fz45{font-size:45px!important}.fz50{font-size:50px!important}.table-striped-tbody>tbody:nth-of-type(2n+1){background-color:#f9f9f9}.table-striped-tbody>tbody:nth-of-type(2n),.table-striped>tbody>tr:nth-of-type(2n),thead tr{background-color:hsla(0,0%,100%,.4)}.table>thead>tr>th{border-top:2px solid #ddd!important}.flex-container{display:-webkit-box;display:-ms-flexbox;display:flex}.flex-fixed{-webkit-box-flex:0;-ms-flex:none;flex:none}.flex-column,.flex-flex{-webkit-box-flex:1;-ms-flex:1;flex:1}.flex-column{display:-webkit-box;display:-ms-flexbox;display:flex}.color_inherit{color:inherit}"],"sourceRoot":"webpack://"}]);
+
+// exports
+
 
 /***/ }),
-/* 302 */
+/* 307 */
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+// css base code, injected by the css-loader
+module.exports = function() {
+	var list = [];
+
+	// return the list of modules as css string
+	list.toString = function toString() {
+		var result = [];
+		for(var i = 0; i < this.length; i++) {
+			var item = this[i];
+			if(item[2]) {
+				result.push("@media " + item[2] + "{" + item[1] + "}");
+			} else {
+				result.push(item[1]);
+			}
+		}
+		return result.join("");
+	};
+
+	// import a list of modules into the list
+	list.i = function(modules, mediaQuery) {
+		if(typeof modules === "string")
+			modules = [[null, modules, ""]];
+		var alreadyImportedModules = {};
+		for(var i = 0; i < this.length; i++) {
+			var id = this[i][0];
+			if(typeof id === "number")
+				alreadyImportedModules[id] = true;
+		}
+		for(i = 0; i < modules.length; i++) {
+			var item = modules[i];
+			// skip already imported module
+			// this implementation is not 100% perfect for weird media query combinations
+			//  when a module is imported multiple times with different media queries.
+			//  I hope this will never occur (Hey this way we have smaller bundles)
+			if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
+				if(mediaQuery && !item[2]) {
+					item[2] = mediaQuery;
+				} else if(mediaQuery) {
+					item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
+				}
+				list.push(item);
+			}
+		}
+	};
+	return list;
+};
+
+
+/***/ }),
+/* 308 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = "<div class=\"container\">\r\n    <h2 class=\"form-signin-heading tac\">\r\n        <img src=\"" + __webpack_require__(315) + "\" alt=\"flickr\" class=\"logo-images\"> +\r\n        <img src=\"" + __webpack_require__(314) + "\" alt=\"Angular\" class=\"logo-images\">\r\n        explorer\r\n    </h2>\r\n\r\n    <form class=\"form-signin\">\r\n        <button class=\"btn btn-lg btn-primary btn-block\" ng-click=\"login()\" type=\"submit\">Sign in on\r\n            <i class=\"fa fa-facebook-square\" aria-hidden=\"true\"></i></button>\r\n    </form>\r\n</div>";
+
+/***/ }),
+/* 309 */
+/***/ (function(module, exports) {
+
+/**
+ * Angular Facebook service
+ * ---------------------------
+ *
+ * Authored by  AlmogBaku (GoDisco)
+ *              almog@GoDisco.net
+ *              http://www.GoDisco.net/
+ *
+ * 9/8/13 10:25 PM
+ */
+
+angular.module('ngFacebook', [])
+  .provider('$facebook', function() {
+    var config = {
+      permissions:    'email',
+      appId:          null,
+      version:        'v1.0',
+      customInit:     {}
+    };
+
+    this.setAppId = function(appId) {
+      config.appId=appId;
+      return this;
+    };
+    this.getAppId = function() {
+      return config.appId;
+    };
+    this.setVersion = function(version) {
+      config.version=version;
+      return this;
+    };
+    this.getVersion = function() {
+      return config.version;
+    };
+    this.setPermissions = function(permissions) {
+      if(permissions instanceof Array) {
+        permissions.join(',');
+      }
+      config.permissions=permissions;
+      return this;
+    };
+    this.getPermissions = function() {
+      return config.permissions;
+    };
+    this.setCustomInit = function(customInit) {
+      if(angular.isDefined(customInit.appId)) {
+        this.setAppId(customInit.appId);
+      }
+      config.customInit=customInit;
+      return this;
+    };
+    this.getCustomInit = function() {
+      return config.customInit;
+    };
+
+    this.$get = ['$q', '$rootScope', '$window', function($q, $rootScope, $window) {
+      var $facebook=$q.defer();
+      $facebook.config = function(property) {
+        return config[property];
+      };
+
+      //Initialization
+      $facebook.init = function() {
+        if($facebook.config('appId')==null)
+          throw "$facebookProvider: `appId` cannot be null";
+
+        $window.FB.init(
+          angular.extend({ appId: $facebook.config('appId'), version: $facebook.config('version') }, $facebook.config("customInit"))
+        );
+        $rootScope.$broadcast("fb.load", $window.FB);
+      };
+
+      $rootScope.$on("fb.load", function(e, FB) {
+        $facebook.resolve(FB);
+
+        //Define action events
+        angular.forEach([
+          'auth.login', 'auth.logout', 'auth.prompt',
+          'auth.sessionChange', 'auth.statusChange', 'auth.authResponseChange',
+          'xfbml.render', 'edge.create', 'edge.remove', 'comment.create',
+          'comment.remove', 'message.send'
+        ],function(event) {
+          FB.Event.subscribe(event, function(response) {
+            $rootScope.$broadcast("fb."+event, response, FB);
+            if(!$rootScope.$$phase) $rootScope.$apply();
+          });
+        });
+
+        // Make sure 'fb.auth.authResponseChange' fires even if the user is not logged in.
+        $facebook.getLoginStatus();
+      });
+
+      /**
+       * Internal cache
+       */
+      $facebook._cache={};
+      $facebook.setCache = function(attr,val) {
+        $facebook._cache[attr]=val;
+      };
+      $facebook.getCache = function(attr) {
+        if(angular.isUndefined($facebook._cache[attr])) return false;
+        return $facebook._cache[attr];
+      };
+      $facebook.clearCache = function() {
+        $facebook._cache = {};
+      };
+
+      /**
+       * Authentication
+       */
+
+      var firstAuthResp=$q.defer();
+      var firstAuthRespReceived=false;
+      function resolveFirstAuthResp(FB) {
+        if (!firstAuthRespReceived) {
+          firstAuthRespReceived=true;
+          firstAuthResp.resolve(FB);
+        }
+      }
+
+      $facebook.setCache("connected", null);
+      $facebook.isConnected = function() {
+        return $facebook.getCache("connected");
+      };
+      $rootScope.$on("fb.auth.authResponseChange", function(event, response, FB) {
+        $facebook.clearCache();
+
+        if(response.status=="connected") {
+          $facebook.setCache("connected", true);
+        } else {
+          $facebook.setCache("connected", false);
+        }
+        resolveFirstAuthResp(FB);
+      });
+
+      $facebook.getAuthResponse = function () {
+        return FB.getAuthResponse();
+      };
+      $facebook.getLoginStatus = function (force) {
+        var deferred=$q.defer();
+
+        return $facebook.promise.then(function(FB) {
+          FB.getLoginStatus(function(response) {
+            if(response.error)  deferred.reject(response.error);
+            else {
+                deferred.resolve(response);
+                if($facebook.isConnected()==null)
+                    $rootScope.$broadcast("fb.auth.authResponseChange", response, FB);
+            }
+            if(!$rootScope.$$phase) $rootScope.$apply();
+          }, force);
+          return deferred.promise;
+        });
+      };
+      $facebook.login = function (permissions, rerequest) {
+        if(permissions==undefined) permissions=$facebook.config("permissions");
+        var deferred=$q.defer();
+
+        var loginOptions = { scope: permissions };
+        if (rerequest) {
+          loginOptions.auth_type = 'rerequest';
+        }
+
+        return $facebook.promise.then(function(FB) {
+          FB.login(function(response) {
+            if(response.error)  deferred.reject(response.error);
+            else                deferred.resolve(response);
+            if(!$rootScope.$$phase) $rootScope.$apply();
+          }, loginOptions);
+          return deferred.promise;
+        });
+      };
+      $facebook.logout = function () {
+        var deferred=$q.defer();
+
+        return $facebook.promise.then(function(FB) {
+          FB.logout(function(response) {
+            if(response.error)  deferred.reject(response.error);
+            else                deferred.resolve(response);
+            if(!$rootScope.$$phase) $rootScope.$apply();
+          });
+          return deferred.promise;
+        });
+      };
+      $facebook.ui = function (params) {
+        var deferred=$q.defer();
+
+        return $facebook.promise.then(function(FB) {
+          FB.ui(params, function(response) {
+            if(response && response.error_code) {
+              deferred.reject(response.error_message);
+            } else {
+              deferred.resolve(response);
+            }
+            if(!$rootScope.$$phase) $rootScope.$apply();
+          });
+          return deferred.promise;
+        });
+      };
+      $facebook.api = function () {
+        var deferred=$q.defer();
+        var args=arguments;
+        args[args.length++] = function(response) {
+          if(response.error)        deferred.reject(response.error);
+          if(response.error_msg)    deferred.reject(response);
+          else                      deferred.resolve(response);
+          if(!$rootScope.$$phase) $rootScope.$apply();
+        };
+
+        return firstAuthResp.promise.then(function(FB) {
+          FB.api.apply(FB, args);
+          return deferred.promise;
+        });
+      };
+
+      /**
+       * API cached request - cached request api with promise
+       *
+       * @param path
+       * @returns $q.defer.promise
+       */
+      $facebook.cachedApi = function() {
+        if(typeof arguments[0] !== 'string')
+          throw "$facebook.cacheApi can works only with graph requests!";
+
+        var promise = $facebook.getCache(arguments[0]);
+        if(promise) return promise;
+
+        var result = $facebook.api.apply($facebook, arguments);
+        $facebook.setCache(arguments[0], result);
+
+        return result;
+      };
+
+      return $facebook;
+    }];
+  })
+  .run(['$rootScope', '$window', '$facebook', function($rootScope, $window, $facebook) {
+    $window.fbAsyncInit = function() {
+      $facebook.init();
+      if(!$rootScope.$$phase) $rootScope.$apply();
+    };
+  }])
+;
+
+
+/***/ }),
+/* 310 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -40693,7 +45919,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 303 */
+/* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {/**
@@ -41380,51 +46606,310 @@ process.umask = function() { return 0; };
   typeof self === "object" ? self : this
 );
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(113), __webpack_require__(302)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(115), __webpack_require__(310)))
 
 /***/ }),
-/* 304 */
+/* 312 */
+/***/ (function(module, exports) {
+
+/*
+	MIT License http://www.opensource.org/licenses/mit-license.php
+	Author Tobias Koppers @sokra
+*/
+var stylesInDom = {},
+	memoize = function(fn) {
+		var memo;
+		return function () {
+			if (typeof memo === "undefined") memo = fn.apply(this, arguments);
+			return memo;
+		};
+	},
+	isOldIE = memoize(function() {
+		return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
+	}),
+	getHeadElement = memoize(function () {
+		return document.head || document.getElementsByTagName("head")[0];
+	}),
+	singletonElement = null,
+	singletonCounter = 0,
+	styleElementsInsertedAtTop = [];
+
+module.exports = function(list, options) {
+	if(typeof DEBUG !== "undefined" && DEBUG) {
+		if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
+	}
+
+	options = options || {};
+	// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
+	// tags it will allow on a page
+	if (typeof options.singleton === "undefined") options.singleton = isOldIE();
+
+	// By default, add <style> tags to the bottom of <head>.
+	if (typeof options.insertAt === "undefined") options.insertAt = "bottom";
+
+	var styles = listToStyles(list);
+	addStylesToDom(styles, options);
+
+	return function update(newList) {
+		var mayRemove = [];
+		for(var i = 0; i < styles.length; i++) {
+			var item = styles[i];
+			var domStyle = stylesInDom[item.id];
+			domStyle.refs--;
+			mayRemove.push(domStyle);
+		}
+		if(newList) {
+			var newStyles = listToStyles(newList);
+			addStylesToDom(newStyles, options);
+		}
+		for(var i = 0; i < mayRemove.length; i++) {
+			var domStyle = mayRemove[i];
+			if(domStyle.refs === 0) {
+				for(var j = 0; j < domStyle.parts.length; j++)
+					domStyle.parts[j]();
+				delete stylesInDom[domStyle.id];
+			}
+		}
+	};
+}
+
+function addStylesToDom(styles, options) {
+	for(var i = 0; i < styles.length; i++) {
+		var item = styles[i];
+		var domStyle = stylesInDom[item.id];
+		if(domStyle) {
+			domStyle.refs++;
+			for(var j = 0; j < domStyle.parts.length; j++) {
+				domStyle.parts[j](item.parts[j]);
+			}
+			for(; j < item.parts.length; j++) {
+				domStyle.parts.push(addStyle(item.parts[j], options));
+			}
+		} else {
+			var parts = [];
+			for(var j = 0; j < item.parts.length; j++) {
+				parts.push(addStyle(item.parts[j], options));
+			}
+			stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
+		}
+	}
+}
+
+function listToStyles(list) {
+	var styles = [];
+	var newStyles = {};
+	for(var i = 0; i < list.length; i++) {
+		var item = list[i];
+		var id = item[0];
+		var css = item[1];
+		var media = item[2];
+		var sourceMap = item[3];
+		var part = {css: css, media: media, sourceMap: sourceMap};
+		if(!newStyles[id])
+			styles.push(newStyles[id] = {id: id, parts: [part]});
+		else
+			newStyles[id].parts.push(part);
+	}
+	return styles;
+}
+
+function insertStyleElement(options, styleElement) {
+	var head = getHeadElement();
+	var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
+	if (options.insertAt === "top") {
+		if(!lastStyleElementInsertedAtTop) {
+			head.insertBefore(styleElement, head.firstChild);
+		} else if(lastStyleElementInsertedAtTop.nextSibling) {
+			head.insertBefore(styleElement, lastStyleElementInsertedAtTop.nextSibling);
+		} else {
+			head.appendChild(styleElement);
+		}
+		styleElementsInsertedAtTop.push(styleElement);
+	} else if (options.insertAt === "bottom") {
+		head.appendChild(styleElement);
+	} else {
+		throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
+	}
+}
+
+function removeStyleElement(styleElement) {
+	styleElement.parentNode.removeChild(styleElement);
+	var idx = styleElementsInsertedAtTop.indexOf(styleElement);
+	if(idx >= 0) {
+		styleElementsInsertedAtTop.splice(idx, 1);
+	}
+}
+
+function createStyleElement(options) {
+	var styleElement = document.createElement("style");
+	styleElement.type = "text/css";
+	insertStyleElement(options, styleElement);
+	return styleElement;
+}
+
+function createLinkElement(options) {
+	var linkElement = document.createElement("link");
+	linkElement.rel = "stylesheet";
+	insertStyleElement(options, linkElement);
+	return linkElement;
+}
+
+function addStyle(obj, options) {
+	var styleElement, update, remove;
+
+	if (options.singleton) {
+		var styleIndex = singletonCounter++;
+		styleElement = singletonElement || (singletonElement = createStyleElement(options));
+		update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
+		remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
+	} else if(obj.sourceMap &&
+		typeof URL === "function" &&
+		typeof URL.createObjectURL === "function" &&
+		typeof URL.revokeObjectURL === "function" &&
+		typeof Blob === "function" &&
+		typeof btoa === "function") {
+		styleElement = createLinkElement(options);
+		update = updateLink.bind(null, styleElement);
+		remove = function() {
+			removeStyleElement(styleElement);
+			if(styleElement.href)
+				URL.revokeObjectURL(styleElement.href);
+		};
+	} else {
+		styleElement = createStyleElement(options);
+		update = applyToTag.bind(null, styleElement);
+		remove = function() {
+			removeStyleElement(styleElement);
+		};
+	}
+
+	update(obj);
+
+	return function updateStyle(newObj) {
+		if(newObj) {
+			if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
+				return;
+			update(obj = newObj);
+		} else {
+			remove();
+		}
+	};
+}
+
+var replaceText = (function () {
+	var textStore = [];
+
+	return function (index, replacement) {
+		textStore[index] = replacement;
+		return textStore.filter(Boolean).join('\n');
+	};
+})();
+
+function applyToSingletonTag(styleElement, index, remove, obj) {
+	var css = remove ? "" : obj.css;
+
+	if (styleElement.styleSheet) {
+		styleElement.styleSheet.cssText = replaceText(index, css);
+	} else {
+		var cssNode = document.createTextNode(css);
+		var childNodes = styleElement.childNodes;
+		if (childNodes[index]) styleElement.removeChild(childNodes[index]);
+		if (childNodes.length) {
+			styleElement.insertBefore(cssNode, childNodes[index]);
+		} else {
+			styleElement.appendChild(cssNode);
+		}
+	}
+}
+
+function applyToTag(styleElement, obj) {
+	var css = obj.css;
+	var media = obj.media;
+
+	if(media) {
+		styleElement.setAttribute("media", media)
+	}
+
+	if(styleElement.styleSheet) {
+		styleElement.styleSheet.cssText = css;
+	} else {
+		while(styleElement.firstChild) {
+			styleElement.removeChild(styleElement.firstChild);
+		}
+		styleElement.appendChild(document.createTextNode(css));
+	}
+}
+
+function updateLink(linkElement, obj) {
+	var css = obj.css;
+	var sourceMap = obj.sourceMap;
+
+	if(sourceMap) {
+		// http://stackoverflow.com/a/26603875
+		css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
+	}
+
+	var blob = new Blob([css], { type: "text/css" });
+
+	var oldSrc = linkElement.href;
+
+	linkElement.href = URL.createObjectURL(blob);
+
+	if(oldSrc)
+		URL.revokeObjectURL(oldSrc);
+}
+
+
+/***/ }),
+/* 313 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(306);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// add the styles to the DOM
+var update = __webpack_require__(312)(content, {});
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!./../../../node_modules/css-loader/index.js?importLoaders=2&sourceMap!./style.css", function() {
+			var newContent = require("!!./../../../node_modules/css-loader/index.js?importLoaders=2&sourceMap!./style.css");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 314 */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,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"
+
+/***/ }),
+/* 315 */
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMDY3IDc5LjE1Nzc0NywgMjAxNS8wMy8zMC0yMzo0MDo0MiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTUgKFdpbmRvd3MpIiB4bXBNTTpJbnN0YW5jZUlEPSJ4bXAuaWlkOjlFNTkxMkVDNjE3QzExRTY4QkE3ODhCNjAwOTcyQjE4IiB4bXBNTTpEb2N1bWVudElEPSJ4bXAuZGlkOjlFNTkxMkVENjE3QzExRTY4QkE3ODhCNjAwOTcyQjE4Ij4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6OUU1OTEyRUE2MTdDMTFFNjhCQTc4OEI2MDA5NzJCMTgiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6OUU1OTEyRUI2MTdDMTFFNjhCQTc4OEI2MDA5NzJCMTgiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz6nfCfSAAADtUlEQVR42uzd4VISYRSA4e9bFtLKyumH/uoOur0uqVtrphqnqcw02BNIzjTi4iKgC9/z/DaUZV/OgZl28/sPH1NHkWB/5C4/VAuDQkWXUGpRIJT2qVKJA+aaiLgvEHFQrCrnhQYqcUD7FlU5FrBkqpge0D5FTBDoMEGAlkCsV9CyZpkgYMUCgYBAQCAgEBAICAQEAgIBBAICAYGAQEAgIBAQCIWaCATa5ZhdfE0g0BpIXjOQvk2h2svKfed95x9c7+02biLr/hsFQs+j2PTvrHJ7PAKhpCB2gkCEgUAQhkAQxsb5mlccvTcRCFsOY6cnx8XVWCCYGlYsxCEQxCEQxCEQxCEQxIFAQCCmBwJBHAIBgWB6CAQEgukhEBAIpgcCAYGAQKxXCISSvRzVWSDQLgQCPeS6WD5/PMq7fdttEXK0D4dcZYGw26YnfkTML8k+WLKPtJ7rud/NC4S1psX1iZ/394s1n0HYuQ/OAmFX4sgCgfbJEQKB/4tooqjnKxBW0oevXgWCD+YCAYGwwe3GIRAICASfPwQCAgGBgEBgmWffG4EAAgGBgEBAICAQEAgIhL10+aoSCCAQEAgIBARCT2SBAALhQYr8L7eu7r5FTUTKa59WOQ1mj/X0b2V5WSQPv+LifHOLPL9XSOSc+nRtOoFscTevZrcF2MCL3ezAc133iovX/3p6vHLPJpcVCwQCAgGBgEBAIHCvEAiYICAQEAgIBBAICAQEAgKhLCEQMEFAICAQEAggEHotBAImCAgEBAICAQQCAgGBgEAoS6/uQ+L2B4/8gn46G6/04IeXf9JxrlOcDp/8rhnnn6+mz3WQhs1F+l1H+jr7+6rDlR/n5Lju1T1ABNIjb9+sdsgHaZTG0wYHT/zGWn37FV+GJymqUXp3dJZeTP+egwc+1nj6VEYC4S6jlZfaftw+50czSaevf6bJ7I5XVfyLd/8JhG6r3tEwVYNIpd2q0Id0uq16VVPk8xYI3VbD8wOBAAIBgYBAQCAgEBAICAQEAgIBgTgEIBAQCAgEBAICAYGAQEAgIBBAICAQEAgIBAQCAgGBgEBAICAQQCAgEBAICAQEAgIBgYBAQCCAQEAgIBAQCAgEBAICAYGAQEAggEBAICAQEAgIBAQCAgGBgEAAgYBAQCCwvUCywwB3yiYIWLFYV13XRQdizWKp8+dNceuVCQIrrFimCNxq4fYEyU04OpSpiVgYFAsrVpVNEgpdp3JeOPfr+0bMlJlCEevUXeoVHkAoFBPGjb8CDAAycoCspDmppwAAAABJRU5ErkJggg=="
+
+/***/ }),
+/* 316 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
  * Created by User on 02.02.2017.
  */
-__webpack_require__(115);
+__webpack_require__(117);
+__webpack_require__(118);
 __webpack_require__(116);
 
-__webpack_require__(114);
-
-
-/***/ }),
-/* 305 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular__ = __webpack_require__(118);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_angular___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_angular__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Templates_incoming_html__ = __webpack_require__(301);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__Templates_incoming_html___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__Templates_incoming_html__);
-/**
- * Created by User on 03.02.2017.
- */
-
-
-
-
-
-const incomingDir = angular.module('incomingDir', []);
-
-incomingDir.directive('incomingDrc', function () {
-    return {
-        restrict: "E",
-        scope: true,
-        template : __WEBPACK_IMPORTED_MODULE_1__Templates_incoming_html___default.a,
-        link: function(){
-            //scope.name
-        }
-    };
-});
 
 /***/ })
 /******/ ]);
-//# sourceMappingURL=build.js.map
+//# sourceMappingURL=index.js.map

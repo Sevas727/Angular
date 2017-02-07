@@ -15,9 +15,13 @@
 -->
 <body ng-app="postBox" ng-controller="postController as ctr">
 
+<a ui-sref="hello">Hello</a>
+<a ui-sref="about">About</a>
+
 <incoming-drc></incoming-drc>
 <p ng-model="ctr.name">{{ctr.name}}</p>
-<script src="./build.js"></script>
+<ui-view></ui-view>
+<script src="./build/index.js"></script>
 
 </body>
 </html>

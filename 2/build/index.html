@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Google Phone Gallery</title>
+</head>
+
+<body>
+
+<a ui-sref="auth">auth</a>
+<a ui-sref="about">About</a>
+
+<div class="document-wrapper">
+    <div class="main-wrapper pl15 pr15" id="container">
+        <div ui-view class="view-area pt15"></div>
+    </div>
+</div>
+<!--
+    <div ng-controller="postController as ctr">
+        <incoming-drc></incoming-drc>
+    </div>
+
+<p ng-model="ctr.name">{{ctr.name}}</p>
+
+<div ui-view> </div>-->
+<script src="./index.js"></script>
+
+</body>
+</html>

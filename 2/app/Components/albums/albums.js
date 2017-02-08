@@ -4,6 +4,8 @@
 
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
+import "../../Services/facebookApiSvc";
+
 export default angular.module('albums',[uiRouter])
 
     .config(($stateProvider, $urlRouterProvider) => {
@@ -17,10 +19,9 @@ export default angular.module('albums',[uiRouter])
 
     .component('albums', {
         template: require("./albums.html"),
-        controller: function(){
-        }
-  /*      controller: ['$scope', 'facebookApiSvc',
-            function($scope, facebookApiSvc) {
+        //controller: function(){}
+        controller: ['$scope', 'facebookApiSvc',
+            function($scope, $facebookApiSvc) {
 
                 facebookApiSvc.refresh();
 
@@ -35,7 +36,7 @@ export default angular.module('albums',[uiRouter])
                     .then(function(data) {
                         $scope.albums = data;
                     });
-            }]*/
+            }]
     })
 /*
     .run(function($templateCache) {

@@ -27,11 +27,13 @@
     "css-loader": "^0.26.1",
     "express": "^4.14.1",
     "file-loader": "^0.10.0",
+    "font-awesome": "4.5.0",
     "html-loader": "^0.4.4",
     "jquery": "^3.1.1",
     "ng-annotate": "^1.2.1",
     "ng-facebook": "^0.1.6",
     "nodemon": "^1.11.0",
+    "npm-run-all": "^4.0.1",
     "style-loader": "^0.13.1",
     "webpack": "^2.2.1"
   }

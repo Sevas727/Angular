@@ -9,11 +9,7 @@ import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import "angular-ui-bootstrap";
-//import "angular-ui-bootstrap/dist/ui-bootstrap-csp.css";
 import "../styles/css/style.css"
-
-//@require "./Components/albums/albums.js"
-//@require "./templates/*.html"
 
 import Components from "./Components"
 import Services from "./Services"

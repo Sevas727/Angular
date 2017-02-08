@@ -5,21 +5,19 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 
-    let authModule = angular.module('auth', [
-        uiRouter
-    ]);
+export default angular.module('auth', [uiRouter])
 
-    authModule.config(($stateProvider, $urlRouterProvider) => {
+    .config(($stateProvider, $urlRouterProvider) => {
         $urlRouterProvider.otherwise('/');
 
         $stateProvider
             .state('auth', {
-                url: '/',
+                url: '/auth',
                 template:  '<auth></auth>',
             });
-    });
+    })
 
-    authModule.component('auth', {
+    .component('auth', {
             template: require("./auth.html"),
             controller: function(){
                     this.name = 'my test name';
@@ -28,5 +26,3 @@ import uiRouter from 'angular-ui-router';
                 count: '='
             }*/
     });
-
-export default authModule;

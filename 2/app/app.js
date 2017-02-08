@@ -1,13 +1,24 @@
 /**
  * Created by User on 02.02.2017.
  */
-import "./styles/css/style.css"
+
 import "angular";
 import "angular-ui-router";
 import "ng-facebook";
+import "bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+
+import "angular-ui-bootstrap";
+//import "angular-ui-bootstrap/dist/ui-bootstrap-csp.css";
+import "../styles/css/style.css"
+
+//@require "./Components/albums/albums.js"
+//@require "./templates/*.html"
+
 import Components from "./Components"
 import Services from "./Services"
-const myApp = angular.module('myApp', ['ui.router', 'ngFacebook', Components.name, Services.name]);
+const myApp = angular.module('myApp', ['ui.router','ui.bootstrap','ngFacebook', Components.name, Services.name]);
+
 
 myApp.config(function($facebookProvider) {
     $facebookProvider

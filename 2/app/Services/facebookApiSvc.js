@@ -1,12 +1,14 @@
 /**
  * Created by User on 07.02.2017.
  */
+
 import angular from "angular";
 
 export default angular.module('facebookApiSvc', [])
+
     .factory('facebookApiSvc', ['$facebook', '$location',
         function ($facebook, $location) {
-            return facebookApiSvc = {
+            let facebookApiSvc = {  //build this object however you want
 
                 login: function() {
 
@@ -88,8 +90,9 @@ export default angular.module('facebookApiSvc', [])
                             return response;
                         })
                 }
+            };
 
-            }
+            return facebookApiSvc;
         }]);
 
 /*
@@ -97,7 +100,10 @@ class GithubService {
 
     constructor($http) {
         this.$http = $http;
+        alert('Service constructor work')
     }
+
+    get(){alert('Service work')};
 
     getItems(githubUsername) {
         var githubUrl = 'https://api.github.com';
@@ -119,4 +125,5 @@ class GithubService {
 
 }
 
-export default GithubService;*/
+export default GithubService;
+ */

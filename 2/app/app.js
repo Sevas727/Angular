@@ -13,14 +13,17 @@ import "../styles/css/style.css"
 
 import Components from "./Components"
 import Services from "./Services"
-const myApp = angular.module('myApp', ['ui.router','ui.bootstrap','ngFacebook', Components.name, Services.name]);
+import Directives from "./Directives"
+
+const myApp = angular.module('myApp', ['ui.router','ui.bootstrap','ngFacebook',
+    Components.name, Services.name, Directives.name]);
 
 
 myApp.config(function($facebookProvider) {
     $facebookProvider
-        .setAppId("333688740303109");
+        .setAppId("1573406859629628");
     $facebookProvider
-        .setPermissions("email,public_profile, user_posts, publish_actions, user_photos");
+        .setPermissions("email, public_profile, user_posts, publish_actions, user_photos");
     $facebookProvider.setCustomInit({
         cookie: true
     });

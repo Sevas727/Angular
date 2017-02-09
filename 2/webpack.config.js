@@ -20,16 +20,16 @@ module.exports = {
                 loaders : 'style-loader!css-loader?importLoaders=2&sourceMap'
             },
             {
-                test    : /\.(jpg|png)$/,
+                test    : /\.(jpg|png|gif)$/,
                 loaders :
                     [
-                        'file-loader?name=[path][name].[ext]' // Any png-image or woff-font below or equal to 10K will be converted to inline base64 instead
+                        'file-loader?name=[name].[ext]' // Any png-image or woff-font below or equal to 10K will be converted to inline base64 instead
                     ]
             },
-            {
-                test: /\.gif/,
-                loader: 'file-loader?mimetype=image/svg+xml',
-            },
+            /*{
+                test: /\.gif$/,
+                loader: 'file-loader?name=[name].[ext]',
+            },*/
             {
                 test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
                 loader: 'file-loader?mimetype=image/svg+xml',

@@ -8,6 +8,7 @@ import uiRouter from 'angular-ui-router';
 export default angular.module('auth', [uiRouter])
 
     .config(($stateProvider, $urlRouterProvider) => {
+        
         $urlRouterProvider.otherwise('/');
 
         $stateProvider

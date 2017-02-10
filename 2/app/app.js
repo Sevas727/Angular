@@ -5,6 +5,12 @@
 import "angular";
 import "angular-ui-router";
 import "ng-facebook";
+
+
+
+import "dropzone/dist/min/basic.min.css";
+import "dropzone/dist/min/dropzone.min.css";
+
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -27,7 +33,14 @@ myApp.config(function($facebookProvider) {
     $facebookProvider.setCustomInit({
         cookie: true
     });
+
+
 });
+
+myApp.config(function($logProvider){
+    $logProvider.debugEnabled(true);
+});
+
 
 myApp.run(function(){
         // Code from FBook JS SDK

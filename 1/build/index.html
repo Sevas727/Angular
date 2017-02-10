@@ -5,23 +5,22 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Google Phone Gallery</title>
 </head>
-<!--<body ng-app="post-box" ng-controller="myCtrl">
-
-    <input ng-model="name">
 
 
 
-</body>
--->
-<body ng-app="postBox" ng-controller="postController as ctr">
+<body ng-app="postBox" >
 
 <a ui-sref="hello">Hello</a>
 <a ui-sref="about">About</a>
+<!--
+    <div ng-controller="postController as ctr">
+        <incoming-drc></incoming-drc>
+    </div>
 
-<incoming-drc></incoming-drc>
 <p ng-model="ctr.name">{{ctr.name}}</p>
-<ui-view></ui-view>
-<script src="./build/index.js"></script>
+-->
+<div ui-view> </div>
+<script src="./index.js"></script>
 
 </body>
 </html>

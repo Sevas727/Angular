@@ -4,7 +4,7 @@
 module.exports = {
     entry: "./app/index.js",
     output: {
-        filename: "build.js"
+        filename: "./build/index.js"
     },
     module: {
         loaders: [

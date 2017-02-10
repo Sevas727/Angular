@@ -19,7 +19,7 @@
               <p><i class="fa fa-refresh" aria-hidden="true"></i> Updated: {{album.updated_time | date : "MM/dd/yyyy 'at' HH:mm"}}</p>
             </div>
             <div class="dib album--link-direction-wrapper flex-fixed">
-              <a class='album--link-direction' ui-sref="album/{{album.id}}/{{album.name}}/" rel='nofollow'>
+              <a class='album--link-direction' ui-sref="album({ albumId: album.id, albumName: album.name })" rel='nofollow'>
                 <i class="fa fa-angle-double-right" aria-hidden="true"></i>
               </a>
             </div>

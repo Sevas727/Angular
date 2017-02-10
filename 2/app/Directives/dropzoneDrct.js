@@ -4,7 +4,7 @@
 /* js/fileAppDirectives */
 
 import angular from "angular";
-import Dropzone from "Dropzone";
+import Dropzone from "dropzone";
 
 export default angular.module('dropzoneDrct', [])
 
@@ -24,11 +24,10 @@ export default angular.module('dropzoneDrct', [])
                     dictDefaultMessage: "Drop files here or <span class='browse'>browse</span> to upload"
                 };
 
-                dropzone = new Dropzone(element[0], config);
-
                 var eventHandlers = {
-                    
                     'sending': function(file, xhr, formData) {
+
+
 
                         if(!scope.currentAlbum) {
 
@@ -42,12 +41,17 @@ export default angular.module('dropzoneDrct', [])
 
                         } else {
 
+                            //     dropzone.enable();
+
+
                             formData.append("albumID", scope.currentAlbum); // Append all the additional input data of your form here!
                             formData.append("access_token", sessionStorage.access_token); // Append all the additional input data of your form here!
 
                         }
                     }
                 };
+
+                dropzone = new Dropzone(element[0], config);
 
                 angular.forEach(eventHandlers, function(handler, event) {
                     dropzone.on(event, handler);

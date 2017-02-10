@@ -36,9 +36,3 @@ export default angular.module('albums',[uiRouter ])
             }
     })
 
-/*
-    .run(function($templateCache) {
-        $templateCache.put("albums.html", require("./albums.html"));
-        $templateCache.put("menu.html", require("./menu.html"));
-    });
-*/

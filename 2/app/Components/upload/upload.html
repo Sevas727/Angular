@@ -7,11 +7,10 @@
 
                 <div class="form-group">
                     <label for="sel1">Select an album:</label>
-                    <select id="album-select" class="form-control" id="sel1" ng-model="currentAlbum" ng-change="selectAlbum()">
+                    <select id="album-select" class="form-control" id="sel1" ng-model="vm.currentAlbum" ng-change="selectAlbum()">
                         <option value="" disabled selected>Please click here and select an album</option>
-                        <option ng-repeat="album in albums" value="{{album.id}}">{{album.name}}</option>
+                        <option ng-repeat="album in vm.albums" value="{{album.id}}">{{album.name}}</option>
                     </select>
-
                 </div>
 
                 <form action="http://facebookgaleryapp-sevas727.rhcloud.com/upload"

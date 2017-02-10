@@ -14,6 +14,11 @@ module.exports = {
     },
     module: {
         loaders: [
+            /*{
+                test: /\.js$/,
+                loaders: ['ng-annotate','required-loader?import[]=angular'],
+                exclude: /node_modules/
+            },*/
             {test: /\.html$/, loaders: "html-loader"},
             {
                 test    : /\.css$/,

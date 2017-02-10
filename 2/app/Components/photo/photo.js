@@ -1,35 +1,37 @@
 /**
  * Created by User on 09.02.2017.
  */
-
-import angular from 'angular';
+import angular from "angular";
 import uiRouter from 'angular-ui-router';
 
 export default angular.module('photo',[uiRouter])
 
-    .config(($stateProvider, $urlRouterProvider) => {
+    .config(($stateProvider) => {
 
         $stateProvider
             .state('photo', {
                 url: '/photo/{imgId}/{imgCreatedTime}/{albumName}/{albumId}/',
-                template:  '<photo></photo>',
+                template:  '<photo/>',
             });
     })
 
     .component('photo', {
         template: require('./photo.html'),
-        controller: function($scope, $stateParams, facebookApiSvc) {
+        controllerAs: 'vm',
+        controller: function($stateParams, facebookApiSvc) {
+
+            let vm = this;
 
             facebookApiSvc.refresh();
 
-            $scope.section = 'view';
-            $scope.albumId = $stateParams.albumId;
-            $scope.albumName = $stateParams.albumName;
-            $scope.imgId = $stateParams.imgId;
-            $scope.imgCreatedTime = $stateParams.imgCreatedTime;
-            $scope.imgName;
+            vm.section = 'view';
+            vm.albumId = $stateParams.albumId;
+            vm.albumName = $stateParams.albumName;
+            vm.imgId = $stateParams.imgId;
+            vm.imgCreatedTime = $stateParams.imgCreatedTime;
+            vm.imgName;
 
-            $scope.closestResolution = function(imagesArr){
+            vm.closestResolution = function(imagesArr){
 
                 if(imagesArr.length == 0) return;
 
@@ -46,16 +48,14 @@ export default angular.module('photo',[uiRouter])
                         closestRight = imagesArr[i];
                     }
                 }
-
                 return closestLeft.source;
-
             }
 
-            facebookApiSvc.getImage($scope.imgId)
-                .then(function (response) {
-                    $scope.imgName = response.name;
-                    $scope.images = response.images;
-                    $scope.imgSrc = $scope.closestResolution($scope.images);
+            facebookApiSvc.getImage(vm.imgId)
+                .then((response) => {
+                    vm.imgName = response.name;
+                    vm.images = response.images;
+                    vm.imgSrc = vm.closestResolution(vm.images);
                 })
 
         }

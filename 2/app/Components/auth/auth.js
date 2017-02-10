@@ -1,8 +1,7 @@
 /**
  * Created by User on 07.02.2017.
  */
-
-import angular from 'angular';
+import angular from "angular";
 import uiRouter from 'angular-ui-router';
 
 export default angular.module('auth', [uiRouter])

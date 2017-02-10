@@ -1,37 +1,36 @@
-/**
- * Created by User on 07.02.2017.
- */
-
-import angular from 'angular';
+import angular from "angular";
 import uiRouter from 'angular-ui-router';
 
-export default angular.module('album',[uiRouter ])
+export default angular.module('album',[uiRouter])
 
-    .config(($stateProvider, $urlRouterProvider) => {
+    .config(($stateProvider) => {
 
             $stateProvider
                 .state('album', {
                     url: '/album/{albumId}/{albumName}/',
-                    template:  '<album></album>',
+                    template:  '<album/>',
                 });
     })
 
     .component('album', {
         template: require('./album.html'),
-        controller: function($scope, $rootScope, facebookApiSvc, $stateParams) {
+        controllerAs: 'vm',
+        controller: function($rootScope, facebookApiSvc, $stateParams) {
+
+            let vm = this;
 
             facebookApiSvc.refresh();
 
             $rootScope.section = 'view';
-            $scope.albumId = $stateParams.albumId;
-            $scope.albumName = $stateParams.albumName;
-            $scope.flagEndPhotoDownload = false;
-            $scope.photoLimit = 50;
-            $scope.offset = 50;
+            vm.albumId = $stateParams.albumId;
+            vm.albumName = $stateParams.albumName;
+            vm.flagEndPhotoDownload = false;
+            vm.photoLimit = 50;
+            vm.offset = 50;
 
-            $scope = facebookApiSvc.getPhotos($scope);
+            vm = facebookApiSvc.getPhotos(vm);
 
-            $scope.scroll = function(elem){
+            vm.scroll = function(elem){
 
                 elem.height(document.documentElement.clientHeight - 210);
                 elem[0].onscroll = function() {
@@ -42,13 +41,13 @@ export default angular.module('album',[uiRouter ])
 
                     if (raw.scrollTop + raw.offsetHeight >= raw.scrollHeight - 1) {
 
-                        $scope = facebookApiSvc.getPhotos($scope);
-
+                        vm = facebookApiSvc.getPhotos(vm);
                     }
                 }
             }
-
-            $scope.scroll($(".images--list"));
-
+            vm.scroll($(".images--list"));
         }
     })
+    .run(function($templateCache) {
+        $templateCache.put("popover.html", require("../../templates/popover.html"));
+    });

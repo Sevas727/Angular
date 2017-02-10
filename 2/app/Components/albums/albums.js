@@ -1,38 +1,37 @@
 /**
  * Created by User on 07.02.2017.
  */
-
-import angular from 'angular';
+import angular from "angular";
 import uiRouter from 'angular-ui-router';
 
-export default angular.module('albums',[uiRouter ])
+export default angular.module('albums',[uiRouter])
 
-    .config(($stateProvider, $urlRouterProvider) => {
-
+    .config(($stateProvider) => {
             $stateProvider
                 .state('albums', {
                     url: '/albums',
-                    template:  '<albums></albums>',
+                    template:  '<albums/>',
                 });
     })
 
     .component('albums', {
         template: require('./albums.html'),
-        controller: function ($scope, $rootScope, facebookApiSvc) {
+        controllerAs: 'vm',
+        controller: function ($rootScope, facebookApiSvc) {
+
+            let vm = this;
 
                 facebookApiSvc.refresh();
-
                 $rootScope.section = 'view';
 
                 facebookApiSvc.getName()
                     .then(function(data) {
-                        $scope.userName = data;
+                        vm.userName = data;
                     });
-
                 facebookApiSvc.getAlbums()
                     .then(function(data) {
-                        $scope.albums = data;
+                        vm.albums = data;
                     });
             }
-    })
+    });
 

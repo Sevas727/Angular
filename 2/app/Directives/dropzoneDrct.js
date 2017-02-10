@@ -1,9 +1,6 @@
 /**
  * Created by Seva on 13.08.2016.
  */
-/* js/fileAppDirectives */
-
-import angular from "angular";
 import Dropzone from "dropzone";
 
 export default angular.module('dropzoneDrct', [])
@@ -26,9 +23,7 @@ export default angular.module('dropzoneDrct', [])
 
                 var eventHandlers = {
                     'sending': function(file, xhr, formData) {
-
-
-
+                        
                         if(!scope.currentAlbum) {
 
                             document.getElementById('album-select').style.border = "1px solid red";

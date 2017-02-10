@@ -4,9 +4,9 @@
     <menu></menu>
 
     <div role="tabpanel" class="tab-pane active" id="home">
-      <p class="user-name-string">Welcome, {{userName}}.</p>
+      <p class="user-name-string">Welcome, {{vm.userName}}.</p>
       <div class="album--list">
-        <div class="album--item flex-container" ng-repeat="album in albums">
+        <div class="album--item flex-container" ng-repeat="album in vm.albums">
           <div class="dib album--thumb-wrapper flex-fixed">
             <img preloader ng-src="{{album.picture.data.url}}" class="album--thumb-image" alt="">
             <span class="loading"><img src="../../../styles/img/preloader64.gif"/></span>

@@ -1,42 +1,44 @@
 /**
  * Created by User on 09.02.2017.
  */
-
-import angular from 'angular';
+import angular from "angular";
 import uiRouter from 'angular-ui-router';
-//import Dropzone from "dropzone";
 
 export default angular.module('upload',[uiRouter])
 
-    .config(($stateProvider, $urlRouterProvider) => {
+    .config(($stateProvider) => {
 
         $stateProvider
             .state('upload', {
                 url: '/upload',
-                template:  '<upload></upload>',
+                template:  '<upload/>',
             });
     })
 
     .component('upload', {
         template: require('./upload.html'),
+        controllerAs: 'vm',
+        controller: function(facebookApiSvc, $rootScope) {
 
-        controller: function(facebookApiSvc, $scope, $rootScope) {
+            let vm = this;
 
             facebookApiSvc.refresh();
 
             $rootScope.section = 'upload';
-            $scope.currentAlbum = "";
+            vm.currentAlbum = "";
 
             facebookApiSvc.getAlbumsID()
                 .then(function(data) {
-                    $scope.albums = data;
+                    vm.albums = data;
+                    console.log(data);
+                    console.log(vm.albums);
                 });
 
-            $scope.catchFile = function(file){
+            vm.catchFile = function(file){
 
             }
 
-            $scope.sendImg = facebookApiSvc.sendImg
+            vm.sendImg = facebookApiSvc.sendImg
 
         }
     });

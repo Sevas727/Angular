@@ -7,18 +7,16 @@
       <p class="user-name-string">
         <a ui-sref="albums" rel='nofollow' class="color_inherit"><i class="fa fa-chevron-left" aria-hidden="true"></i></a>
         <i class="fa fa-folder" aria-hidden="true"></i>
-        {{albumName}}
+        {{vm.albumName}}
       </p>
       <div class="images--list">
         <div class="dib images--item"
-             ng-repeat="image in images"
-             uib-popover-template="'templates/popover.html'"
-
+             ng-repeat="image in vm.images"
+             uib-popover-template="'popover.html'"
              popover-container='body'
              popover-trigger="'mouseenter'"
              popover-placement="bottom"
              container="#container"
-
         >
 
           <div class="images--thumb-wrapper">
@@ -28,7 +26,7 @@
           </div>
           <div class="images--thumb-select-link">
 
-            <a ui-sref="photo({imgId: image.id, imgCreatedTime: image.created_time, albumName: albumName, albumId: albumId})" class="uline">
+            <a ui-sref="photo({imgId: image.id, imgCreatedTime: image.created_time, albumName: vm.albumName, albumId: vm.albumId})" class="uline">
               <i class="fa fa-check blue m3" aria-hidden="true"></i>Select</a>
           </div>
         </div>

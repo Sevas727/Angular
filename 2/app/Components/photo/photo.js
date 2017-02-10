@@ -22,8 +22,6 @@ export default angular.module('photo',[uiRouter])
 
             let vm = this;
 
-            facebookApiSvc.refresh();
-
             vm.section = 'view';
             vm.albumId = $stateParams.albumId;
             vm.albumName = $stateParams.albumName;

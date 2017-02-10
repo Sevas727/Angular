@@ -10,16 +10,38 @@ export default angular.module('facebookApiSvc', [])
         function ($facebook, $location) {
             let facebookApiSvc = {  //build this object however you want
 
+                isAuth: false,
+
                 login: function() {
 
                     $facebook.login()
                         .then(function(response) {
-
-                            $location.path("/albums");
-                            sessionStorage.setItem('access_token', response.authResponse.accessToken);
-
+                            if(response.status == "connected"){
+                                this.isAuth = true;
+                                $location.path("/albums");
+                                sessionStorage.setItem('access_token', response.authResponse.accessToken);
+                            }
                         });
+                },
 
+                check: function() {
+                    console.log('check this.isAuth', this.isAuth);
+                    if(this.isAuth == true){
+                        return true;
+                    } else {
+                        return false
+                    };
+                    /*
+                     $facebook.getLoginStatus()
+                        .then((response)=>{
+                            return response;
+                            console.log('response',response);
+                            if(response.status == "connected"){
+                                return true;
+                            }
+                            return false;
+                        });
+                     */
                 },
 
                 refresh: function() {

@@ -19,8 +19,11 @@ export default angular.module('auth', [uiRouter])
 
     .component('auth', {
             template: require("./auth.html"),
-            controller: function(){
-                    this.name = 'my test name';
+            controllerAs: 'vm',
+            controller: function(facebookApiSvc){
+
+                this.login = facebookApiSvc.login;
+                
             },
             /*bindings: {
                 count: '='

@@ -21,7 +21,6 @@ export default angular.module('albums',[uiRouter])
 
             let vm = this;
 
-                facebookApiSvc.refresh();
                 $rootScope.section = 'view';
 
                 facebookApiSvc.getName()

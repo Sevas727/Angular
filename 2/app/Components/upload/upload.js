@@ -22,8 +22,6 @@ export default angular.module('upload',[uiRouter])
 
             let vm = this;
 
-            facebookApiSvc.refresh();
-
             $rootScope.section = 'upload';
             vm.currentAlbum = "";
 

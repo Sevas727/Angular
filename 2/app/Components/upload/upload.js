@@ -28,8 +28,6 @@ export default angular.module('upload',[uiRouter])
             facebookApiSvc.getAlbumsID()
                 .then(function(data) {
                     vm.albums = data;
-                    console.log(data);
-                    console.log(vm.albums);
                 });
 
             vm.catchFile = function(file){

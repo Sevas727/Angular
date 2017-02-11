@@ -8,7 +8,9 @@ export default angular.module('menu', [uiRouter])
     .component('menu', {
             template: require("./menu.html"),
             controllerAs: 'vm',
-            controller: function($rootScope){
+            controller: function($rootScope, facebookApiSvc){
                 this.section = $rootScope.section;
+                this.logout = facebookApiSvc.logout;
+
             }
     });

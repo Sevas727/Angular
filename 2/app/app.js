@@ -63,13 +63,9 @@ myApp.run(function($rootScope, $state, facebookApiSvc, $location){
 
     $rootScope.$on('$stateChangeStart', function (event, toState){
 
-        console.log("facebookApiSvc.isAuth", facebookApiSvc.isAuth);
-
       if(facebookApiSvc.isAuth == false && toState.name != 'auth') {
           event.preventDefault();
-            console.log("facebookApiSvc.isAuth == false && toState.name != 'auth'");
                 $state.go('auth');
-         // $location('auth');
        }
     });
 });
